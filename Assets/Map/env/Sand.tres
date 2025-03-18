@@ -1,0 +1,13 @@
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://bpuou5s8cd5yw"]
+
+[ext_resource type="Texture2D" uid="uid://dmnbyox3ocuu" path="res://Assets/Map/env/Environment_Sand_ColorMap.jpg" id="1_vtku4"]
+[ext_resource type="Texture2D" uid="uid://b38aeqjnde22b" path="res://Assets/Map/env/Environment_Sand_NormalMap.jpg" id="2_gx88o"]
+
+[resource]
+resource_name = "Sand"
+cull_mode = 2
+albedo_texture = ExtResource("1_vtku4")
+normal_enabled = true
+normal_texture = ExtResource("2_gx88o")
+uv1_triplanar_sharpness = 0.148651
+uv1_world_triplanar = true

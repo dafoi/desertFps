@@ -1,0 +1,42 @@
+[gd_scene load_steps=6 format=3 uid="uid://yhwl5ovd582l"]
+
+[sub_resource type="Curve" id="Curve_jl07k"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.640678, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_3lqv8"]
+curve = SubResource("Curve_jl07k")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_jl07k"]
+lifetime_randomness = 0.2
+emission_shape_scale = Vector3(12.425, 0.71, 34.76)
+emission_shape = 3
+emission_box_extents = Vector3(3.295, 0.995, 1.049)
+angle_min = -720.0
+angle_max = 692.0
+spread = 78.333
+initial_velocity_min = 1.49
+initial_velocity_max = 5.04
+gravity = Vector3(0, 0.085, 0)
+scale_curve = SubResource("CurveTexture_3lqv8")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3lqv8"]
+albedo_color = Color(0.823529, 0.588235, 0.392157, 0.866667)
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="QuadMesh" id="QuadMesh_yque1"]
+material = SubResource("StandardMaterial3D_3lqv8")
+size = Vector2(0.2, 0.2)
+
+[node name="SandParticles" type="GPUParticles3D"]
+amount = 64
+lifetime = 2.0
+fixed_fps = 60
+visibility_aabb = AABB(-39.33, -4.875, -35.955, 82.92, 11.96, 82.49)
+local_coords = true
+process_material = SubResource("ParticleProcessMaterial_jl07k")
+draw_pass_1 = SubResource("QuadMesh_yque1")

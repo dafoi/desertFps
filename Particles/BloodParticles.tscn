@@ -1,0 +1,49 @@
+[gd_scene load_steps=9 format=3 uid="uid://cxp8pm8asya02"]
+
+[ext_resource type="PackedScene" uid="uid://bpg6udum3gkhy" path="res://Components/delete_timer.tscn" id="1_f6wgl"]
+
+[sub_resource type="Gradient" id="Gradient_71t54"]
+offsets = PackedFloat32Array(0, 0.197026, 0.412639, 0.895911)
+colors = PackedColorArray(1, 0.28784, 0.220263, 1, 0.737056, 0.0197104, 2.88785e-07, 1, 0.447217, 0.00660433, 9.62615e-08, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_igbn8"]
+gradient = SubResource("Gradient_71t54")
+
+[sub_resource type="Curve" id="Curve_lf62d"]
+_data = [Vector2(0, 0.200967), 0.0, 11.4767, 0, 0, Vector2(0.210169, 1), 0.0, 0.0, 0, 0, Vector2(0.488136, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_wtt3c"]
+curve = SubResource("Curve_lf62d")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_komv3"]
+particle_flag_align_y = true
+direction = Vector3(0, 1, 0)
+spread = 180.0
+initial_velocity_min = 8.0
+initial_velocity_max = 8.0
+gravity = Vector3(0, -8.845, 0)
+scale_curve = SubResource("CurveTexture_wtt3c")
+color_ramp = SubResource("GradientTexture1D_igbn8")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fdk6y"]
+vertex_color_use_as_albedo = true
+
+[sub_resource type="QuadMesh" id="QuadMesh_fb151"]
+material = SubResource("StandardMaterial3D_fdk6y")
+size = Vector2(0.07, 0.465)
+
+[node name="BloodParticles" type="Node3D"]
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+amount = 64
+lifetime = 0.5
+explosiveness = 0.7
+randomness = 0.86
+local_coords = true
+transform_align = 3
+process_material = SubResource("ParticleProcessMaterial_komv3")
+draw_pass_1 = SubResource("QuadMesh_fb151")
+
+[node name="DeleteTimer" parent="." instance=ExtResource("1_f6wgl")]
+wait_time = 0.5

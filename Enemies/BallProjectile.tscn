@@ -1,0 +1,78 @@
+[gd_scene load_steps=14 format=3 uid="uid://byupw6he2ky4g"]
+
+[ext_resource type="Script" uid="uid://ce6ppicuu0u5h" path="res://Enemies/BallProjectile.cs" id="1_i4222"]
+[ext_resource type="PackedScene" uid="uid://bpg6udum3gkhy" path="res://Components/delete_timer.tscn" id="1_uiefj"]
+[ext_resource type="Resource" uid="uid://hx8itknwgcsq" path="res://Resources/player/default_player.tres" id="2_t1vi8"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mweh0"]
+albedo_color = Color(0.295867, 0.295866, 0.295866, 1)
+metallic = 1.0
+roughness = 0.51
+
+[sub_resource type="SphereMesh" id="SphereMesh_uiefj"]
+material = SubResource("StandardMaterial3D_mweh0")
+radius = 0.4
+height = 0.815
+
+[sub_resource type="Gradient" id="Gradient_i4222"]
+interpolation_mode = 1
+offsets = PackedFloat32Array(0.263941, 0.472119, 0.687732, 0.802974, 1)
+colors = PackedColorArray(1, 0, 0, 1, 0.984854, 0.241953, 9.45727e-08, 1, 0.969168, 0.492547, 1.92523e-07, 1, 0.980546, 0.679821, 0.369048, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_t1vi8"]
+gradient = SubResource("Gradient_i4222")
+
+[sub_resource type="Curve" id="Curve_bmaeh"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1e-05, 0), 0.0, 0.0, 0, 0, Vector2(0.376271, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_57i25"]
+curve = SubResource("Curve_bmaeh")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_nq1n8"]
+direction = Vector3(0, 0, 1)
+spread = 58.333
+initial_velocity_max = 2.0
+gravity = Vector3(0, 0, 0)
+scale_min = 2.0
+scale_max = 2.0
+scale_curve = SubResource("CurveTexture_57i25")
+color_ramp = SubResource("GradientTexture1D_t1vi8")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_opgqt"]
+vertex_color_use_as_albedo = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_a3bo4"]
+material = SubResource("StandardMaterial3D_opgqt")
+size = Vector3(0.1, 0.1, 0.1)
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_58red"]
+radius = 0.213955
+height = 0.893594
+
+[node name="Ball" type="Node3D" node_paths=PackedStringArray("attackArea")]
+script = ExtResource("1_i4222")
+attackArea = NodePath("AttackArea")
+playerRes = ExtResource("2_t1vi8")
+speed = 25.0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_uiefj")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.239397)
+amount = 16
+lifetime = 0.4
+process_material = SubResource("ParticleProcessMaterial_nq1n8")
+draw_pass_1 = SubResource("BoxMesh_a3bo4")
+
+[node name="AttackArea" type="Area3D" parent="."]
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="AttackArea"]
+transform = Transform3D(4.35072e-08, -4.39146e-08, -1, -0.999989, 0.00466011, -4.37114e-08, 0.00466011, 0.999989, -4.37114e-08, 0, 0, 0)
+shape = SubResource("CapsuleShape3D_58red")
+
+[node name="DeleteTimer" parent="." instance=ExtResource("1_uiefj")]
+wait_time = 5.0

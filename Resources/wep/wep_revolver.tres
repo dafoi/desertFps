@@ -1,0 +1,29 @@
+[gd_resource type="Resource" script_class="Wep" load_steps=4 format=3 uid="uid://bneovbcktix3e"]
+
+[ext_resource type="Script" uid="uid://bshdmuedc85xx" path="res://Resources/wep/Wep.cs" id="1_1ehh7"]
+[ext_resource type="AudioStream" uid="uid://bkmcj4catf8t7" path="res://Assets/Sounds/Weapons/revolver_activate.mp3" id="2_xcs7n"]
+[ext_resource type="AudioStream" uid="uid://bi7c17dgs6l55" path="res://Assets/Sounds/Weapons/revolver_shoot.wav" id="3_4n1a8"]
+
+[resource]
+script = ExtResource("1_1ehh7")
+name = "revolver_anim/revolver"
+mag_size = 6
+reserve_size = 72
+reserve_ammo = 24
+ammo = 6
+default_reserve_ammo = 24
+default_ammo = 6
+Shoot_anim = "revolver_anim/Shoot"
+Reload_anim = ""
+Activate_anim = "revolver_anim/Activate"
+Deactivate_anim = "revolver_anim/Deactivate"
+r_Shoot_anim = "rig_revolver_shot"
+r_Reload_anim = ""
+r_Activate_anim = "rig_revolver_activate"
+r_Deactivate_anim = "rig_revolver_deactivate"
+s_Activate = ExtResource("2_xcs7n")
+s_Shoot = ExtResource("3_4n1a8")
+Activate_speed = 2.0
+Deactivate_speed = 2.0
+Shoot_speed = 2.0
+metadata/_custom_type_script = ExtResource("1_1ehh7")

@@ -1,0 +1,59 @@
+[gd_scene load_steps=6 format=3 uid="uid://b1egghv51trs0"]
+
+[ext_resource type="Texture2D" uid="uid://chrigj13dl3h2" path="res://Assets/Particles/blood.png" id="1_vcjap"]
+[ext_resource type="Texture2D" uid="uid://bowuosvma444j" path="res://Assets/Particles/NormalMap.png" id="2_lnj1p"]
+
+[sub_resource type="Animation" id="Animation_lnj1p"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(2, 1.49726, 2)]
+}
+
+[sub_resource type="Animation" id="Animation_vcjap"]
+resource_name = "blood size"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0333333, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(2, 1.49726, 2), Vector3(6, 1.497, 6)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_43ske"]
+_data = {
+&"RESET": SubResource("Animation_lnj1p"),
+&"blood size": SubResource("Animation_vcjap")
+}
+
+[node name="Decal" type="Decal"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.709381, 0)
+size = Vector3(2, 1.49726, 2)
+texture_albedo = ExtResource("1_vcjap")
+texture_normal = ExtResource("2_lnj1p")
+
+[node name="Decal" type="Decal" parent="."]
+transform = Transform3D(0.493532, 0, -0.869728, 0, 1, 0, 0.869728, 0, 0.493532, 0, -0.397461, -1.04489)
+size = Vector3(2, 1.20508, 2)
+texture_albedo = ExtResource("1_vcjap")
+texture_normal = ExtResource("2_lnj1p")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_43ske")
+}
+autoplay = "blood size"

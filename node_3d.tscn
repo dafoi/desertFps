@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://co4a3qelv58dt"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="TBLoader" type="TBLoader" parent="."]
+map_resource = "res://Assets/Map/Trenchbroom/unnamed.map"

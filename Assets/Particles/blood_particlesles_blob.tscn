@@ -1,0 +1,58 @@
+[gd_scene load_steps=10 format=3 uid="uid://byyk5256wud6q"]
+
+[ext_resource type="Texture2D" uid="uid://chrigj13dl3h2" path="res://Assets/Particles/blood.png" id="1_yp2ww"]
+[ext_resource type="Texture2D" uid="uid://bowuosvma444j" path="res://Assets/Particles/NormalMap.png" id="2_k6875"]
+[ext_resource type="PackedScene" uid="uid://bpg6udum3gkhy" path="res://Components/delete_timer.tscn" id="3_k6875"]
+[ext_resource type="PackedScene" uid="uid://b1egghv51trs0" path="res://Particles/BloodDecal.tscn" id="4_2dryk"]
+
+[sub_resource type="Curve" id="Curve_2dryk"]
+_limits = [0.0, 2.0, 0.0, 1.0]
+_data = [Vector2(1e-05, 0), 0.0, 0.0, 0, 0, Vector2(0.40339, 1.17403), 0.0, 0.0, 0, 0, Vector2(0.854237, 1.2279), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_wlqgm"]
+curve = SubResource("Curve_2dryk")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_vooor"]
+angle_min = -717.8
+angle_max = 592.5
+direction = Vector3(0, 1, 0)
+spread = 180.0
+initial_velocity_min = 2.0
+initial_velocity_max = 2.0
+angular_velocity_min = -298.38
+angular_velocity_max = 198.91
+scale_max = 2.0
+scale_curve = SubResource("CurveTexture_wlqgm")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_miio4"]
+transparency = 2
+alpha_scissor_threshold = 0.976
+alpha_antialiasing_mode = 0
+albedo_color = Color(0.579627, 0.0358376, 0.407312, 1)
+albedo_texture = ExtResource("1_yp2ww")
+normal_enabled = true
+normal_texture = ExtResource("2_k6875")
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="QuadMesh" id="QuadMesh_8dj6f"]
+material = SubResource("StandardMaterial3D_miio4")
+
+[node name="BloodParlesBlob" type="Node3D"]
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+amount = 6
+explosiveness = 0.9
+process_material = SubResource("ParticleProcessMaterial_vooor")
+draw_pass_1 = SubResource("QuadMesh_8dj6f")
+
+[node name="DeleteTimer" parent="." node_paths=PackedStringArray("spawnNextPosition") instance=ExtResource("3_k6875")]
+spawnNext = ExtResource("4_2dryk")
+spawnNextPosition = NodePath("../Marker3D")
+
+[node name="Marker3D" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.98987, 0)

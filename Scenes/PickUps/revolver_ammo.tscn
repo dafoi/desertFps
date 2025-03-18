@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://cs23i45hxk6t"]
+
+[ext_resource type="PackedScene" uid="uid://fjts3l82p323" path="res://Assets/wep/revolver/revolver_ap.glb" id="1_hrxc2"]
+[ext_resource type="PackedScene" uid="uid://cp6fd33yx2jpc" path="res://AmmoPacks/ammoPack.tscn" id="2_0yhwl"]
+[ext_resource type="Resource" uid="uid://bneovbcktix3e" path="res://Resources/wep/wep_revolver.tres" id="3_c2ux4"]
+
+[node name="revolver_ammo" type="Node3D"]
+
+[node name="revolver_ap2" parent="." instance=ExtResource("1_hrxc2")]
+transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, 0, 0, 0)
+
+[node name="ammoPack" parent="revolver_ap2" node_paths=PackedStringArray("model") instance=ExtResource("2_0yhwl")]
+weapon_resource = ExtResource("3_c2ux4")
+model = NodePath("../..")
+amount_of_ammo = 4

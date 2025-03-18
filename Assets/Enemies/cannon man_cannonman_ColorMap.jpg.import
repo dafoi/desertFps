@@ -1,0 +1,38 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://c30o666y5b1rp"
+path.s3tc="res://.godot/imported/cannon man_cannonman_ColorMap.jpg-824342a69ea6dedfb7203db35a2f3fa6.s3tc.ctex"
+metadata={
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
+}
+generator_parameters={
+"md5": "59d6cfabf678400f6447b0a847df8746"
+}
+
+[deps]
+
+source_file="res://Assets/Enemies/cannon man_cannonman_ColorMap.jpg"
+dest_files=["res://.godot/imported/cannon man_cannonman_ColorMap.jpg-824342a69ea6dedfb7203db35a2f3fa6.s3tc.ctex"]
+
+[params]
+
+compress/mode=2
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=0
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+roughness/mode=0
+roughness/src_normal=""
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=0

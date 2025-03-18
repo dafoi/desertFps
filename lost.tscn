@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://duqdxncfltwi1"]
+
+[ext_resource type="Script" uid="uid://cgxlxda14a0v0" path="res://again.cs" id="1_ugjck"]
+[ext_resource type="Resource" uid="uid://pb00xfsuaxwn" path="res://Resources/wep/wep_db.tres" id="2_k0ma7"]
+[ext_resource type="Resource" uid="uid://bneovbcktix3e" path="res://Resources/wep/wep_revolver.tres" id="3_6coyq"]
+
+[node name="Lost" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 64.0
+offset_top = 36.0
+offset_right = 64.0
+offset_bottom = 36.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 743.0
+offset_top = 802.0
+offset_right = 1089.0
+offset_bottom = 950.0
+text = "again
+"
+script = ExtResource("1_ugjck")
+scene = "uid://dce3wwvm6ov43"
+weapons = Array[Object]([ExtResource("2_k0ma7"), ExtResource("3_6coyq")])

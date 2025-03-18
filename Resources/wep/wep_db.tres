@@ -1,0 +1,29 @@
+[gd_resource type="Resource" script_class="Wep" load_steps=4 format=3 uid="uid://pb00xfsuaxwn"]
+
+[ext_resource type="Script" uid="uid://bshdmuedc85xx" path="res://Resources/wep/Wep.cs" id="1_rfs4w"]
+[ext_resource type="AudioStream" uid="uid://c3k73rrulvrw4" path="res://Assets/Sounds/Weapons/db_activate.mp3" id="2_pg1hi"]
+[ext_resource type="AudioStream" uid="uid://dova2kj08ffrd" path="res://Assets/Sounds/Weapons/db_shoot.mp3" id="3_vnmou"]
+
+[resource]
+script = ExtResource("1_rfs4w")
+name = "db"
+mag_size = 2
+reserve_size = 24
+reserve_ammo = 12
+ammo = 2
+default_reserve_ammo = 24
+default_ammo = 2
+Shoot_anim = "db_anim/db_Shoot"
+Reload_anim = ""
+Activate_anim = "db_anim/db_Activate"
+Deactivate_anim = "db_anim/db_Deactivate"
+r_Shoot_anim = "rig_db_shot"
+r_Reload_anim = ""
+r_Activate_anim = "rig_db_activate"
+r_Deactivate_anim = "rig_db_deactivate"
+s_Activate = ExtResource("2_pg1hi")
+s_Shoot = ExtResource("3_vnmou")
+Activate_speed = 2.0
+Deactivate_speed = 2.0
+Shoot_speed = 1.0
+metadata/_custom_type_script = ExtResource("1_rfs4w")

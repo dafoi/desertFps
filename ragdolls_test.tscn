@@ -1,0 +1,33 @@
+[gd_scene load_steps=3 format=3 uid="uid://cy4vdyr57oiwl"]
+
+[ext_resource type="PackedScene" uid="uid://dmilavgdouvhg" path="res://Enemies/cannon_man.tscn" id="1_b8kn2"]
+
+[sub_resource type="Environment" id="Environment_2tujp"]
+background_mode = 1
+background_color = Color(0.781891, 0.721227, 0.720437, 1)
+
+[node name="Ragdolls test" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_2tujp")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -0.510723, 0.859745, 0, -0.859745, -0.510723, 0, 1.65159, 0)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.395097, -0.269335, 0.878269, 7.45058e-09, 0.956054, 0.293189, -0.91864, -0.115838, 0.377734, 7.26708, 6.1424, 0.0578852)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.15293, 1.18895, -4.96421)
+use_collision = true
+size = Vector3(1.74695, 2.43066, 2.14355)
+
+[node name="CannonMan" parent="." instance=ExtResource("1_b8kn2")]
+transform = Transform3D(-0.729052, 0, -0.684458, 0, 1, 0, 0.684458, 0, -0.729052, 1.0125, 0.0677434, 2.93608)
+
+[node name="CannonMan2" parent="." instance=ExtResource("1_b8kn2")]
+transform = Transform3D(-0.729052, 0, -0.684458, 0, 1, 0, 0.684458, 0, -0.729052, 1.0125, 0.0677434, -3.67764)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="."]
+transform = Transform3D(-90.7413, 0, 0, 0, 2.71377, 0, 0, 0, -72.3906, 0, -1.2052, 0)
+use_collision = true

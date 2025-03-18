@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="playerResource" load_steps=2 format=3 uid="uid://hx8itknwgcsq"]
+
+[ext_resource type="Script" uid="uid://dvfykbhlqkqa6" path="res://Resources/player/playerResource.cs" id="1_7wwam"]
+
+[resource]
+script = ExtResource("1_7wwam")
+hp = 100
+metadata/_custom_type_script = ExtResource("1_7wwam")

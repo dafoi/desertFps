@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://be23yw8av1it"]
+
+[ext_resource type="AudioStream" uid="uid://dup4442wwggrj" path="res://Assets/Sounds/pickupammo.mp3" id="1_ow3y7"]
+[ext_resource type="PackedScene" uid="uid://bpg6udum3gkhy" path="res://Components/delete_timer.tscn" id="2_3i6nw"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer"]
+stream = ExtResource("1_ow3y7")
+autoplay = true
+
+[node name="DeleteTimer" parent="." instance=ExtResource("2_3i6nw")]

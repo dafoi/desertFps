@@ -1,0 +1,45 @@
+[gd_resource type="ArrayMesh" load_steps=5 format=4 uid="uid://bd6svfrr2wqrf"]
+
+[ext_resource type="Texture2D" uid="uid://btq0tlgsd1sr1" path="res://Assets/Map/env/Environment_Mossy sandstone_ColorMap.jpg" id="1_0guxr"]
+[ext_resource type="Texture2D" uid="uid://bfxcsns4mjk6q" path="res://Assets/Map/env/Environment_Mossy sandstone_NormalMap.jpg" id="2_j2a0l"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_88o8d"]
+resource_name = "Mossy sandstone"
+cull_mode = 2
+albedo_texture = ExtResource("1_0guxr")
+roughness = 0.859091
+normal_enabled = true
+normal_scale = 2.0
+normal_texture = ExtResource("2_j2a0l")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_5a4ku"]
+_surfaces = [{
+"aabb": AABB(-1, -1, -1, 12.5327, 52.1615, 43.5743),
+"format": 34896613377,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAACAAEAAwAEAAEABQAAAAIAAwAAAAUABAAGAAIABQACAAYAAwAHAAQAAwAFAAcABwAGAAQABwAFAAYA"),
+"name": "Mossy sandstone",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("AAAAAP//AAAAAP//AAAAAAAA/////wAAAAAAAAAAAAD/////AAAAAP//AAD//wAA////////AAD//wAAAAAAAA==")
+}]
+blend_shape_mode = 0
+
+[resource]
+resource_name = "Environment_Cube_052-col-col"
+_surfaces = [{
+"aabb": AABB(-1, -1, -1, 12.5327, 52.1615, 43.5743),
+"attribute_data": PackedByteArray("Dlb/////RjYOVkY2/////5aS//92w0Y2lpJGNnbD////////DlZGNv//RjYOVv//dsP//5aSRjZ2w0Y2lpL//5aSaFZ2w+v+dsNoVpaS6/52w2hWlpLr/paSaFZ2w+v+"),
+"format": 34896613399,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACAALAAkADAANAA4ADAAPAA0AEAARABIAEAATABEAFAAVABYAFAAXABUA"),
+"material": SubResource("StandardMaterial3D_88o8d"),
+"name": "Mossy sandstone",
+"primitive": 3,
+"uv_scale": Vector4(2.97478, 3, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray("AAAAAP//AAAAAP//AAAAAAAA/////wAAAAAAAAAAAAAAAAAAAAAAAP////8AAAAAAAD//wAAAAD//wAAAAAAAP//AAAAAP+//////////7//////AAD/v///AAD///+///8AAP//AIAAAP////8AgP///////wCAAAAAAP//AIAAAAAAAAD/P///AAD///8///8AAAAA/z8AAAAA////P/////8AAP+/AAD//////78AAP//AAD/v/////////+//z//f/8//3//P/9//z//f////3////9/////f////3//fwAA/38AAP9/AAD/fwAA/3////9/////f////3///wAA/38AAP9/AAD/fwAA/3////9/////f////3////9/")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_5a4ku")

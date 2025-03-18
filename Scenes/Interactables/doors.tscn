@@ -1,0 +1,277 @@
+[gd_scene load_steps=10 format=3 uid="uid://44m62jd8sixy"]
+
+[ext_resource type="ArrayMesh" uid="uid://bd6svfrr2wqrf" path="res://Assets/Meshes/WallMesh.tres" id="1_csxgu"]
+[ext_resource type="Script" uid="uid://dypcqloy0mhvg" path="res://Scenes/Interactables/doors.cs" id="2_7jdgn"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_csxgu"]
+data = PackedVector3Array(-1, -1, 42.5743, -1, 51.1615, -1, -1, 51.1615, 42.5743, -1, -1, 42.5743, -1, -1, -1, -1, 51.1615, -1, -1, -1, -1, 11.5327, 51.1615, -1, -1, 51.1615, -1, -1, -1, -1, 11.5327, -1, -1, 11.5327, 51.1615, -1, 11.5327, -1, -1, 11.5327, 51.1615, 42.5743, 11.5327, 51.1615, -1, 11.5327, -1, -1, 11.5327, -1, 42.5743, 11.5327, 51.1615, 42.5743, 11.5327, -1, 42.5743, -1, 51.1615, 42.5743, 11.5327, 51.1615, 42.5743, 11.5327, -1, 42.5743, -1, -1, 42.5743, -1, 51.1615, 42.5743, -1, -1, -1, 11.5327, -1, 42.5743, 11.5327, -1, -1, -1, -1, -1, -1, -1, 42.5743, 11.5327, -1, 42.5743, 11.5327, 51.1615, -1, -1, 51.1615, 42.5743, -1, 51.1615, -1, 11.5327, 51.1615, -1, 11.5327, 51.1615, 42.5743, -1, 51.1615, 42.5743)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_7jdgn"]
+data = PackedVector3Array(-1, -1, 42.5743, -1, 51.1615, -1, -1, 51.1615, 42.5743, -1, -1, 42.5743, -1, -1, -1, -1, 51.1615, -1, -1, -1, -1, 11.5327, 51.1615, -1, -1, 51.1615, -1, -1, -1, -1, 11.5327, -1, -1, 11.5327, 51.1615, -1, 11.5327, -1, -1, 11.5327, 51.1615, 42.5743, 11.5327, 51.1615, -1, 11.5327, -1, -1, 11.5327, -1, 42.5743, 11.5327, 51.1615, 42.5743, 11.5327, -1, 42.5743, -1, 51.1615, 42.5743, 11.5327, 51.1615, 42.5743, 11.5327, -1, 42.5743, -1, -1, 42.5743, -1, 51.1615, 42.5743, -1, -1, -1, 11.5327, -1, 42.5743, 11.5327, -1, -1, -1, -1, -1, -1, -1, 42.5743, 11.5327, -1, 42.5743, 11.5327, 51.1615, -1, -1, 51.1615, 42.5743, -1, 51.1615, -1, 11.5327, 51.1615, -1, 11.5327, 51.1615, 42.5743, -1, 51.1615, 42.5743)
+
+[sub_resource type="Animation" id="Animation_2e5vd"]
+resource_name = "open"
+length = 3.0
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Node3D/WallMesh2:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 2.93333)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Node3D/WallMesh2:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 2.93333)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Node3D/WallMesh2:position:z")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(-44.0656, -0.25, 0, 0.25, 0, -81.1777, -0.333333, 33.6777, 0.25, 0),
+"times": PackedFloat32Array(0, 2.93333)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Node3D/WallMesh:position:x")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 2.92333)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Node3D/WallMesh:position:y")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 2.92333)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Node3D/WallMesh:position:z")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 41.117, 0, -33.617, 0.25, 0),
+"times": PackedFloat32Array(0, 2.92333)
+}
+
+[sub_resource type="Animation" id="Animation_sg6ew"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Node3D/WallMesh2:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Node3D/WallMesh2:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Node3D/WallMesh2:position:z")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-44.0656, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Node3D/WallMesh:position:x")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Node3D/WallMesh:position:y")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Node3D/WallMesh:position:z")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_rjn8m"]
+resource_name = "close"
+length = 3.0
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Node3D/WallMesh2:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0.0333333, 2.96667)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Node3D/WallMesh2:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0.0333333, 2.96667)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Node3D/WallMesh2:position:z")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(-81.1777, -0.25, 0, 0.25, 0, -44.0656, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0.0333333, 2.96667)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Node3D/WallMesh:position:x")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0.0233333, 2.96667)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Node3D/WallMesh:position:y")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0.0233333, 2.96667)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Node3D/WallMesh:position:z")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(41.117, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0.0233333, 2.96667)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xu25t"]
+_data = {
+&"RESET": SubResource("Animation_sg6ew"),
+&"close": SubResource("Animation_rjn8m"),
+&"open": SubResource("Animation_2e5vd")
+}
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2e5vd"]
+size = Vector3(16.51, 11.55, 18.655)
+
+[node name="Doors" type="Node3D"]
+
+[node name="Node3D" type="Node3D" parent="."]
+transform = Transform3D(0.468, 0, 0, 0, 0.468, 0, 0, 0, 0.468, 0, 0, 0)
+
+[node name="WallMesh" type="MeshInstance3D" parent="Node3D"]
+mesh = ExtResource("1_csxgu")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Node3D/WallMesh"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/WallMesh/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_csxgu")
+
+[node name="WallMesh2" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -44.0656)
+mesh = ExtResource("1_csxgu")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Node3D/WallMesh2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/WallMesh2/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_7jdgn")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_xu25t")
+}
+script = ExtResource("2_7jdgn")
+
+[node name="OpenArea" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="OpenArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.2699, 0, 0)
+shape = SubResource("BoxShape3D_2e5vd")
+debug_color = Color(2.88785e-06, 0.683571, 0.455171, 0.42)
+
+[node name="CloseArea" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36.5505, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CloseArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.2699, 0, 0)
+shape = SubResource("BoxShape3D_2e5vd")
+debug_color = Color(2.88785e-06, 0.683571, 0.455171, 0.42)
+
+[connection signal="body_entered" from="OpenArea" to="AnimationPlayer" method="open"]
+[connection signal="body_entered" from="CloseArea" to="AnimationPlayer" method="close"]

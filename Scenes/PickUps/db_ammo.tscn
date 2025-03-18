@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://c3agdp61yljtp"]
+
+[ext_resource type="PackedScene" uid="uid://3vjdtawjo4ei" path="res://Assets/wep/db/db_Ammo.glb" id="1_7bq4x"]
+[ext_resource type="PackedScene" uid="uid://cp6fd33yx2jpc" path="res://AmmoPacks/ammoPack.tscn" id="2_k3fpp"]
+
+[node name="db_ammo" type="Node3D"]
+
+[node name="db_Ammo" parent="." instance=ExtResource("1_7bq4x")]
+transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, 0, 0, 0)
+
+[node name="ammoPack" parent="db_Ammo" node_paths=PackedStringArray("model") instance=ExtResource("2_k3fpp")]
+model = NodePath("../..")
+amount_of_ammo = 4

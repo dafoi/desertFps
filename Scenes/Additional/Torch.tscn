@@ -1,0 +1,101 @@
+[gd_scene load_steps=15 format=3 uid="uid://bsrh6hqvej00e"]
+
+[ext_resource type="Texture2D" uid="uid://chrigj13dl3h2" path="res://Assets/Particles/blood.png" id="1_cmj02"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ra1ao"]
+albedo_color = Color(0.411813, 0.223242, 0.158498, 1)
+roughness = 0.62
+
+[sub_resource type="BoxMesh" id="BoxMesh_fwgl1"]
+size = Vector3(0.2, 1, 0.2)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tr7qp"]
+albedo_color = Color(0.527419, 0, 0.128466, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ttt6x"]
+size = Vector3(0.3, 0.2, 0.3)
+
+[sub_resource type="Gradient" id="Gradient_sq2bi"]
+offsets = PackedFloat32Array(0.483271)
+colors = PackedColorArray(1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_evfc5"]
+gradient = SubResource("Gradient_sq2bi")
+
+[sub_resource type="Curve" id="Curve_cmj02"]
+_limits = [-1.0, 1.0, 0.0, 1.0]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_loy4p"]
+curve = SubResource("Curve_cmj02")
+
+[sub_resource type="Curve" id="Curve_7crqp"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.467797, 0.955111), 0.0, 0.0, 0, 0, Vector2(0.79661, 0.497238), 0.0, 0.0, 0, 0, Vector2(1, 0.138122), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_rteoa"]
+curve = SubResource("Curve_7crqp")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_8xnec"]
+emission_shape_scale = Vector3(0.5, 0.5, 0.5)
+emission_shape = 1
+emission_sphere_radius = 1.0
+angle_min = 151.4
+angle_max = 246.5
+gravity = Vector3(0, 9.8, 0)
+linear_accel_min = -3.0
+linear_accel_max = -3.0
+damping_min = 0.901
+damping_max = 4.505
+scale_curve = SubResource("CurveTexture_rteoa")
+color_ramp = SubResource("GradientTexture1D_evfc5")
+hue_variation_curve = SubResource("CurveTexture_loy4p")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jeac5"]
+transparency = 2
+alpha_scissor_threshold = 0.957
+alpha_antialiasing_mode = 0
+diffuse_mode = 3
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.75, 0.9625, 1, 0.964706)
+albedo_texture = ExtResource("1_cmj02")
+emission_enabled = true
+emission = Color(0.719895, 0.38736, 0.303307, 1)
+texture_filter = 2
+disable_receive_shadows = true
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="QuadMesh" id="QuadMesh_3hdf0"]
+material = SubResource("StandardMaterial3D_jeac5")
+
+[node name="Torch" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(2, 0, 0, 0, 1.6908, 1.06826, 0, -1.06826, 1.6908, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_ra1ao")
+mesh = SubResource("BoxMesh_fwgl1")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(2, 0, 0, 0, 1.6908, 1.06826, 0, -1.06826, 1.6908, -0.00409709, 0.611853, -0.356533)
+material_override = SubResource("StandardMaterial3D_tr7qp")
+mesh = SubResource("BoxMesh_ttt6x")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.13987, -1.09098)
+light_color = Color(0.877705, 0.678333, 0.529731, 1)
+light_energy = 10.067
+light_volumetric_fog_energy = 2.158
+shadow_enabled = true
+omni_range = 20.0
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0.611386, -0.24439)
+cast_shadow = 0
+amount = 16
+process_material = SubResource("ParticleProcessMaterial_8xnec")
+draw_pass_1 = SubResource("QuadMesh_3hdf0")

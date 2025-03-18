@@ -1,0 +1,38 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://cqpr6de535c2t"
+path.s3tc="res://.godot/imported/revolver_Revolver_NormalMap.png-9394812f3e2ba0bab0e9bd0f4c0faa37.s3tc.ctex"
+metadata={
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
+}
+generator_parameters={
+"md5": "4f91b9ca707ce4ec7013422d01e3673f"
+}
+
+[deps]
+
+source_file="res://Assets/wep/revolver/revolver_Revolver_NormalMap.png"
+dest_files=["res://.godot/imported/revolver_Revolver_NormalMap.png-9394812f3e2ba0bab0e9bd0f4c0faa37.s3tc.ctex"]
+
+[params]
+
+compress/mode=2
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=1
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+roughness/mode=1
+roughness/src_normal="res://Assets/wep/revolver/revolver_Revolver_NormalMap.png"
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=0
