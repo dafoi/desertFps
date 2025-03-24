@@ -1,0 +1,57 @@
+[gd_scene load_steps=9 format=3 uid="uid://po1qvdauwfgj"]
+
+[ext_resource type="Texture2D" uid="uid://dyxyjfshjya26" path="res://Assets/Particles/fire_21.png" id="1_qdqqc"]
+
+[sub_resource type="Gradient" id="Gradient_qdqqc"]
+offsets = PackedFloat32Array(0, 0.891304, 1)
+colors = PackedColorArray(0.57, 0.304, 0, 0, 0.57, 0.304, 0, 0.866667, 0.57, 0.304, 0, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_bqmpv"]
+gradient = SubResource("Gradient_qdqqc")
+
+[sub_resource type="Curve" id="Curve_bqmpv"]
+_data = [Vector2(1e-05, 0), 0.0, 0.0, 0, 0, Vector2(0.517241, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_3pkqo"]
+curve = SubResource("Curve_bqmpv")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_n13om"]
+angle_min = -720.0
+angle_max = 567.0
+direction = Vector3(0, 0, -1)
+spread = 3.599
+initial_velocity_min = 4.0
+initial_velocity_max = 16.0
+angular_velocity_min = -410.37
+angular_velocity_max = 328.28
+radial_velocity_min = 0.999978
+radial_velocity_max = 0.999978
+gravity = Vector3(0, 9.8, 0)
+damping_min = 0.777
+damping_max = 5.182
+scale_max = 4.0
+scale_curve = SubResource("CurveTexture_3pkqo")
+color_ramp = SubResource("GradientTexture1D_bqmpv")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7lma0"]
+transparency = 4
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_qdqqc")
+disable_receive_shadows = true
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="QuadMesh" id="QuadMesh_i5npk"]
+material = SubResource("StandardMaterial3D_7lma0")
+
+[node name="CannonBall Particles" type="GPUParticles3D"]
+cast_shadow = 0
+amount = 16
+explosiveness = 0.88
+process_material = SubResource("ParticleProcessMaterial_n13om")
+draw_pass_1 = SubResource("QuadMesh_i5npk")

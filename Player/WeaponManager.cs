@@ -74,7 +74,7 @@ public partial class WeaponManager : Node3D
         }
         last_id = id;
 
-        if (Input.IsActionJustPressed("shoot"))
+        if (Input.IsActionPressed("shoot"))
         {
             if (can_switch && !isShooting && wep_current.ammo > 0)
             {

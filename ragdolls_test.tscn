@@ -23,7 +23,7 @@ use_collision = true
 size = Vector3(1.74695, 2.43066, 2.14355)
 
 [node name="CannonMan" parent="." instance=ExtResource("1_b8kn2")]
-transform = Transform3D(-0.729052, 0, -0.684458, 0, 1, 0, 0.684458, 0, -0.729052, 1.0125, 0.0677434, 2.93608)
+transform = Transform3D(-0.729052, 0, -0.684458, 0.377827, 0.833838, -0.402444, 0.570727, -0.55201, -0.607911, 1.0125, 3.30321, 2.93608)
 
 [node name="CannonMan2" parent="." instance=ExtResource("1_b8kn2")]
 transform = Transform3D(-0.729052, 0, -0.684458, 0, 1, 0, 0.684458, 0, -0.729052, 1.0125, 0.0677434, -3.67764)

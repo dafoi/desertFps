@@ -46,12 +46,6 @@ size = Vector3(2, 1.49726, 2)
 texture_albedo = ExtResource("1_vcjap")
 texture_normal = ExtResource("2_lnj1p")
 
-[node name="Decal" type="Decal" parent="."]
-transform = Transform3D(0.493532, 0, -0.869728, 0, 1, 0, 0.869728, 0, 0.493532, 0, -0.397461, -1.04489)
-size = Vector3(2, 1.20508, 2)
-texture_albedo = ExtResource("1_vcjap")
-texture_normal = ExtResource("2_lnj1p")
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 &"": SubResource("AnimationLibrary_43ske")

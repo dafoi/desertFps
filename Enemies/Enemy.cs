@@ -15,31 +15,44 @@ public partial class Enemy : CharacterBody3D
     [Export] PackedScene projectile;
     [Export] Timer aimingTimer;
     [Export] CheckForObstacles obstacleCheck;
+    [Export] PhysicalBoneSimulator3D ragdollSimulator;
+
+    public bool ragdolled = false;
+
     Vector3 velocity = Vector3.Zero;
     Vector3 nextPosition = Vector3.Zero;
+
     Node3D targetNode;
+
     bool aimingTimerStarted = false;
     int iteration = 0;
 
 
-    enum S
+    public enum S
     {
         Idle,
         Running,
         Aiming,
         Shooting,
+        Ragdoll
     }
-    S st = S.Idle;
+    public S st = S.Idle;
     public override void _Ready()
 
     {
         health.hit += gotHit;
+        health.died += onDeath;
+
         targetNode = GetTree().GetFirstNodeInGroup("Player") as Node3D;
+
         detectArea.BodyEntered += detectAreaEntered;
         shootArea.BodyEntered += shootAreaEntered;
         shootArea.BodyExited += shootAreaExited;
         aimingTimer.Timeout += shoot;
+
         animPlayer.AnimationFinished += animFinished;
+        
+        
     }
     public override void _PhysicsProcess(double delta)
     {
@@ -60,7 +73,7 @@ public partial class Enemy : CharacterBody3D
                     animPlayer.Play("Run");
 
                 }
-                //updateTargetPosition();
+                updateTargetPosition();
                 applyMovement(delta);
                 break;
             case S.Aiming:
@@ -71,13 +84,17 @@ public partial class Enemy : CharacterBody3D
                     aimingTimer.Start();
                     aimingTimerStarted = true;
                 }
-                animPlayer.Pause();
-
+                //animPlayer.Pause();
+                animPlayer.Play("Idle");
 
                 break;
+
             case S.Shooting:
                 LookAt(targetNode.GlobalPosition, Vector3.Up);
                 Rotation = new Vector3(0, Rotation.Y, Rotation.Z);
+                break;
+            case S.Ragdoll:
+
                 break;
 
         }
@@ -85,15 +102,20 @@ public partial class Enemy : CharacterBody3D
         Velocity = velocity;
         MoveAndSlide();
     }
-    void gotHit()
+    void gotHit(float damage)
     {
-        if (st == S.Idle)
+        if (st == S.Idle && st != S.Ragdoll)
         {
             st = S.Running;
         }
     }
     void shoot()
     {
+        if (ragdolled)
+        {
+            return;
+        }
+        
         LookAt(targetNode.GlobalPosition, Vector3.Up);
         Rotation = new Vector3(0, Rotation.Y, Rotation.Z);
         st = S.Shooting;
@@ -103,7 +125,7 @@ public partial class Enemy : CharacterBody3D
     }
     void animFinished(StringName name)
     {
-        if (name == "Shoot")
+        if (name == "Shoot" && st != S.Ragdoll)
         {
             st = S.Aiming;
         }
@@ -128,7 +150,8 @@ public partial class Enemy : CharacterBody3D
     }
     void applyMovement(double delta)
     {
-        navAgent.TargetPosition = targetNode.Position;
+
+
         Vector3 direction = (navAgent.GetNextPathPosition() - GlobalPosition).Normalized() * stats.speed;
         velocity.X = direction.X;
         velocity.Z = direction.Z;
@@ -136,14 +159,14 @@ public partial class Enemy : CharacterBody3D
     }
     public void detectAreaEntered(Node body)
     {
-        if (body is player && st == S.Idle)
+        if (body is player && st == S.Idle && st != S.Ragdoll)
         {
             st = S.Running;
         }
     }
     public void shootAreaEntered(Node body)
     {
-        if (body is player)
+        if (body is player && !ragdolled)
         {
             st = S.Aiming;
             velocity.X = 0;
@@ -159,7 +182,7 @@ public partial class Enemy : CharacterBody3D
     }
     void updateTargetPosition()
     {
-        if (iteration > 3)
+        if (iteration > 6)
         {
             navAgent.TargetPosition = targetNode.Position;
             nextPosition = navAgent.GetNextPathPosition();
@@ -169,5 +192,17 @@ public partial class Enemy : CharacterBody3D
         {
             iteration++;
         }
+    }
+    void onDeath()
+    {
+        ragdolled = true;
+        st = S.Ragdoll;
+        animPlayer.QueueFree();
+        health.hitAble = false;
+        ragdollSimulator.PhysicalBonesStartSimulation();
+        detectArea.QueueFree();
+        shootArea.QueueFree();
+        animPlayer.QueueFree();
+        navAgent.QueueFree();
     }
 }

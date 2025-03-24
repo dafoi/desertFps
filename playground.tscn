@@ -1,0 +1,74 @@
+[gd_scene load_steps=11 format=3 uid="uid://dqohd0gwpmbbr"]
+
+[ext_resource type="Script" uid="uid://cmnnx6xfirnca" path="res://Playground.cs" id="1_is3ju"]
+[ext_resource type="Material" uid="uid://bpuou5s8cd5yw" path="res://Assets/Map/env/Sand.tres" id="1_wt17y"]
+[ext_resource type="PackedScene" uid="uid://c01q4ie2e0pxi" path="res://Player/Player.tscn" id="2_m8u5f"]
+[ext_resource type="PackedScene" uid="uid://dmilavgdouvhg" path="res://Enemies/cannon_man.tscn" id="3_m8u5f"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_is3ju"]
+sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+ground_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+
+[sub_resource type="Sky" id="Sky_o00ia"]
+sky_material = SubResource("ProceduralSkyMaterial_is3ju")
+
+[sub_resource type="Environment" id="Environment_4bqqs"]
+background_mode = 2
+sky = SubResource("Sky_o00ia")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_m8u5f"]
+vertices = PackedVector3Array(-199.5, 0.5, -199.5, -199.5, 0.5, 199.5, 199.5, 0.5, 199.5, 199.5, 0.5, -199.5)
+polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1)]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_wt17y"]
+size = Vector2(400, 400)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_m8u5f"]
+data = PackedVector3Array(200, 0, 200, -200, 0, 200, 200, 0, -200, -200, 0, 200, -200, 0, -200, 200, 0, -200)
+
+[node name="Playground" type="Node3D"]
+script = ExtResource("1_is3ju")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_4bqqs")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Enemies" type="Node3D" parent="."]
+
+[node name="CannonMan" parent="Enemies" instance=ExtResource("3_m8u5f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.3266, 0.35743, -63.8655)
+
+[node name="CannonMan2" parent="Enemies" instance=ExtResource("3_m8u5f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.6875, 0.357428, -59.3217)
+
+[node name="CannonMan3" parent="Enemies" instance=ExtResource("3_m8u5f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.47389, 0.357432, -73.3332)
+
+[node name="CannonMan4" parent="Enemies" instance=ExtResource("3_m8u5f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.23006, 0.35743, -69.1672)
+
+[node name="CannonMan5" parent="Enemies" instance=ExtResource("3_m8u5f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.60782, 0.35743, -83.8994)
+
+[node name="Physics" type="Node3D" parent="."]
+
+[node name="Player" parent="Physics" instance=ExtResource("2_m8u5f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.178097, 2, -0.441856)
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="Physics"]
+navigation_mesh = SubResource("NavigationMesh_m8u5f")
+
+[node name="Floor" type="MeshInstance3D" parent="Physics/NavigationRegion3D"]
+material_override = ExtResource("1_wt17y")
+mesh = SubResource("PlaneMesh_wt17y")
+skeleton = NodePath("../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Physics/NavigationRegion3D/Floor"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Physics/NavigationRegion3D/Floor/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_m8u5f")

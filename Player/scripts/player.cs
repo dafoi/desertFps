@@ -17,7 +17,7 @@ public partial class player : CharacterBody3D
     [Export] HeadBob Bob;
     public bool footsteps = false;
     public bool weapon_sway = false;
-
+    [Export] public bool can_die = true;
     Vector3 velocity;
     [Export] AnimationPlayer wep_player;
     [Export] AudioStreamPlayer jumpsound;
@@ -39,7 +39,7 @@ public partial class player : CharacterBody3D
     public override void _PhysicsProcess(double delta)
     {
 
-        if(playerResource.hp <= 0)
+        if(playerResource.hp <= 0 && can_die)
         {
             //var sm = GetTree().GetFirstNodeInGroup("SceneManager") as SceneManager;
             GetTree().ChangeSceneToFile("uid://duqdxncfltwi1");

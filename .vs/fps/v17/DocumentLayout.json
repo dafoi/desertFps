@@ -3,19 +3,19 @@
   "WorkspaceRootPath": "C:\\Users\\Ruslan\\Desktop\\Projects\\fps\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{4B0AA5FA-1904-44AA-AA06-EF9FD12E2C34}|fps.csproj|C:\\Users\\Ruslan\\Desktop\\Projects\\fps\\player\\materialraycast.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4B0AA5FA-1904-44AA-AA06-EF9FD12E2C34}|fps.csproj|solutionrelative:player\\materialraycast.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Ruslan\\Desktop\\Projects\\fps\\Enemies\\Ragdoll.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Enemies\\Ragdoll.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{4B0AA5FA-1904-44AA-AA06-EF9FD12E2C34}|fps.csproj|C:\\Users\\Ruslan\\Desktop\\Projects\\fps\\enemies\\enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4B0AA5FA-1904-44AA-AA06-EF9FD12E2C34}|fps.csproj|solutionrelative:enemies\\enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4B0AA5FA-1904-44AA-AA06-EF9FD12E2C34}|fps.csproj|c:\\users\\ruslan\\desktop\\projects\\fps\\player\\weaponmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{4B0AA5FA-1904-44AA-AA06-EF9FD12E2C34}|fps.csproj|C:\\Users\\Ruslan\\Desktop\\Projects\\fps\\components\\health.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4B0AA5FA-1904-44AA-AA06-EF9FD12E2C34}|fps.csproj|solutionrelative:components\\health.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4B0AA5FA-1904-44AA-AA06-EF9FD12E2C34}|fps.csproj|c:\\users\\ruslan\\desktop\\projects\\fps\\player\\materialraycast.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4B0AA5FA-1904-44AA-AA06-EF9FD12E2C34}|fps.csproj|solutionrelative:player\\materialraycast.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4B0AA5FA-1904-44AA-AA06-EF9FD12E2C34}|fps.csproj|C:\\Users\\Ruslan\\Desktop\\Projects\\fps\\player\\weaponmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4B0AA5FA-1904-44AA-AA06-EF9FD12E2C34}|fps.csproj|solutionrelative:player\\weaponmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -67,12 +67,12 @@
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:player\\pr.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4B0AA5FA-1904-44AA-AA06-EF9FD12E2C34}|fps.csproj|C:\\Users\\Ruslan\\Desktop\\Projects\\fps\\components\\health.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4B0AA5FA-1904-44AA-AA06-EF9FD12E2C34}|fps.csproj|solutionrelative:components\\health.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{4B0AA5FA-1904-44AA-AA06-EF9FD12E2C34}|fps.csproj|C:\\Users\\Ruslan\\Desktop\\Projects\\fps\\Scenes\\Interactables\\doors.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4B0AA5FA-1904-44AA-AA06-EF9FD12E2C34}|fps.csproj|solutionrelative:Scenes\\Interactables\\doors.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4B0AA5FA-1904-44AA-AA06-EF9FD12E2C34}|fps.csproj|C:\\Users\\Ruslan\\Desktop\\Projects\\fps\\Enemies\\Ragdoll.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4B0AA5FA-1904-44AA-AA06-EF9FD12E2C34}|fps.csproj|solutionrelative:Enemies\\Ragdoll.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -82,11 +82,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 14,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 17,
               "Title": "Ragdoll.cs",
               "DocumentMoniker": "C:\\Users\\Ruslan\\Desktop\\Projects\\fps\\Enemies\\Ragdoll.cs",
               "RelativeDocumentMoniker": "Enemies\\Ragdoll.cs",
@@ -94,18 +94,17 @@
               "RelativeToolTip": "Enemies\\Ragdoll.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-07T09:18:04.016Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-07T09:18:04.016Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "Enemy.cs",
               "DocumentMoniker": "C:\\Users\\Ruslan\\Desktop\\Projects\\fps\\Enemies\\Enemy.cs",
               "RelativeDocumentMoniker": "Enemies\\Enemy.cs",
               "ToolTip": "C:\\Users\\Ruslan\\Desktop\\Projects\\fps\\Enemies\\Enemy.cs",
               "RelativeToolTip": "Enemies\\Enemy.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAAAAAA",
+              "ViewState": "AQIAAGgAAAAAAAAAAAAwwHoAAAAjAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-24T16:41:40.303Z",
               "EditorCaption": ""
@@ -184,7 +183,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 16,
               "Title": "doors.cs",
               "DocumentMoniker": "C:\\Users\\Ruslan\\Desktop\\Projects\\fps\\Scenes\\Interactables\\doors.cs",
               "RelativeDocumentMoniker": "Scenes\\Interactables\\doors.cs",
@@ -220,15 +219,16 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 1,
               "Title": "Health.cs",
               "DocumentMoniker": "C:\\Users\\Ruslan\\Desktop\\Projects\\fps\\Components\\Health.cs",
               "RelativeDocumentMoniker": "Components\\Health.cs",
               "ToolTip": "C:\\Users\\Ruslan\\Desktop\\Projects\\fps\\Components\\Health.cs",
               "RelativeToolTip": "Components\\Health.cs",
-              "ViewState": "AQIAAAIAAAAAAAAAAAAAABgAAAAcAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAEAAAANAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-17T19:09:08.74Z"
+              "WhenOpened": "2025-02-17T19:09:08.74Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -240,8 +240,7 @@
               "RelativeToolTip": "Player\\WeaponManager.cs",
               "ViewState": "AQIAABEAAAAAAAAAAAAQwCUAAAAXAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-15T20:40:54.316Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-15T20:40:54.316Z"
             },
             {
               "$type": "Document",
@@ -257,13 +256,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "MaterialRayCast.cs",
               "DocumentMoniker": "C:\\Users\\Ruslan\\Desktop\\Projects\\fps\\Player\\MaterialRayCast.cs",
               "RelativeDocumentMoniker": "Player\\MaterialRayCast.cs",
               "ToolTip": "C:\\Users\\Ruslan\\Desktop\\Projects\\fps\\Player\\MaterialRayCast.cs",
               "RelativeToolTip": "Player\\MaterialRayCast.cs",
-              "ViewState": "AQIAAAUAAAAAAAAAAAAQwA8AAABAAAAA",
+              "ViewState": "AQIAAAIAAAAAAAAAAAAAAA8AAABAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-13T06:16:14.888Z",
               "EditorCaption": ""

@@ -1,4 +1,4 @@
-[gd_scene load_steps=79 format=4 uid="uid://dce3wwvm6ov43"]
+[gd_scene load_steps=77 format=4 uid="uid://dce3wwvm6ov43"]
 
 [ext_resource type="PackedScene" uid="uid://c01q4ie2e0pxi" path="res://Player/Player.tscn" id="1_oi3di"]
 [ext_resource type="Texture2D" uid="uid://msocq38dln2o" path="res://Assets/Map/env/Mossy sandstone_ColorMap.jpg" id="2_h6smj"]
@@ -15,8 +15,6 @@
 [ext_resource type="Texture2D" uid="uid://bdyjtppvncidc" path="res://Assets/Map/env/Sand_NormalMap.jpg" id="8_42xju"]
 [ext_resource type="Texture2D" uid="uid://c0o6567u18j1i" path="res://Assets/Map/Skybox/sky_linekotsi_18.png" id="10_ait7k"]
 [ext_resource type="Script" uid="uid://c16u8a3oxusm6" path="res://world_environment.gd" id="10_fedht"]
-[ext_resource type="VoxelGIData" uid="uid://bllgcyk4s07gt" path="res://level.VoxelGI_data.res" id="14_v7sqt"]
-[ext_resource type="Script" uid="uid://wulxkipq3urj" path="res://voxel_gi.gd" id="15_5pxul"]
 [ext_resource type="ArrayOccluder3D" uid="uid://bls265qkm2t5f" path="res://level.occ" id="15_v5j5c"]
 [ext_resource type="PackedScene" uid="uid://cfq8of4al4wpo" path="res://Assets/Map/env/level2.gltf" id="18_4c15r"]
 
@@ -633,7 +631,7 @@ height = 5.22583
 [node name="Level" type="Node3D"]
 
 [node name="Player" parent="." instance=ExtResource("1_oi3di")]
-transform = Transform3D(-0.0772063, 0, -0.997015, 0, 1, 0, 0.997015, 0, -0.0772063, 171.362, 24.8319, -21.6157)
+transform = Transform3D(-0.0772063, 0, -0.997015, 0, 1, 0, 0.997015, 0, -0.0772063, 1.38813, 2.27567, 0.0244775)
 
 [node name="OccluderInstance3D" type="OccluderInstance3D" parent="."]
 occluder = ExtResource("15_v5j5c")
@@ -993,12 +991,6 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 4.98508, 16.7048, -119.861)
 [node name="revolver_ammo10" parent="." instance=ExtResource("5_1ainy")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 4.98508, 16.7048, -123.746)
 
-[node name="VoxelGI" type="VoxelGI" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60.5381, 24.1417, -15.9405)
-size = Vector3(201.217, 61.0757, 168.599)
-data = ExtResource("14_v7sqt")
-script = ExtResource("15_5pxul")
-
 [node name="Enemies" type="Node3D" parent="."]
 
 [node name="CannonMan" parent="Enemies" instance=ExtResource("3_f2txt")]
@@ -1021,45 +1013,39 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 135.806, 9.10337, 4.72212)
 stats = null
 projectile = null
 
-[node name="DetectArea" parent="Enemies/CannonMan5" index="2"]
+[node name="DetectArea" parent="Enemies/CannonMan5" index="3"]
 monitoring = false
 monitorable = false
 
-[node name="Physical Bone ORG-spine" parent="Enemies/CannonMan5/cannon man/cannonman/Skeleton3D3/PhysicalBoneSimulator3D" index="0"]
-transform = Transform3D(0.5, 1.19209e-07, -1.77636e-14, 2.97594e-08, -0.12482, -0.484169, -1.15435e-07, 0.484169, -0.12482, 0, 1.21962, -0.0473735)
-joint_offset = Transform3D(1, 0, -7.10543e-15, 0, 1, 0, 0, 0, 1, 1.41543e-15, -1.18735e-08, 0.199203)
-body_offset = Transform3D(0.5, 1.42109e-14, -3.55271e-15, -3.55271e-15, 2.98023e-08, -0.5, 0, 0.5, 2.98023e-08, 0, 0.0996017, 0)
+[node name="Head" parent="Enemies/CannonMan5/Visual/cannon man/cannonman/Skeleton3D/PhysicalBoneSimulator3D" index="0"]
+transform = Transform3D(0.8, -3.49303e-11, 6.09561e-11, 6.19283e-11, 0.0228467, -0.799674, 3.31681e-11, 0.799674, 0.0228467, 0, 2.05928, -0.0112946)
+joint_offset = Transform3D(1, 0, 0, 0, 0.999995, 0, 0, 0, 0.999995, -1.19983e-11, -3.17806e-05, 0.15754)
+body_offset = Transform3D(0.8, -3.51577e-11, 6.09213e-11, 6.09222e-11, -5.47618e-07, -0.8, 3.51434e-11, 0.8, -5.47618e-07, 0, 0.126032, 2.55108e-05)
 
-[node name="Physical Bone ORG-spine_001" parent="Enemies/CannonMan5/cannon man/cannonman/Skeleton3D3/PhysicalBoneSimulator3D" index="1"]
-transform = Transform3D(0.5, 1.19216e-07, -6.67244e-13, 6.69062e-09, -0.0280637, -0.499212, -1.19028e-07, 0.499212, -0.0280637, 0, 1.51163, -0.0116642)
-joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.49244e-13, 0.000297927, 0.391727)
-body_offset = Transform3D(0.5, 6.63647e-12, -7.06102e-13, -7.0699e-13, 1.22935e-07, -0.5, -6.65068e-12, 0.5, 1.22935e-07, 0, 0.195864, -0.000149012)
+[node name="Thigh L" parent="Enemies/CannonMan5/Visual/cannon man/cannonman/Skeleton3D/PhysicalBoneSimulator3D" index="1"]
+transform = Transform3D(0.79607, -0.000212864, -0.0791981, 0.0787379, -0.0840148, 0.79167, -0.00852791, -0.795576, -0.0835811, 0.204681, 0.820294, 0.0105987)
+joint_offset = Transform3D(1, 0, 0, 0, 0.999999, 0, 0, 0, 0.999999, -2.85742e-05, -3.78733e-07, 0.320969)
+body_offset = Transform3D(0.8, 2.79397e-09, -8.9698e-08, -8.02102e-08, 1.86265e-07, -0.8, -9.31323e-10, 0.8, 2.01166e-07, 2.28882e-05, 0.256775, 2.38419e-07)
 
-[node name="Physical Bone ORG-spine_002" parent="Enemies/CannonMan5/cannon man/cannonman/Skeleton3D3/PhysicalBoneSimulator3D" index="2"]
-transform = Transform3D(0.5, 3.63087e-12, -4.27658e-13, -5.42868e-13, 0.0159041, -0.499747, -3.61311e-12, 0.499747, 0.0159041, 0, 1.82052, -0.00381541)
-joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.0804e-13, -0.000630021, 0.226809)
-body_offset = Transform3D(0.5, 3.51363e-12, -4.48863e-13, -4.48308e-13, -1.84029e-06, -0.5, -3.51008e-12, 0.5, -1.84029e-06, 0, 0.113405, 0.000315428)
+[node name="Thigh R" parent="Enemies/CannonMan5/Visual/cannon man/cannonman/Skeleton3D/PhysicalBoneSimulator3D" index="2"]
+transform = Transform3D(0.79607, 0.00021299, 0.0791988, -0.0787386, -0.0840148, 0.79167, 0.00852811, -0.795576, -0.0835811, -0.204651, 0.820285, 0.0105987)
+joint_offset = Transform3D(1, 0, 0, 0, 0.999999, 0, 0, 0, 0.999999, -2.88916e-05, -1.56784e-06, 0.320976)
+body_offset = Transform3D(0.8, 1.16415e-07, 7.01286e-07, 6.94999e-07, 1.78814e-07, -0.8, -1.16415e-07, 0.8, 1.93715e-07, 2.28882e-05, 0.256781, 1.19209e-06)
 
-[node name="Physical Bone ORG-spine_003" parent="Enemies/CannonMan5/cannon man/cannonman/Skeleton3D3/PhysicalBoneSimulator3D" index="3"]
-transform = Transform3D(0.348262, 0.35862, 0.0102504, 2.34692e-06, 0.0142833, -0.499796, -0.358766, 0.34812, 0.00994701, -0.00259399, 2.05912, -0.0102403)
-joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.24624e-06, 4.38966e-05, 0.251754)
-body_offset = Transform3D(0.5, 1.14292e-05, 2.47313e-06, 2.47266e-06, 3.73647e-06, -0.5, -1.14441e-05, 0.5, 3.73321e-06, 0, 0.125877, -2.28882e-05)
+[node name="Spine 1" parent="Enemies/CannonMan5/Visual/cannon man/cannonman/Skeleton3D/PhysicalBoneSimulator3D" index="3"]
+transform = Transform3D(0.8, 1.90735e-07, -3.19744e-14, 4.76151e-08, -0.199712, -0.774671, -1.84696e-07, 0.774671, -0.199712, 0, 1.21962, -0.0473728)
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.21167e-15, -9.2764e-09, 0.124506)
+body_offset = Transform3D(0.8, 8.52651e-14, -1.42109e-14, -1.42109e-14, 5.96046e-08, -0.8, -2.84217e-14, 0.8, 5.96046e-08, 0, 0.0996046, 0)
 
-[node name="Physical Bone ORG-thigh_L" parent="Enemies/CannonMan5/cannon man/cannonman/Skeleton3D3/PhysicalBoneSimulator3D" index="4"]
-transform = Transform3D(0.497544, -0.000132917, -0.0494989, 0.0492113, -0.0525097, 0.494794, -0.00532987, -0.497235, -0.0522387, 0.200958, 0.819755, 0.0106652)
-joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00749216, 1.53434e-05, 0.513893)
-body_offset = Transform3D(0.5, 7.59028e-08, -9.06875e-08, -8.22474e-08, 5.96046e-07, -0.5, -7.49715e-08, 0.5, 6.14673e-07, -0.00374603, 0.256947, -7.98702e-06)
+[node name="Spine 2" parent="Enemies/CannonMan5/Visual/cannon man/cannonman/Skeleton3D/PhysicalBoneSimulator3D" index="4"]
+transform = Transform3D(0.8, 1.90888e-07, 7.85034e-11, 1.07926e-08, -0.0449028, -0.798739, -1.90583e-07, 0.798739, -0.0449028, 0, 1.51178, -0.011507)
+joint_offset = Transform3D(1, 0, 0, 0, 0.999999, 0, 0, 0, 0.999999, -2.40901e-11, 2.14506e-07, 0.245025)
+body_offset = Transform3D(0.8, 1.53079e-10, 7.86535e-11, 7.86535e-11, -7.00355e-07, -0.8, -1.53108e-10, 0.8, -7.00355e-07, 0, 0.19602, 0)
 
-[node name="Physical Bone ORG-thigh_R" parent="Enemies/CannonMan5/cannon man/cannonman/Skeleton3D3/PhysicalBoneSimulator3D" index="5"]
-transform = Transform3D(0.497544, 0.000132657, 0.0494997, -0.0492121, -0.052511, 0.494794, 0.00532984, -0.497235, -0.05224, -0.202606, 0.820121, 0.0106299)
-joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00413605, 2.16158e-05, 0.513487)
-body_offset = Transform3D(0.5, -2.10013e-07, 8.92614e-07, 8.96631e-07, 1.92598e-06, -0.5, 2.10945e-07, 0.5, 1.93715e-06, 0.00206757, 0.256744, -1.18017e-05)
-
-[node name="Skeleton3D" parent="Enemies/CannonMan5/cannon man/cannonman" index="1"]
-bones/1/rotation = Quaternion(-0.0979187, 4.23922e-14, -2.33456e-08, 0.995194)
-bones/8/rotation = Quaternion(0.0670638, -0.00168747, 0.0490949, 0.996539)
-bones/9/rotation = Quaternion(0.982857, -0.0487463, 0.00894311, 0.177585)
-bones/10/rotation = Quaternion(0.0670638, 0.00168746, -0.0490949, 0.996539)
+[node name="Spine 3" parent="Enemies/CannonMan5/Visual/cannon man/cannonman/Skeleton3D/PhysicalBoneSimulator3D" index="5"]
+transform = Transform3D(0.8, -2.44711e-11, -1.79012e-12, -1.01072e-12, 0.0254489, -0.799595, 2.45137e-11, 0.799595, 0.0254489, 0, 1.82023, -0.00415754)
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.23936e-13, 4.48095e-05, 0.141412)
+body_offset = Transform3D(0.8, -2.467e-11, -1.82476e-12, -1.82299e-12, -5.99772e-07, -0.8, 2.46558e-11, 0.8, -5.99772e-07, 0, 0.11313, -3.57628e-05)
 
 [node name="CannonMan6" parent="Enemies" instance=ExtResource("3_f2txt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 87.8469, 13.891, 15.7457)
@@ -1109,41 +1095,35 @@ projectile = null
 [node name="CollisionShape3D" parent="Enemies/CannonMan15/DetectArea" index="0"]
 shape = SubResource("SphereShape3D_n6hdu")
 
-[node name="Physical Bone ORG-spine" parent="Enemies/CannonMan15/cannon man/cannonman/Skeleton3D3/PhysicalBoneSimulator3D" index="0"]
-transform = Transform3D(0.5, 3.7998e-07, -8.84756e-08, 9.18382e-09, -0.12482, -0.484169, -3.8743e-07, 0.484169, -0.12482, 0.000143051, 1.21959, -0.0473671)
-joint_offset = Transform3D(1, 0, -7.10543e-15, 0, 1, 0, 0, 0, 1, -0.000286067, -2.28468e-05, 0.199153)
-body_offset = Transform3D(0.5, 2.64496e-07, -8.84756e-08, -8.84756e-08, -5.96046e-08, -0.5, -2.6077e-07, 0.5, -1.04308e-07, 0.000143051, 0.0995765, 1.14441e-05)
+[node name="Head" parent="Enemies/CannonMan15/Visual/cannon man/cannonman/Skeleton3D/PhysicalBoneSimulator3D" index="0"]
+transform = Transform3D(0.8, 2.23517e-08, -9.33651e-08, -9.37525e-08, 0.0228471, -0.799674, -1.49012e-08, 0.799674, 0.0228471, 1.90735e-06, 2.05927, -0.0112915)
+joint_offset = Transform3D(1, 0, 0, 0, 0.999995, 0, 0, 0, 0.999995, 1.83859e-08, -2.85834e-05, 0.157535)
+body_offset = Transform3D(0.8, 1.49012e-08, -9.33651e-08, -9.33651e-08, -1.41561e-07, -0.8, -1.49012e-08, 0.8, -1.35973e-07, 0, 0.126028, 2.28882e-05)
 
-[node name="Physical Bone ORG-spine_001" parent="Enemies/CannonMan15/cannon man/cannonman/Skeleton3D3/PhysicalBoneSimulator3D" index="1"]
-transform = Transform3D(0.5, 4.17233e-07, -5.58794e-09, 1.78392e-08, -0.028064, -0.499212, -4.17233e-07, 0.499212, -0.028064, 0.000112534, 1.51162, -0.0116844)
-joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000225063, 0.000335868, 0.391715)
-body_offset = Transform3D(0.5, 2.98023e-07, -5.58794e-09, -5.58794e-09, -2.14204e-07, -0.5, -2.98023e-07, 0.5, -2.23517e-07, 0.000112534, 0.195857, -0.000167847)
+[node name="Thigh L" parent="Enemies/CannonMan15/Visual/cannon man/cannonman/Skeleton3D/PhysicalBoneSimulator3D" index="1"]
+transform = Transform3D(0.79607, -0.000212781, -0.0791982, 0.078738, -0.0840159, 0.79167, -0.00852794, -0.795576, -0.0835822, 0.204674, 0.820312, 0.010582)
+joint_offset = Transform3D(1, 0, 0, 0, 0.999999, 0, 0, 0, 0.999999, -9.49975e-06, -1.95995e-05, 0.320942)
+body_offset = Transform3D(0.8, -7.45058e-09, -9.22009e-08, -7.03149e-08, 1.2666e-06, -0.8, 2.23517e-08, 0.8, 1.3113e-06, 7.62939e-06, 0.256754, 1.52588e-05)
 
-[node name="Physical Bone ORG-spine_002" parent="Enemies/CannonMan15/cannon man/cannonman/Skeleton3D3/PhysicalBoneSimulator3D" index="2"]
-transform = Transform3D(0.5, 3.7998e-07, -3.03844e-08, -4.23383e-08, 0.0159041, -0.499747, -3.76254e-07, 0.499747, 0.0159041, 4.76837e-06, 1.82047, -0.00380325)
-joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.52241e-06, -0.000655295, 0.226712)
-body_offset = Transform3D(0.5, 3.83705e-07, -3.05008e-08, -3.03844e-08, -1.84029e-06, -0.5, -3.76254e-07, 0.5, -1.83657e-06, 4.76837e-06, 0.113356, 0.000328064)
+[node name="Thigh R" parent="Enemies/CannonMan15/Visual/cannon man/cannonman/Skeleton3D/PhysicalBoneSimulator3D" index="2"]
+transform = Transform3D(0.79607, 0.000212945, 0.0791987, -0.0787385, -0.0840151, 0.79167, 0.00852808, -0.795576, -0.0835814, -0.204659, 0.820292, 0.0106812)
+joint_offset = Transform3D(1, 0, 0, 0, 0.999999, 0, 0, 0, 0.999999, -1.45368e-05, 0.000104713, 0.320978)
+body_offset = Transform3D(0.8, 9.68575e-08, 5.7742e-07, 5.50412e-07, 4.32134e-07, -0.8, -1.04308e-07, 0.8, 4.76837e-07, 1.14441e-05, 0.256783, -8.39233e-05)
 
-[node name="Physical Bone ORG-spine_003" parent="Enemies/CannonMan15/cannon man/cannonman/Skeleton3D3/PhysicalBoneSimulator3D" index="3"]
-transform = Transform3D(0.348261, 0.358621, 0.0102507, 2.71102e-06, 0.0142833, -0.499796, -0.358767, 0.348119, 0.00994673, -0.00259304, 2.05912, -0.0102386)
-joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.44969e-06, 3.62642e-05, 0.251755)
-body_offset = Transform3D(0.5, 1.28746e-05, 2.87732e-06, 2.87779e-06, 3.73647e-06, -0.5, -1.28746e-05, 0.5, 3.73926e-06, 0, 0.125877, -1.90735e-05)
+[node name="Spine 1" parent="Enemies/CannonMan15/Visual/cannon man/cannonman/Skeleton3D/PhysicalBoneSimulator3D" index="3"]
+transform = Transform3D(0.8, 1.93715e-07, 9.31323e-09, 5.66335e-08, -0.199712, -0.774671, -1.86265e-07, 0.774671, -0.199712, 3.8147e-06, 1.21962, -0.0473709)
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.1543e-06, 4.40646e-08, 0.124511)
+body_offset = Transform3D(0.8, -1.49012e-08, 1.11759e-08, 9.31323e-09, -2.23517e-07, -0.8, 0, 0.8, -2.83122e-07, 5.72205e-06, 0.0996084, 0)
 
-[node name="Physical Bone ORG-thigh_L" parent="Enemies/CannonMan15/cannon man/cannonman/Skeleton3D3/PhysicalBoneSimulator3D" index="4"]
-transform = Transform3D(0.497544, -0.000133179, -0.0494988, 0.0492112, -0.0525097, 0.494794, -0.00533013, -0.497235, -0.0522387, 0.204638, 0.820315, 0.0108223)
-joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.1075e-05, 0.000449537, 0.513544)
-body_offset = Transform3D(0.5, -1.82539e-07, -3.86499e-08, -1.49012e-08, 5.51343e-07, -0.5, 1.8999e-07, 0.5, 5.81145e-07, -3.05176e-05, 0.256772, -0.000225067)
+[node name="Spine 2" parent="Enemies/CannonMan15/Visual/cannon man/cannonman/Skeleton3D/PhysicalBoneSimulator3D" index="4"]
+transform = Transform3D(0.8, 1.93715e-07, 4.65661e-10, 1.12172e-08, -0.0449028, -0.798739, -1.93715e-07, 0.798739, -0.0449028, -1.90735e-06, 1.51171, -0.0115128)
+joint_offset = Transform3D(1, 0, 0, 0, 0.999999, 0, 0, 0, 0.999999, 2.3839e-06, 9.75802e-06, 0.244942)
+body_offset = Transform3D(0.8, 7.45058e-09, 9.31323e-10, 9.31323e-10, -7.0408e-07, -0.8, 7.45058e-09, 0.8, -7.22706e-07, -1.90735e-06, 0.195954, -7.62939e-06)
 
-[node name="Physical Bone ORG-thigh_R" parent="Enemies/CannonMan15/cannon man/cannonman/Skeleton3D3/PhysicalBoneSimulator3D" index="5"]
-transform = Transform3D(0.497544, 0.000132605, 0.0494989, -0.0492113, -0.0525112, 0.494794, 0.00532972, -0.497235, -0.0522402, -0.204696, 0.820306, 0.0106049)
-joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.71238e-05, 5.43319e-06, 0.513529)
-body_offset = Transform3D(0.5, -2.38419e-07, 9.40636e-08, 7.12462e-08, 2.10479e-06, -0.5, 2.34693e-07, 0.5, 2.13832e-06, -2.86102e-05, 0.256764, -3.8147e-06)
-
-[node name="Skeleton3D" parent="Enemies/CannonMan15/cannon man/cannonman" index="1"]
-bones/1/rotation = Quaternion(-0.0979187, 4.23922e-14, -2.33456e-08, 0.995194)
-bones/8/rotation = Quaternion(0.0670638, -0.00168747, 0.0490949, 0.996539)
-bones/9/rotation = Quaternion(0.982857, -0.0487463, 0.00894311, 0.177585)
-bones/10/rotation = Quaternion(0.0670638, 0.00168746, -0.0490949, 0.996539)
+[node name="Spine 3" parent="Enemies/CannonMan15/Visual/cannon man/cannonman/Skeleton3D/PhysicalBoneSimulator3D" index="5"]
+transform = Transform3D(0.8, 6.78003e-07, 2.13971e-07, 1.92299e-07, 0.0254507, -0.799595, -6.78003e-07, 0.799595, 0.0254507, 1.90735e-06, 1.82023, -0.00415802)
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.42205e-06, 4.74733e-05, 0.141411)
+body_offset = Transform3D(0.8, 6.70552e-07, 2.13971e-07, 2.13739e-07, 1.17905e-06, -0.8, -6.70552e-07, 0.8, 1.19023e-06, 1.90735e-06, 0.113129, -3.8147e-05)
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="Enemies/CannonMan15"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.69703, -0.157483)
@@ -1157,41 +1137,35 @@ projectile = null
 [node name="CollisionShape3D" parent="Enemies/CannonMan16/DetectArea" index="0"]
 shape = SubResource("SphereShape3D_n6hdu")
 
-[node name="Physical Bone ORG-spine" parent="Enemies/CannonMan16/cannon man/cannonman/Skeleton3D3/PhysicalBoneSimulator3D" index="0"]
-transform = Transform3D(0.5, 8.19564e-08, -2.01166e-07, -1.76197e-07, -0.12483, -0.484167, -1.19209e-07, 0.484167, -0.12483, 0, 1.21961, -0.0474129)
-joint_offset = Transform3D(1, 0, -7.10543e-15, 0, 1, 0, 0, 0, 1, 8.01367e-08, 7.29174e-05, 0.199167)
-body_offset = Transform3D(0.5, -3.72529e-08, -2.01166e-07, -2.01166e-07, -1.06618e-05, -0.5, 4.47035e-08, 0.5, -1.06767e-05, 0, 0.0995836, -3.43323e-05)
+[node name="Head" parent="Enemies/CannonMan16/Visual/cannon man/cannonman/Skeleton3D/PhysicalBoneSimulator3D" index="0"]
+transform = Transform3D(0.8, 5.96046e-08, -1.36439e-07, -1.38125e-07, 0.0228467, -0.799674, -4.47035e-08, 0.799674, 0.0228467, -7.62939e-06, 2.05928, -0.0112953)
+joint_offset = Transform3D(1, 0, 0, 0, 0.999995, 0, 0, 0, 0.999995, 7.17952e-06, -2.37392e-05, 0.157536)
+body_offset = Transform3D(0.8, 1.49012e-08, -1.36904e-07, -1.36904e-07, -5.19678e-07, -0.8, -4.47035e-08, 0.8, -5.21541e-07, -5.72205e-06, 0.126029, 1.90735e-05)
 
-[node name="Physical Bone ORG-spine_001" parent="Enemies/CannonMan16/cannon man/cannonman/Skeleton3D3/PhysicalBoneSimulator3D" index="1"]
-transform = Transform3D(0.5, 1.49012e-07, -4.65661e-10, 6.69095e-09, -0.028064, -0.499212, -1.19209e-07, 0.499212, -0.028064, 0, 1.51163, -0.0116577)
-joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.12814e-10, 0.000282455, 0.391727)
-body_offset = Transform3D(0.5, 2.98023e-08, -9.31323e-10, 0, -2.14204e-07, -0.5, 0, 0.5, -2.14204e-07, 0, 0.195864, -0.000141144)
+[node name="Thigh L" parent="Enemies/CannonMan16/Visual/cannon man/cannonman/Skeleton3D/PhysicalBoneSimulator3D" index="1"]
+transform = Transform3D(0.79607, -0.000212803, -0.0791986, 0.0787384, -0.0840148, 0.79167, -0.0085279, -0.795576, -0.0835811, 0.204624, 0.820286, 0.0105896)
+joint_offset = Transform3D(1, 0, 0, 0, 0.999999, 0, 0, 0, 0.999999, 5.74334e-05, -9.62941e-06, 0.32097)
+body_offset = Transform3D(0.8, 7.45058e-08, -5.30854e-07, -5.19678e-07, 2.08616e-07, -0.8, -7.45058e-08, 0.8, 2.30968e-07, -4.57764e-05, 0.256776, 7.62939e-06)
 
-[node name="Physical Bone ORG-spine_002" parent="Enemies/CannonMan16/cannon man/cannonman/Skeleton3D3/PhysicalBoneSimulator3D" index="2"]
-transform = Transform3D(0.5, 0, 0, 1.68754e-14, 0.0159084, -0.499747, 0, 0.499747, 0.0159084, 0, 1.82047, -0.00379944)
-joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.95875e-11, -0.000657249, 0.226712)
-body_offset = Transform3D(0.5, 1.49012e-08, 0, 0, 2.46987e-06, -0.5, 0, 0.5, 2.47173e-06, 0, 0.113356, 0.000328064)
+[node name="Thigh R" parent="Enemies/CannonMan16/Visual/cannon man/cannonman/Skeleton3D/PhysicalBoneSimulator3D" index="2"]
+transform = Transform3D(0.79607, 0.000212461, 0.0791993, -0.0787391, -0.0840148, 0.79167, 0.00852764, -0.795576, -0.0835812, -0.204872, 0.820324, 0.0105362)
+joint_offset = Transform3D(1, 0, 0, 0, 0.999999, 0, 0, 0, 0.999999, 0.00025703, -8.1182e-05, 0.320945)
+body_offset = Transform3D(0.8, -4.32134e-07, 1.15111e-06, 1.14739e-06, 2.6077e-07, -0.8, 4.02331e-07, 0.8, 2.98023e-07, -0.000205994, 0.256756, 6.48499e-05)
 
-[node name="Physical Bone ORG-spine_003" parent="Enemies/CannonMan16/cannon man/cannonman/Skeleton3D3/PhysicalBoneSimulator3D" index="3"]
-transform = Transform3D(0.348263, 0.35862, 0.0102507, 3.13401e-06, 0.014283, -0.499796, -0.358766, 0.348121, 0.00994624, -0.0025959, 2.05918, -0.0102386)
-joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.98966e-06, 3.64182e-05, 0.251864)
-body_offset = Transform3D(0.5, 1.12206e-05, 3.25358e-06, 3.25497e-06, 3.43565e-06, -0.5, -1.12653e-05, 0.5, 3.43216e-06, -3.8147e-06, 0.125932, -1.90735e-05)
+[node name="Spine 1" parent="Enemies/CannonMan16/Visual/cannon man/cannonman/Skeleton3D/PhysicalBoneSimulator3D" index="3"]
+transform = Transform3D(0.8, 1.63913e-07, -1.43796e-06, -1.35609e-06, -0.199712, -0.774671, -5.06639e-07, 0.774671, -0.199712, 0, 1.21962, -0.0473747)
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.24942e-07, 1.39139e-08, 0.1245)
+body_offset = Transform3D(0.8, -4.47035e-08, -1.44541e-06, -1.43424e-06, -8.9407e-08, -0.8, 5.96046e-08, 0.8, -8.9407e-08, 0, 0.0995998, 0)
 
-[node name="Physical Bone ORG-thigh_L" parent="Enemies/CannonMan16/cannon man/cannonman/Skeleton3D3/PhysicalBoneSimulator3D" index="4"]
-transform = Transform3D(0.497544, -0.000132799, -0.0494989, 0.0492113, -0.0525099, 0.494794, -0.00532977, -0.497235, -0.0522388, 0.204674, 0.820289, 0.0105896)
-joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.12786e-05, -2.36994e-05, 0.513554)
-body_offset = Transform3D(0.5, 1.63913e-07, -1.61119e-07, -1.55531e-07, 7.78586e-07, -0.5, -1.78814e-07, 0.5, 7.89762e-07, 5.72205e-06, 0.256777, 1.14441e-05)
+[node name="Spine 2" parent="Enemies/CannonMan16/Visual/cannon man/cannonman/Skeleton3D/PhysicalBoneSimulator3D" index="4"]
+transform = Transform3D(0.8, 2.5332e-07, -1.86265e-09, 1.31211e-08, -0.0449028, -0.798739, -2.68221e-07, 0.798739, -0.0449028, 0, 1.51171, -0.0115166)
+joint_offset = Transform3D(1, 0, 0, 0, 0.999999, 0, 0, 0, 0.999999, -9.27907e-14, 4.98166e-06, 0.244941)
+body_offset = Transform3D(0.8, 1.49012e-08, 0, -9.31323e-10, -6.96629e-07, -0.8, -5.96046e-08, 0.8, -6.96629e-07, 0, 0.195953, -3.8147e-06)
 
-[node name="Physical Bone ORG-thigh_R" parent="Enemies/CannonMan16/cannon man/cannonman/Skeleton3D3/PhysicalBoneSimulator3D" index="5"]
-transform = Transform3D(0.497544, 0.000132591, 0.0494994, -0.0492118, -0.0525115, 0.494794, 0.00532978, -0.497235, -0.0522405, -0.204668, 0.820301, 0.0106049)
-joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.26948e-06, 1.27527e-05, 0.513533)
-body_offset = Transform3D(0.5, -2.16067e-07, 5.30854e-07, 5.40167e-07, 2.43261e-06, -0.5, 2.45869e-07, 0.5, 2.44007e-06, -1.90735e-06, 0.256766, -7.62939e-06)
-
-[node name="Skeleton3D" parent="Enemies/CannonMan16/cannon man/cannonman" index="1"]
-bones/1/rotation = Quaternion(-0.0979187, 4.23922e-14, -2.33456e-08, 0.995194)
-bones/8/rotation = Quaternion(0.0670638, -0.00168747, 0.0490949, 0.996539)
-bones/9/rotation = Quaternion(0.982857, -0.0487463, 0.00894311, 0.177585)
-bones/10/rotation = Quaternion(0.0670638, 0.00168746, -0.0490949, 0.996539)
+[node name="Spine 3" parent="Enemies/CannonMan16/Visual/cannon man/cannonman/Skeleton3D/PhysicalBoneSimulator3D" index="5"]
+transform = Transform3D(0.8, 4.47035e-08, 9.31323e-10, -2.57963e-11, 0.0254495, -0.799595, -4.47035e-08, 0.799595, 0.0254495, 3.8147e-06, 1.82023, -0.00415039)
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.76837e-06, 3.33753e-05, 0.141411)
+body_offset = Transform3D(0.8, 2.98023e-08, 0, 1.39698e-09, 2.23517e-08, -0.8, -4.47035e-08, 0.8, 1.86265e-08, 3.8147e-06, 0.113129, -2.67029e-05)
 
 [node name="CannonMan14" parent="Enemies" instance=ExtResource("3_f2txt")]
 transform = Transform3D(-0.416392, 0, -0.909185, 0, 1, 0, 0.909185, 0, -0.416392, -32.994, 18.3774, -135.456)

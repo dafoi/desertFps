@@ -11,8 +11,10 @@ roughness = 0.51
 
 [sub_resource type="SphereMesh" id="SphereMesh_uiefj"]
 material = SubResource("StandardMaterial3D_mweh0")
-radius = 0.4
-height = 0.815
+radius = 0.2
+height = 0.4
+radial_segments = 4
+rings = 2
 
 [sub_resource type="Gradient" id="Gradient_i4222"]
 interpolation_mode = 1
