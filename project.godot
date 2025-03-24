@@ -17,7 +17,7 @@ warnings/check_invalid_track_paths=false
 config/name="fps"
 run/main_scene="uid://dce3wwvm6ov43"
 config/features=PackedStringArray("4.4", "C#", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="uid://bucdgimkyqc2l"
 
 [display]
 

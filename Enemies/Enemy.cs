@@ -25,7 +25,11 @@ public partial class Enemy : CharacterBody3D
     Node3D targetNode;
 
     bool aimingTimerStarted = false;
+
+    int navUpdateAfterNumberOfIterations = 12;
     int iteration = 0;
+    int navAgentUpdateOffset = 0;
+    
 
 
     public enum S
@@ -51,6 +55,8 @@ public partial class Enemy : CharacterBody3D
         aimingTimer.Timeout += shoot;
 
         animPlayer.AnimationFinished += animFinished;
+
+        iteration = new Random().Next(0, navUpdateAfterNumberOfIterations);
         
         
     }
@@ -182,7 +188,7 @@ public partial class Enemy : CharacterBody3D
     }
     void updateTargetPosition()
     {
-        if (iteration > 6)
+        if (iteration > navUpdateAfterNumberOfIterations)
         {
             navAgent.TargetPosition = targetNode.Position;
             nextPosition = navAgent.GetNextPathPosition();
