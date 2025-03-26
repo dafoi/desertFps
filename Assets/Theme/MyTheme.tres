@@ -3,5 +3,6 @@
 [ext_resource type="FontFile" uid="uid://bbtjbavox5m5w" path="res://Assets/Fonts/Marlboro.ttf" id="1_y5f44"]
 
 [resource]
+Button/fonts/font = ExtResource("1_y5f44")
 Label/font_sizes/font_size = 54
 Label/fonts/font = ExtResource("1_y5f44")

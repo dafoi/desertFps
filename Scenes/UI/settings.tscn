@@ -1,0 +1,66 @@
+[gd_scene load_steps=3 format=3 uid="uid://cibpyjfct7rsu"]
+
+[ext_resource type="Script" uid="uid://ban40ht142evj" path="res://Scenes/UI/Settings.cs" id="1_ma1v7"]
+[ext_resource type="Theme" uid="uid://7yd65svu8utm" path="res://Assets/Theme/MyTheme.tres" id="2_p46qs"]
+
+[node name="Settings" type="Control" node_paths=PackedStringArray("crosshair_button", "crosshair_color")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ma1v7")
+crosshair_button = NodePath("MarginContainer/Panel/MarginContainer/HBoxContainer/VScrollBar/VBoxContainer/crosshair color")
+crosshair_color = NodePath("MarginContainer/Panel/MarginContainer/HBoxContainer/VScrollBar/VBoxContainer/ColorPicker")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -275.078
+offset_right = 605.035
+offset_bottom = 275.078
+grow_vertical = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 305
+
+[node name="Panel" type="Panel" parent="MarginContainer"]
+custom_minimum_size = Vector2(605.035, 550.155)
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/Panel/MarginContainer"]
+layout_mode = 2
+
+[node name="VScrollBar" type="VScrollBar" parent="MarginContainer/Panel/MarginContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/VScrollBar"]
+layout_mode = 2
+offset_left = 12.0
+offset_right = 575.0
+offset_bottom = 520.0
+size_flags_horizontal = 3
+
+[node name="crosshair color" type="Button" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/VScrollBar/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_p46qs")
+theme_override_font_sizes/font_size = 32
+text = "Crosshair color"
+
+[node name="ColorPicker" type="ColorPicker" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/VScrollBar/VBoxContainer"]
+visible = false
+layout_mode = 2

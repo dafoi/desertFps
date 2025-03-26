@@ -41,6 +41,7 @@ public partial class Croco : CharacterBody3D
     {
         health.hit += gotHit;
         health.died += onDeath;
+        
 
         targetNode = GetTree().GetFirstNodeInGroup("Player") as Node3D;
 
