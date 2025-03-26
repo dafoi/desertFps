@@ -6,6 +6,7 @@ using System.Runtime.CompilerServices;
 public partial class WeaponManager : Node3D
 {
     [Export] player gamer;
+    [Export] ShootManager shootManager;
     [Export] Timer reloadTimer;
     [Export] ProgressBar reloadProgressBar;
     [Export] AnimationPlayer player;
@@ -90,6 +91,8 @@ public partial class WeaponManager : Node3D
                 isShooting = true;
                 can_switch = false;
                 wep_current.ammo--;
+                shootManager.shoot(wep_current.damage, wep_current.amountOfBullets, wep_current.accuracy);
+
             }
         }
         ui_ammo.Text = wep_current.ammo + "/" + wep_current.reserve_ammo;

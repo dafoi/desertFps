@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://byyk5256wud6q"]
 
 [ext_resource type="Texture2D" uid="uid://chrigj13dl3h2" path="res://Assets/Particles/blood.png" id="1_yp2ww"]
-[ext_resource type="Texture2D" uid="uid://bowuosvma444j" path="res://Assets/Particles/NormalMap.png" id="2_k6875"]
+[ext_resource type="Texture2D" uid="uid://bowuosvma444j" path="res://Assets/Particles/blood normal.png" id="2_k6875"]
 [ext_resource type="PackedScene" uid="uid://bpg6udum3gkhy" path="res://Components/delete_timer.tscn" id="3_k6875"]
 [ext_resource type="PackedScene" uid="uid://b1egghv51trs0" path="res://Particles/BloodDecal.tscn" id="4_2dryk"]
 

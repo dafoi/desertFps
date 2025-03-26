@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://b1egghv51trs0"]
 
 [ext_resource type="Texture2D" uid="uid://chrigj13dl3h2" path="res://Assets/Particles/blood.png" id="1_vcjap"]
-[ext_resource type="Texture2D" uid="uid://bowuosvma444j" path="res://Assets/Particles/NormalMap.png" id="2_lnj1p"]
+[ext_resource type="Texture2D" uid="uid://bowuosvma444j" path="res://Assets/Particles/blood normal.png" id="2_lnj1p"]
 
 [sub_resource type="Animation" id="Animation_lnj1p"]
 length = 0.001

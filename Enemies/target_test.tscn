@@ -19,4 +19,4 @@ shape = SubResource("ConvexPolygonShape3D_jsbld")
 script = ExtResource("1_jsbld")
 startHealth = 20.0
 restoreHealthOnStart = true
-metadata/_custom_type_script = ExtResource("1_jsbld")
+metadata/_custom_type_script = "uid://wnhx2ckfxlrk"

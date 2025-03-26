@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://3wf70dl40kv0"]
+
+[ext_resource type="Texture2D" uid="uid://cgo3hyocbpsbb" path="res://Assets/Particles/bullet hole decal.png" id="1_qe2cv"]
+[ext_resource type="Texture2D" uid="uid://jjseaswobieu" path="res://Assets/Particles/bullet hole normal.png" id="2_kn8bm"]
+[ext_resource type="PackedScene" uid="uid://d32wti0iuvqtj" path="res://Particles/decal_particles.tscn" id="3_kn8bm"]
+
+[node name="Decal" type="Decal"]
+size = Vector3(0.3, 0.3, 0.3)
+texture_albedo = ExtResource("1_qe2cv")
+texture_normal = ExtResource("2_kn8bm")
+distance_fade_enabled = true
+
+[node name="DecalParticles" parent="." instance=ExtResource("3_kn8bm")]

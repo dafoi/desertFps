@@ -1,9 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://dqohd0gwpmbbr"]
+[gd_scene load_steps=12 format=3 uid="uid://dqohd0gwpmbbr"]
 
 [ext_resource type="Script" uid="uid://cmnnx6xfirnca" path="res://Playground.cs" id="1_is3ju"]
 [ext_resource type="Material" uid="uid://bpuou5s8cd5yw" path="res://Assets/Map/env/Sand.tres" id="1_wt17y"]
 [ext_resource type="PackedScene" uid="uid://c01q4ie2e0pxi" path="res://Player/Player.tscn" id="2_m8u5f"]
 [ext_resource type="PackedScene" uid="uid://dmilavgdouvhg" path="res://Enemies/cannon_man.tscn" id="3_m8u5f"]
+[ext_resource type="PackedScene" uid="uid://bd5jkuduwu87l" path="res://Enemies/croco.tscn" id="5_o00ia"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_is3ju"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -30,6 +31,7 @@ data = PackedVector3Array(200, 0, 200, -200, 0, 200, 200, 0, -200, -200, 0, 200,
 
 [node name="Playground" type="Node3D"]
 script = ExtResource("1_is3ju")
+enemies_run_at_start = false
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_4bqqs")
@@ -72,3 +74,20 @@ skeleton = NodePath("../../..")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Physics/NavigationRegion3D/Floor/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_m8u5f")
+
+[node name="Croco" parent="." instance=ExtResource("5_o00ia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.2922, 9.53674e-07, -11.9546)
+
+[node name="Croco2" parent="." instance=ExtResource("5_o00ia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.3459, 0, -11.9935)
+
+[node name="Decals" type="Node3D" parent="." groups=["Decals"]]
+
+[node name="Croco3" parent="." instance=ExtResource("5_o00ia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.7113, 9.53674e-07, -5.35505)
+
+[node name="Croco4" parent="." instance=ExtResource("5_o00ia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.89764, 9.53674e-07, -18.5617)
+
+[node name="Croco5" parent="." instance=ExtResource("5_o00ia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.5524, 9.53674e-07, -2.05312)

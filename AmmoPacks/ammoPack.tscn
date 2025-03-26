@@ -24,12 +24,13 @@ size = Vector2(0.03, 0.03)
 orientation = 2
 
 [node name="ammoPack" type="Area3D"]
+collision_layer = 0
 script = ExtResource("1_ohghi")
 weapon_resource = ExtResource("2_evnn2")
 rotation_speed = 0.01
 amount_of_ammo = 8
 soundScene = ExtResource("3_evnn2")
-metadata/_custom_type_script = ExtResource("1_ohghi")
+metadata/_custom_type_script = "uid://7ppwr4xvj6a1"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("BoxShape3D_evnn2")

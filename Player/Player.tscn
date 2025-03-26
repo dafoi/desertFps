@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://c01q4ie2e0pxi"]
+[gd_scene load_steps=37 format=3 uid="uid://c01q4ie2e0pxi"]
 
 [ext_resource type="Script" uid="uid://bpy0e0x4mv0g3" path="res://Player/scripts/player.cs" id="1_3qydi"]
 [ext_resource type="Resource" uid="uid://hx8itknwgcsq" path="res://Resources/player/default_player.tres" id="2_3nb2p"]
@@ -14,9 +14,10 @@
 [ext_resource type="Resource" uid="uid://bneovbcktix3e" path="res://Resources/wep/wep_revolver.tres" id="5_dm7nj"]
 [ext_resource type="AudioStream" uid="uid://dqqcvhn7fotil" path="res://Assets/Sounds/Footsteps/Sand.mp3" id="6_6ysni"]
 [ext_resource type="PackedScene" uid="uid://f8pa74fcxi5w" path="res://Assets/wep/revolver/revolver.glb" id="6_p7tob"]
+[ext_resource type="Script" uid="uid://bijbu3j0fggge" path="res://Components/ShootManager.cs" id="8_d7xyo"]
 [ext_resource type="AnimationLibrary" uid="uid://buo8tyv6dwrve" path="res://Assets/wep/revolver/revolver_anim.glb" id="8_dm7nj"]
 [ext_resource type="AudioStream" uid="uid://dj4imassecjfk" path="res://Assets/Sounds/Jump/jump.wav" id="8_s1rgi"]
-[ext_resource type="Script" uid="uid://dwprmql7g8pfl" path="res://Player/ShootRayCast.cs" id="10_7v5gs"]
+[ext_resource type="PackedScene" uid="uid://3wf70dl40kv0" path="res://Particles/decal.tscn" id="9_evw08"]
 [ext_resource type="PackedScene" uid="uid://dlxesjwxunooj" path="res://Assets/Rig/arms_Rig.gltf" id="11_3nb2p"]
 [ext_resource type="Theme" uid="uid://7yd65svu8utm" path="res://Assets/Theme/MyTheme.tres" id="15_3mea3"]
 
@@ -198,10 +199,11 @@ libraries = {
 script = ExtResource("4_d7xyo")
 Player = NodePath("../../..")
 
-[node name="WeaponManager" type="Node3D" parent="Head/Camera3D/WeaponSway" node_paths=PackedStringArray("gamer", "reloadTimer", "reloadProgressBar", "player", "rig_player", "label", "ui_ammo", "wep_activate_sound", "wep_shoot_sound")]
+[node name="WeaponManager" type="Node3D" parent="Head/Camera3D/WeaponSway" node_paths=PackedStringArray("gamer", "shootManager", "reloadTimer", "reloadProgressBar", "player", "rig_player", "label", "ui_ammo", "wep_activate_sound", "wep_shoot_sound")]
 transform = Transform3D(1.9993, 0, 0.052982, 0, 2, 0, -0.052982, 0, 1.9993, 0.427915, -0.335138, -1.44694)
 script = ExtResource("3_v0k0e")
 gamer = NodePath("../../../..")
+shootManager = NodePath("ShootManager")
 reloadTimer = NodePath("reloadTimer")
 reloadProgressBar = NodePath("../../../../UI/MarginContainer/ReloadProgressBar")
 player = NodePath("AnimationPlayer")
@@ -219,6 +221,13 @@ label = NodePath("../../../../Label")
 ui_ammo = NodePath("../../../../UI/MarginContainer/ammo")
 wep_activate_sound = NodePath("../../../../wep_activate_sound")
 wep_shoot_sound = NodePath("../../../../wep_shoot_sound")
+
+[node name="ShootManager" type="Node" parent="Head/Camera3D/WeaponSway/WeaponManager" node_paths=PackedStringArray("camera", "rayCast")]
+script = ExtResource("8_d7xyo")
+camera = NodePath("../../..")
+rayCast = NodePath("../../../shootRay")
+decal = ExtResource("9_evw08")
+metadata/_custom_type_script = "uid://bijbu3j0fggge"
 
 [node name="db" parent="Head/Camera3D/WeaponSway/WeaponManager" instance=ExtResource("3_vlldt")]
 
@@ -478,93 +487,11 @@ bones/260/scale = Vector3(0.511528, 0.511527, 0.511527)
 bones/262/position = Vector3(1.40099, 0.71294, -0.310161)
 bones/262/rotation = Quaternion(-1.05069e-08, 0.707107, 0.707107, 1.05274e-08)
 
-[node name="ShootRayCast" type="RayCast3D" parent="Head/Camera3D" node_paths=PackedStringArray("rays")]
-target_position = Vector3(0, 0, -200)
+[node name="shootRay" type="RayCast3D" parent="Head/Camera3D"]
+transform = Transform3D(0.999649, 0, 0.026491, 0, 1, 0, -0.026491, 0, 0.999649, 0, 0, 3.57628e-07)
+enabled = false
+target_position = Vector3(0, 0, -500)
 collide_with_areas = true
-debug_shape_custom_color = Color(0.479431, 0.0437578, 0.17293, 1)
-script = ExtResource("10_7v5gs")
-rays = []
-
-[node name="ShootRayShotGun" type="RayCast3D" parent="Head/Camera3D" node_paths=PackedStringArray("rays")]
-transform = Transform3D(0.999268, -0.00625243, -0.0377515, 0.00561111, 0.999839, -0.0170698, 0.0378521, 0.0168455, 0.999142, 0, -0.00998339, -1.12287)
-target_position = Vector3(0, 0, -200)
-hit_from_inside = true
-collide_with_areas = true
-debug_shape_custom_color = Color(0.321663, 0.215569, 0.300017, 1)
-script = ExtResource("10_7v5gs")
-rays = [NodePath("ShootRayCast3"), NodePath("ShootRayCast4"), NodePath("ShootRayCast5"), NodePath("ShootRayCast6"), NodePath("ShootRayCast7"), NodePath("ShootRayCast8"), NodePath("ShootRayCast9"), NodePath("ShootRayCast10")]
-
-[node name="ShootRayCast3" type="RayCast3D" parent="Head/Camera3D/ShootRayShotGun" node_paths=PackedStringArray("rays")]
-transform = Transform3D(0.99973, -0.0226389, 0.00514448, 0.0228919, 0.998164, -0.0560674, -0.00386567, 0.05617, 0.998413, 0, 0, 0)
-target_position = Vector3(0, 0, -200)
-hit_from_inside = true
-collide_with_areas = true
-debug_shape_custom_color = Color(0.321663, 0.215569, 0.300017, 1)
-script = ExtResource("10_7v5gs")
-rays = []
-
-[node name="ShootRayCast4" type="RayCast3D" parent="Head/Camera3D/ShootRayShotGun" node_paths=PackedStringArray("rays")]
-transform = Transform3D(0.999417, -0.0265975, 0.0213999, 0.0247554, 0.996311, 0.0821658, -0.0235063, -0.0815877, 0.996389, 0, 0, 0)
-target_position = Vector3(0, 0, -200)
-hit_from_inside = true
-collide_with_areas = true
-debug_shape_custom_color = Color(0.321663, 0.215569, 0.300017, 1)
-script = ExtResource("10_7v5gs")
-rays = []
-
-[node name="ShootRayCast9" type="RayCast3D" parent="Head/Camera3D/ShootRayShotGun" node_paths=PackedStringArray("rays")]
-transform = Transform3D(0.999482, -0.0305029, 0.0102012, 0.0297867, 0.997492, 0.0642162, -0.0121343, -0.063879, 0.997884, 0, 0, 0)
-target_position = Vector3(0, 0, -200)
-hit_from_inside = true
-collide_with_areas = true
-debug_shape_custom_color = Color(0.321663, 0.215569, 0.300017, 1)
-script = ExtResource("10_7v5gs")
-rays = []
-
-[node name="ShootRayCast10" type="RayCast3D" parent="Head/Camera3D/ShootRayShotGun" node_paths=PackedStringArray("rays")]
-transform = Transform3D(0.998907, -0.0309576, 0.0350292, 0.0312313, 0.999485, -0.00729475, -0.0347853, 0.0083811, 0.99936, 0, 0, 0)
-target_position = Vector3(0, 0, -200)
-hit_from_inside = true
-collide_with_areas = true
-debug_shape_custom_color = Color(0.321663, 0.215569, 0.300017, 1)
-script = ExtResource("10_7v5gs")
-rays = []
-
-[node name="ShootRayCast5" type="RayCast3D" parent="Head/Camera3D/ShootRayShotGun" node_paths=PackedStringArray("rays")]
-transform = Transform3D(0.998186, -0.0218456, 0.0560991, 0.0218256, 0.999762, 0.000970446, -0.0561069, 0.000255488, 0.998424, 0, 0, 0)
-target_position = Vector3(0, 0, -200)
-hit_from_inside = true
-collide_with_areas = true
-debug_shape_custom_color = Color(0.321663, 0.215569, 0.300017, 1)
-script = ExtResource("10_7v5gs")
-rays = []
-
-[node name="ShootRayCast6" type="RayCast3D" parent="Head/Camera3D/ShootRayShotGun" node_paths=PackedStringArray("rays")]
-transform = Transform3D(0.999195, -0.0172184, 0.0362131, 0.0174818, 0.999823, -0.006971, -0.0360867, 0.00759797, 0.999319, 0, 0, 0)
-target_position = Vector3(0, 0, -200)
-hit_from_inside = true
-collide_with_areas = true
-debug_shape_custom_color = Color(0.321663, 0.215569, 0.300017, 1)
-script = ExtResource("10_7v5gs")
-rays = []
-
-[node name="ShootRayCast7" type="RayCast3D" parent="Head/Camera3D/ShootRayShotGun" node_paths=PackedStringArray("rays")]
-transform = Transform3D(0.998292, -0.0224919, 0.0539263, 0.0233528, 0.999608, -0.0153879, -0.0535583, 0.0166207, 0.998426, 0, 0, 0)
-target_position = Vector3(0, 0, -200)
-hit_from_inside = true
-collide_with_areas = true
-debug_shape_custom_color = Color(0.321663, 0.215569, 0.300017, 1)
-script = ExtResource("10_7v5gs")
-rays = []
-
-[node name="ShootRayCast8" type="RayCast3D" parent="Head/Camera3D/ShootRayShotGun" node_paths=PackedStringArray("rays")]
-transform = Transform3D(0.996799, -0.0325451, 0.0730328, 0.0299859, 0.998907, 0.0358684, -0.0741202, -0.0335636, 0.996684, 0, 0, 0)
-target_position = Vector3(0, 0, -200)
-hit_from_inside = true
-collide_with_areas = true
-debug_shape_custom_color = Color(0.321663, 0.215569, 0.300017, 1)
-script = ExtResource("10_7v5gs")
-rays = []
 
 [node name="RemoteTransform3D" type="RemoteTransform3D" parent="Head"]
 update_scale = false
