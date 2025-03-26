@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://c01q4ie2e0pxi"]
+[gd_scene load_steps=36 format=3 uid="uid://c01q4ie2e0pxi"]
 
 [ext_resource type="Script" uid="uid://bpy0e0x4mv0g3" path="res://Player/scripts/player.cs" id="1_3qydi"]
 [ext_resource type="Resource" uid="uid://hx8itknwgcsq" path="res://Resources/player/default_player.tres" id="2_3nb2p"]
@@ -21,6 +21,7 @@
 [ext_resource type="PackedScene" uid="uid://dlxesjwxunooj" path="res://Assets/Rig/arms_Rig.gltf" id="11_3nb2p"]
 [ext_resource type="Theme" uid="uid://7yd65svu8utm" path="res://Assets/Theme/MyTheme.tres" id="15_3mea3"]
 [ext_resource type="Script" uid="uid://cwov2ifsi1bkn" path="res://Player/healthBar.cs" id="21_roy6y"]
+[ext_resource type="Script" uid="uid://ci5bb1210bb6n" path="res://Player/Crosshair.cs" id="22_u5tep"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_fo8cm"]
 
@@ -186,13 +187,12 @@ libraries = {
 script = ExtResource("4_d7xyo")
 Player = NodePath("../../..")
 
-[node name="WeaponManager" type="Node3D" parent="Head/Camera3D/WeaponSway" node_paths=PackedStringArray("gamer", "shootManager", "reloadTimer", "reloadProgressBar", "player", "rig_player", "label", "ui_ammo", "wep_activate_sound", "wep_shoot_sound")]
+[node name="WeaponManager" type="Node3D" parent="Head/Camera3D/WeaponSway" node_paths=PackedStringArray("gamer", "shootManager", "reloadTimer", "player", "rig_player", "crosshair", "label", "ui_ammo", "wep_activate_sound", "wep_shoot_sound")]
 transform = Transform3D(1.9993, 0, 0.052982, 0, 2, 0, -0.052982, 0, 1.9993, 0.427915, -0.335138, -1.44694)
 script = ExtResource("3_v0k0e")
 gamer = NodePath("../../../..")
 shootManager = NodePath("ShootManager")
 reloadTimer = NodePath("reloadTimer")
-reloadProgressBar = NodePath("")
 player = NodePath("AnimationPlayer")
 rig_player = NodePath("arms_Rig/AnimationPlayer")
 wep_resources = Dictionary[String, Object]({
@@ -204,6 +204,7 @@ wep_paths = Dictionary[String, String]({
 "revolver": "../revolver2"
 })
 wep_have = PackedStringArray("db", "revolver")
+crosshair = NodePath("../../../../UI/Crosshair")
 label = NodePath("../../../../Label")
 ui_ammo = NodePath("../../../../UI/Ammo/ammo")
 wep_activate_sound = NodePath("../../../../wep_activate_sound")
@@ -616,6 +617,108 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_roy6y")
 value = 100.0
 show_percentage = false
 script = ExtResource("21_roy6y")
+
+[node name="Crosshair" type="Control" parent="UI" node_paths=PackedStringArray("center")]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("22_u5tep")
+center = NodePath("HBoxContainer/VBoxContainer2/Center")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/Crosshair"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -22.0
+offset_top = -22.0
+offset_right = 22.0
+offset_bottom = 22.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/Crosshair/HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ColorRect" type="ColorRect" parent="UI/Crosshair/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(12, 12)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+color = Color(1, 1, 1, 0)
+
+[node name="L" type="ColorRect" parent="UI/Crosshair/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(16, 4)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="ColorRect3" type="ColorRect" parent="UI/Crosshair/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(12, 12)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+color = Color(1, 1, 1, 0)
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="UI/Crosshair/HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="U" type="ColorRect" parent="UI/Crosshair/HBoxContainer/VBoxContainer2"]
+custom_minimum_size = Vector2(4, 16)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Center" type="ColorRect" parent="UI/Crosshair/HBoxContainer/VBoxContainer2"]
+modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(12, 12)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+
+[node name="D" type="ColorRect" parent="UI/Crosshair/HBoxContainer/VBoxContainer2"]
+custom_minimum_size = Vector2(4, 16)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="UI/Crosshair/HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ColorRect" type="ColorRect" parent="UI/Crosshair/HBoxContainer/VBoxContainer3"]
+custom_minimum_size = Vector2(12, 12)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+color = Color(1, 1, 1, 0)
+
+[node name="R" type="ColorRect" parent="UI/Crosshair/HBoxContainer/VBoxContainer3"]
+custom_minimum_size = Vector2(16, 4)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="ColorRect3" type="ColorRect" parent="UI/Crosshair/HBoxContainer/VBoxContainer3"]
+custom_minimum_size = Vector2(12, 12)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+color = Color(1, 1, 1, 0)
 
 [connection signal="animation_finished" from="Head/Camera3D/WeaponSway/WeaponManager/AnimationPlayer" to="Head/Camera3D/WeaponSway/WeaponManager" method="finished"]
 [connection signal="timeout" from="Head/Camera3D/WeaponSway/WeaponManager/reloadTimer" to="Head/Camera3D/WeaponSway/WeaponManager" method="onreloadTimer"]

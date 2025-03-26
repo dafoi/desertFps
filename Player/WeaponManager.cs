@@ -13,12 +13,14 @@ public partial class WeaponManager : Node3D
     [Export] Godot.Collections.Dictionary<string, Wep> wep_resources;
     [Export] Godot.Collections.Dictionary<string, string> wep_paths;
     [Export] string[] wep_have;
+    [Export] Crosshair crosshair;
     [ExportGroup("Labels")]
     [Export] Label label;
     [Export] Label ui_ammo;
     [ExportGroup("Sound player's")]
     [Export] AudioStreamPlayer wep_activate_sound; 
     [Export] AudioStreamPlayer wep_shoot_sound;
+    
     public Wep wep_current;
     public int id = 0;
     public string next_weapon = "";
@@ -121,6 +123,10 @@ public partial class WeaponManager : Node3D
         rig_player.SpeedScale = wep_current.Activate_speed;
         rig_player.Play(wep_current.r_Activate_anim);
         next_weapon = "";
+        if(crosshair != null)
+        {
+            crosshair.targetSize = wep_current.crosshairSize;
+        }
     }
     void exit()
     {
