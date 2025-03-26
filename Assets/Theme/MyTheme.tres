@@ -1,12 +1,7 @@
-[gd_resource type="Theme" load_steps=3 format=3 uid="uid://7yd65svu8utm"]
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://7yd65svu8utm"]
 
-[ext_resource type="FontFile" uid="uid://bcfamc2rgyhpk" path="res://Assets/Fonts/uwch.ttf" id="1_y5f44"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xxhir"]
-bg_color = Color(0.680176, 0.384772, 0.138406, 1)
-skew = Vector2(0.85, 0.21)
+[ext_resource type="FontFile" uid="uid://bbtjbavox5m5w" path="res://Assets/Fonts/Marlboro.ttf" id="1_y5f44"]
 
 [resource]
-Label/font_sizes/font_size = 64
+Label/font_sizes/font_size = 54
 Label/fonts/font = ExtResource("1_y5f44")
-Label/styles/normal = SubResource("StyleBoxFlat_xxhir")

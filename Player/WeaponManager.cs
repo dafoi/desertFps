@@ -8,7 +8,6 @@ public partial class WeaponManager : Node3D
     [Export] player gamer;
     [Export] ShootManager shootManager;
     [Export] Timer reloadTimer;
-    [Export] ProgressBar reloadProgressBar;
     [Export] AnimationPlayer player;
     [Export] AnimationPlayer rig_player;
     [Export] Godot.Collections.Dictionary<string, Wep> wep_resources;
@@ -31,7 +30,6 @@ public partial class WeaponManager : Node3D
 
     public override void _Process(double delta)
     {
-        reloadProgressBar.Value = 100 - reloadTimer.TimeLeft * 100;
         if (isReloading) can_switch = false;
 
         label.Text = "fps:" + Engine.GetFramesPerSecond() + " toggle v:global illumination, b:voletric fog";//$"{id} , {wep_current.name} , {can_switch} , next: {next_weapon} , res_ammo : {wep_current.reserve_ammo}";

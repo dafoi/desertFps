@@ -22,7 +22,7 @@ public partial class player : CharacterBody3D
     [Export] AnimationPlayer wep_player;
     [Export] AudioStreamPlayer jumpsound;
     [Export] GpuParticles3D footparticles;
-    [Export] ProgressBar HPProgressbar;
+    [Export] healthBar HPProgressbar;
     [Export] AnimationPlayer cameraAnimationPlayer;
     private float timeInAir = 0f;
     private float minTimeToLandAnimation = 0.4f;
@@ -45,7 +45,11 @@ public partial class player : CharacterBody3D
             GetTree().ChangeSceneToFile("uid://duqdxncfltwi1");
             //sm.loadLevel("main");
         }
-        HPProgressbar.Value = playerResource.hp;
+
+        HPProgressbar.targetValue = playerResource.hp;
+
+
+
         Vector3 velocity = Velocity;
 
         // Add the gravity.

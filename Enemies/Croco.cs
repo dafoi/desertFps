@@ -12,6 +12,7 @@ public partial class Croco : CharacterBody3D
     [Export] PhysicalBoneSimulator3D ragdollSimulator;
 
     [Export] CollisionShape3D[] collisionShape;
+    [Export] Node3D helperNode;
     public bool ragdolled = false;
 
     Vector3 velocity = Vector3.Zero;
@@ -52,6 +53,8 @@ public partial class Croco : CharacterBody3D
     }
     public override void _PhysicsProcess(double delta)
     {
+        LookAt(nextPosition,Vector3.Up);
+        var rot = Rotation; rot.X = 0; Rotation = rot;
 
         applyGravity(delta);
         switch (st)
@@ -64,11 +67,16 @@ public partial class Croco : CharacterBody3D
                 {
                     if (targetNode != null)
                     {
-                        LookAt(targetNode.GlobalPosition, Vector3.Up);
+                        
                     }
                     animPlayer.Play("Run");
 
                 }
+                
+                
+                
+
+
                 updateTargetPosition();
                 applyMovement(delta);
                 break;

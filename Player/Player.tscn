@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://c01q4ie2e0pxi"]
+[gd_scene load_steps=35 format=3 uid="uid://c01q4ie2e0pxi"]
 
 [ext_resource type="Script" uid="uid://bpy0e0x4mv0g3" path="res://Player/scripts/player.cs" id="1_3qydi"]
 [ext_resource type="Resource" uid="uid://hx8itknwgcsq" path="res://Resources/player/default_player.tres" id="2_3nb2p"]
@@ -20,6 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://3wf70dl40kv0" path="res://Particles/decal.tscn" id="9_evw08"]
 [ext_resource type="PackedScene" uid="uid://dlxesjwxunooj" path="res://Assets/Rig/arms_Rig.gltf" id="11_3nb2p"]
 [ext_resource type="Theme" uid="uid://7yd65svu8utm" path="res://Assets/Theme/MyTheme.tres" id="15_3mea3"]
+[ext_resource type="Script" uid="uid://cwov2ifsi1bkn" path="res://Player/healthBar.cs" id="21_roy6y"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_fo8cm"]
 
@@ -143,22 +144,8 @@ material = SubResource("StandardMaterial3D_dm7nj")
 size = Vector2(0.39, 0.39)
 orientation = 2
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8sa4y"]
-bg_color = Color(0, 0, 0, 1)
-skew = Vector2(-0.92, 0.345)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3nb2p"]
-bg_color = Color(0.678431, 0.384314, 0.137255, 1)
-skew = Vector2(-0.705, 0.34)
-corner_detail = 1
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d7xyo"]
-bg_color = Color(0.276104, 0.165997, 0.132714, 1)
-skew = Vector2(-0.1, -0.21)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_evw08"]
-bg_color = Color(0.632624, 0.194684, 0.0901323, 1)
-skew = Vector2(0.77, -0.155)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_roy6y"]
+bg_color = Color(0.858824, 0.278431, 0.262745, 1)
 
 [node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("cam", "Bob", "wep_player", "jumpsound", "footparticles", "HPProgressbar", "cameraAnimationPlayer") groups=["Player"]]
 wall_min_slide_angle = 0.808087
@@ -170,7 +157,7 @@ can_die = false
 wep_player = NodePath("Head/Camera3D/WeaponSway/WeaponManager/db/AnimationPlayer")
 jumpsound = NodePath("JumpSound")
 footparticles = NodePath("GPUParticles3D")
-HPProgressbar = NodePath("UI/MarginContainer2/HPProgressBar")
+HPProgressbar = NodePath("UI/Health/ColorRect/MarginContainer/ColorRect/MarginContainer/ProgressBar")
 cameraAnimationPlayer = NodePath("Head/Camera3D/CameraEffects")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
@@ -205,7 +192,7 @@ script = ExtResource("3_v0k0e")
 gamer = NodePath("../../../..")
 shootManager = NodePath("ShootManager")
 reloadTimer = NodePath("reloadTimer")
-reloadProgressBar = NodePath("../../../../UI/MarginContainer/ReloadProgressBar")
+reloadProgressBar = NodePath("")
 player = NodePath("AnimationPlayer")
 rig_player = NodePath("arms_Rig/AnimationPlayer")
 wep_resources = Dictionary[String, Object]({
@@ -218,7 +205,7 @@ wep_paths = Dictionary[String, String]({
 })
 wep_have = PackedStringArray("db", "revolver")
 label = NodePath("../../../../Label")
-ui_ammo = NodePath("../../../../UI/MarginContainer/ammo")
+ui_ammo = NodePath("../../../../UI/Ammo/ammo")
 wep_activate_sound = NodePath("../../../../wep_activate_sound")
 wep_shoot_sound = NodePath("../../../../wep_shoot_sound")
 
@@ -538,29 +525,23 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="UI"]
+[node name="Ammo" type="MarginContainer" parent="UI"]
 layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
+anchors_preset = 7
+anchor_left = 0.5
 anchor_top = 1.0
-anchor_right = 1.0
+anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -150.0
-offset_top = -72.0
-grow_horizontal = 0
+offset_left = -100.0
+offset_top = -122.0
+offset_right = 100.0
+grow_horizontal = 2
 grow_vertical = 0
+theme_override_constants/margin_left = 965
 theme_override_constants/margin_right = 50
-theme_override_constants/margin_bottom = 50
+theme_override_constants/margin_bottom = -2
 
-[node name="ReloadProgressBar" type="ProgressBar" parent="UI/MarginContainer"]
-custom_minimum_size = Vector2(0, 6.435)
-layout_mode = 2
-theme_override_styles/background = SubResource("StyleBoxFlat_8sa4y")
-theme_override_styles/fill = SubResource("StyleBoxFlat_3nb2p")
-value = 89.43
-show_percentage = false
-
-[node name="ammo" type="Label" parent="UI/MarginContainer"]
+[node name="ammo" type="Label" parent="UI/Ammo"]
 layout_mode = 2
 size_flags_horizontal = 4
 theme = ExtResource("15_3mea3")
@@ -581,22 +562,60 @@ offset_bottom = 2.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="MarginContainer2" type="MarginContainer" parent="UI"]
+[node name="Health" type="MarginContainer" parent="UI"]
+custom_minimum_size = Vector2(640, 91.215)
 layout_mode = 1
-anchors_preset = 2
+anchors_preset = 7
+anchor_left = 0.5
 anchor_top = 1.0
+anchor_right = 0.5
 anchor_bottom = 1.0
+offset_left = -6.2325
+offset_right = 6.2325
+grow_horizontal = 2
 grow_vertical = 0
-theme_override_constants/margin_left = 52
-theme_override_constants/margin_bottom = 45
+theme_override_constants/margin_bottom = 40
 
-[node name="HPProgressBar" type="ProgressBar" parent="UI/MarginContainer2"]
-custom_minimum_size = Vector2(297.785, 53.185)
+[node name="ColorRect" type="ColorRect" parent="UI/Health"]
+custom_minimum_size = Vector2(12.465, 0)
 layout_mode = 2
-theme_override_styles/background = SubResource("StyleBoxFlat_d7xyo")
-theme_override_styles/fill = SubResource("StyleBoxFlat_evw08")
+color = Color(0.858688, 0.276799, 0.264518, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="UI/Health/ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="ColorRect" type="ColorRect" parent="UI/Health/ColorRect/MarginContainer"]
+layout_mode = 2
+color = Color(0.266575, 0.266575, 0.266575, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="UI/Health/ColorRect/MarginContainer/ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="ProgressBar" type="ProgressBar" parent="UI/Health/ColorRect/MarginContainer/ColorRect/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_styles/fill = SubResource("StyleBoxFlat_roy6y")
 value = 100.0
 show_percentage = false
+script = ExtResource("21_roy6y")
 
 [connection signal="animation_finished" from="Head/Camera3D/WeaponSway/WeaponManager/AnimationPlayer" to="Head/Camera3D/WeaponSway/WeaponManager" method="finished"]
 [connection signal="timeout" from="Head/Camera3D/WeaponSway/WeaponManager/reloadTimer" to="Head/Camera3D/WeaponSway/WeaponManager" method="onreloadTimer"]
