@@ -3,7 +3,7 @@ using System;
 
 public partial class player : CharacterBody3D
 {
-    [Export] playerResource playerResource;
+    [Export] public playerResource playerResource;
     float Speed = 12.0f;
     float acceleration = 0.2f;
 

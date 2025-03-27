@@ -3,12 +3,24 @@
   "WorkspaceRootPath": "D:\\Heaven Benchmark 4.0\\Parkour_game\\desertFps\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Heaven Benchmark 4.0\\Parkour_game\\desertFps\\PuHp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:PuHp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4B0AA5FA-1904-44AA-AA06-EF9FD12E2C34}|fps.csproj|d:\\heaven benchmark 4.0\\parkour_game\\desertfps\\puhp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4B0AA5FA-1904-44AA-AA06-EF9FD12E2C34}|fps.csproj|solutionrelative:puhp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{4B0AA5FA-1904-44AA-AA06-EF9FD12E2C34}|fps.csproj|d:\\heaven benchmark 4.0\\parkour_game\\desertfps\\components\\ammopack.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4B0AA5FA-1904-44AA-AA06-EF9FD12E2C34}|fps.csproj|solutionrelative:components\\ammopack.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4B0AA5FA-1904-44AA-AA06-EF9FD12E2C34}|fps.csproj|d:\\heaven benchmark 4.0\\parkour_game\\desertfps\\scenes\\test\\hitboxtest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4B0AA5FA-1904-44AA-AA06-EF9FD12E2C34}|fps.csproj|solutionrelative:scenes\\test\\hitboxtest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4B0AA5FA-1904-44AA-AA06-EF9FD12E2C34}|fps.csproj|d:\\heaven benchmark 4.0\\parkour_game\\desertfps\\player\\scripts\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4B0AA5FA-1904-44AA-AA06-EF9FD12E2C34}|fps.csproj|solutionrelative:player\\scripts\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4B0AA5FA-1904-44AA-AA06-EF9FD12E2C34}|fps.csproj|d:\\heaven benchmark 4.0\\parkour_game\\desertfps\\enemies\\croco.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4B0AA5FA-1904-44AA-AA06-EF9FD12E2C34}|fps.csproj|solutionrelative:enemies\\croco.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{4B0AA5FA-1904-44AA-AA06-EF9FD12E2C34}|fps.csproj|d:\\heaven benchmark 4.0\\parkour_game\\desertfps\\player\\shootraycast.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -43,24 +55,12 @@
       "RelativeMoniker": "D:0:0:{4B0AA5FA-1904-44AA-AA06-EF9FD12E2C34}|fps.csproj|solutionrelative:components\\dismembermentmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4B0AA5FA-1904-44AA-AA06-EF9FD12E2C34}|fps.csproj|d:\\heaven benchmark 4.0\\parkour_game\\desertfps\\scenes\\test\\hitboxtest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4B0AA5FA-1904-44AA-AA06-EF9FD12E2C34}|fps.csproj|solutionrelative:scenes\\test\\hitboxtest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{4B0AA5FA-1904-44AA-AA06-EF9FD12E2C34}|fps.csproj|d:\\heaven benchmark 4.0\\parkour_game\\desertfps\\player\\weaponmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4B0AA5FA-1904-44AA-AA06-EF9FD12E2C34}|fps.csproj|solutionrelative:player\\weaponmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{4B0AA5FA-1904-44AA-AA06-EF9FD12E2C34}|fps.csproj|d:\\heaven benchmark 4.0\\parkour_game\\desertfps\\resources\\wep\\wep.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4B0AA5FA-1904-44AA-AA06-EF9FD12E2C34}|fps.csproj|solutionrelative:resources\\wep\\wep.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4B0AA5FA-1904-44AA-AA06-EF9FD12E2C34}|fps.csproj|d:\\heaven benchmark 4.0\\parkour_game\\desertfps\\player\\scripts\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4B0AA5FA-1904-44AA-AA06-EF9FD12E2C34}|fps.csproj|solutionrelative:player\\scripts\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4B0AA5FA-1904-44AA-AA06-EF9FD12E2C34}|fps.csproj|d:\\heaven benchmark 4.0\\parkour_game\\desertfps\\enemies\\croco.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4B0AA5FA-1904-44AA-AA06-EF9FD12E2C34}|fps.csproj|solutionrelative:enemies\\croco.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{4B0AA5FA-1904-44AA-AA06-EF9FD12E2C34}|fps.csproj|d:\\heaven benchmark 4.0\\parkour_game\\desertfps\\player\\materialraycast.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -154,53 +154,14 @@
               "RelativeDocumentMoniker": "PuHp.cs",
               "ToolTip": "D:\\Heaven Benchmark 4.0\\Parkour_game\\desertFps\\PuHp.cs",
               "RelativeToolTip": "PuHp.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-27T10:23:08.581Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "again.cs",
-              "DocumentMoniker": "D:\\Heaven Benchmark 4.0\\Parkour_game\\desertFps\\Scenes\\again.cs",
-              "RelativeDocumentMoniker": "Scenes\\again.cs",
-              "ToolTip": "D:\\Heaven Benchmark 4.0\\Parkour_game\\desertFps\\Scenes\\again.cs",
-              "RelativeToolTip": "Scenes\\again.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-27T10:06:47.088Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Spawner.cs",
-              "DocumentMoniker": "D:\\Heaven Benchmark 4.0\\Parkour_game\\desertFps\\Components\\Spawner.cs",
-              "RelativeDocumentMoniker": "Components\\Spawner.cs",
-              "ToolTip": "D:\\Heaven Benchmark 4.0\\Parkour_game\\desertFps\\Components\\Spawner.cs",
-              "RelativeToolTip": "Components\\Spawner.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAfAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-27T09:43:48.773Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "DismembermentManager.cs",
-              "DocumentMoniker": "D:\\Heaven Benchmark 4.0\\Parkour_game\\desertFps\\Components\\DismembermentManager.cs",
-              "RelativeDocumentMoniker": "Components\\DismembermentManager.cs",
-              "ToolTip": "D:\\Heaven Benchmark 4.0\\Parkour_game\\desertFps\\Components\\DismembermentManager.cs",
-              "RelativeToolTip": "Components\\DismembermentManager.cs",
-              "ViewState": "AgIAAAoAAAAAAAAAAAAgwCcAAAAkAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-27T08:59:52.402Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 2,
               "Title": "Hitboxtest.cs",
               "DocumentMoniker": "D:\\Heaven Benchmark 4.0\\Parkour_game\\desertFps\\Scenes\\test\\Hitboxtest.cs",
               "RelativeDocumentMoniker": "Scenes\\test\\Hitboxtest.cs",
@@ -213,7 +174,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 6,
               "Title": "Enemy.cs",
               "DocumentMoniker": "D:\\Heaven Benchmark 4.0\\Parkour_game\\desertFps\\Enemies\\Enemy.cs",
               "RelativeDocumentMoniker": "Enemies\\Enemy.cs",
@@ -221,12 +182,11 @@
               "RelativeToolTip": "Enemies\\Enemy.cs",
               "ViewState": "AgIAAMIAAAAAAAAAAADwv98AAAACAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-24T16:41:40.303Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-24T16:41:40.303Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 9,
               "Title": "ShootManager.cs",
               "DocumentMoniker": "D:\\Heaven Benchmark 4.0\\Parkour_game\\desertFps\\Components\\ShootManager.cs",
               "RelativeDocumentMoniker": "Components\\ShootManager.cs",
@@ -234,8 +194,7 @@
               "RelativeToolTip": "Components\\ShootManager.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-24T19:10:53.177Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-24T19:10:53.177Z"
             },
             {
               "$type": "Document",
@@ -273,7 +232,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 8,
               "Title": "HeadBob.cs",
               "DocumentMoniker": "D:\\Heaven Benchmark 4.0\\Parkour_game\\desertFps\\Player\\scripts\\HeadBob.cs",
               "RelativeDocumentMoniker": "Player\\scripts\\HeadBob.cs",
@@ -281,12 +240,11 @@
               "RelativeToolTip": "Player\\scripts\\HeadBob.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-13T05:51:07.688Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-13T05:51:07.688Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 7,
               "Title": "Health.cs",
               "DocumentMoniker": "D:\\Heaven Benchmark 4.0\\Parkour_game\\desertFps\\Components\\Health.cs",
               "RelativeDocumentMoniker": "Components\\Health.cs",
@@ -294,12 +252,11 @@
               "RelativeToolTip": "Components\\Health.cs",
               "ViewState": "AgIAAAUAAAAAAAAAAAAQwFcAAAA6AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-17T19:09:08.74Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-17T19:09:08.74Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 5,
               "Title": "ShootRayCast.cs",
               "DocumentMoniker": "D:\\Heaven Benchmark 4.0\\Parkour_game\\desertFps\\Player\\ShootRayCast.cs",
               "RelativeDocumentMoniker": "Player\\ShootRayCast.cs",
@@ -307,21 +264,69 @@
               "RelativeToolTip": "Player\\ShootRayCast.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-17T19:18:24.746Z",
+              "WhenOpened": "2025-02-17T19:18:24.746Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Croco.cs",
+              "DocumentMoniker": "D:\\Heaven Benchmark 4.0\\Parkour_game\\desertFps\\Enemies\\Croco.cs",
+              "RelativeDocumentMoniker": "Enemies\\Croco.cs",
+              "ToolTip": "D:\\Heaven Benchmark 4.0\\Parkour_game\\desertFps\\Enemies\\Croco.cs",
+              "RelativeToolTip": "Enemies\\Croco.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAAQwAYAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-26T09:06:39.683Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "AmmoPack.cs",
-              "DocumentMoniker": "D:\\Heaven Benchmark 4.0\\Parkour_game\\desertFps\\Components\\AmmoPack.cs",
-              "RelativeDocumentMoniker": "Components\\AmmoPack.cs",
-              "ToolTip": "D:\\Heaven Benchmark 4.0\\Parkour_game\\desertFps\\Components\\AmmoPack.cs",
-              "RelativeToolTip": "Components\\AmmoPack.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAAeAAAAAAAAAA==",
+              "DocumentIndex": 3,
+              "Title": "player.cs",
+              "DocumentMoniker": "D:\\Heaven Benchmark 4.0\\Parkour_game\\desertFps\\Player\\scripts\\player.cs",
+              "RelativeDocumentMoniker": "Player\\scripts\\player.cs",
+              "ToolTip": "D:\\Heaven Benchmark 4.0\\Parkour_game\\desertFps\\Player\\scripts\\player.cs",
+              "RelativeToolTip": "Player\\scripts\\player.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-23T18:56:14.519Z",
+              "WhenOpened": "2025-02-13T05:56:11.539Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "DismembermentManager.cs",
+              "DocumentMoniker": "D:\\Heaven Benchmark 4.0\\Parkour_game\\desertFps\\Components\\DismembermentManager.cs",
+              "RelativeDocumentMoniker": "Components\\DismembermentManager.cs",
+              "ToolTip": "D:\\Heaven Benchmark 4.0\\Parkour_game\\desertFps\\Components\\DismembermentManager.cs",
+              "RelativeToolTip": "Components\\DismembermentManager.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAgwCcAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-27T08:59:52.402Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Spawner.cs",
+              "DocumentMoniker": "D:\\Heaven Benchmark 4.0\\Parkour_game\\desertFps\\Components\\Spawner.cs",
+              "RelativeDocumentMoniker": "Components\\Spawner.cs",
+              "ToolTip": "D:\\Heaven Benchmark 4.0\\Parkour_game\\desertFps\\Components\\Spawner.cs",
+              "RelativeToolTip": "Components\\Spawner.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-27T09:43:48.773Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "again.cs",
+              "DocumentMoniker": "D:\\Heaven Benchmark 4.0\\Parkour_game\\desertFps\\Scenes\\again.cs",
+              "RelativeDocumentMoniker": "Scenes\\again.cs",
+              "ToolTip": "D:\\Heaven Benchmark 4.0\\Parkour_game\\desertFps\\Scenes\\again.cs",
+              "RelativeToolTip": "Scenes\\again.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-27T10:06:47.088Z"
             },
             {
               "$type": "Document",
@@ -337,7 +342,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 13,
               "Title": "WeaponManager.cs",
               "DocumentMoniker": "D:\\Heaven Benchmark 4.0\\Parkour_game\\desertFps\\Player\\WeaponManager.cs",
               "RelativeDocumentMoniker": "Player\\WeaponManager.cs",
@@ -346,18 +351,6 @@
               "ViewState": "AQIAAEoAAAAAAAAAAAAmwF0AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-15T20:40:54.316Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "Croco.cs",
-              "DocumentMoniker": "D:\\Heaven Benchmark 4.0\\Parkour_game\\desertFps\\Enemies\\Croco.cs",
-              "RelativeDocumentMoniker": "Enemies\\Croco.cs",
-              "ToolTip": "D:\\Heaven Benchmark 4.0\\Parkour_game\\desertFps\\Enemies\\Croco.cs",
-              "RelativeToolTip": "Enemies\\Croco.cs",
-              "ViewState": "AgIAADIAAAAAAAAAAAAAAEYAAAAVAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-26T09:06:39.683Z"
             },
             {
               "$type": "Document",
@@ -397,18 +390,6 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "player.cs",
-              "DocumentMoniker": "D:\\Heaven Benchmark 4.0\\Parkour_game\\desertFps\\Player\\scripts\\player.cs",
-              "RelativeDocumentMoniker": "Player\\scripts\\player.cs",
-              "ToolTip": "D:\\Heaven Benchmark 4.0\\Parkour_game\\desertFps\\Player\\scripts\\player.cs",
-              "RelativeToolTip": "Player\\scripts\\player.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAQwBkAAAAzAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-13T05:56:11.539Z"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 19,
               "Title": "playerResource.cs",
               "DocumentMoniker": "D:\\Heaven Benchmark 4.0\\Parkour_game\\desertFps\\Resources\\player\\playerResource.cs",
@@ -445,7 +426,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 14,
               "Title": "Wep.cs",
               "DocumentMoniker": "D:\\Heaven Benchmark 4.0\\Parkour_game\\desertFps\\Resources\\wep\\Wep.cs",
               "RelativeDocumentMoniker": "Resources\\wep\\Wep.cs",
@@ -502,6 +483,40 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "FloatingWindowState": {
+        "Id": "2c450eb9-9f5a-4752-816b-e80e44341668",
+        "Display": 1,
+        "X": 1389,
+        "Y": 98,
+        "Width": 1725,
+        "Height": 1317,
+        "WindowState": 0
+      },
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AmmoPack.cs",
+              "DocumentMoniker": "D:\\Heaven Benchmark 4.0\\Parkour_game\\desertFps\\Components\\AmmoPack.cs",
+              "RelativeDocumentMoniker": "Components\\AmmoPack.cs",
+              "ToolTip": "D:\\Heaven Benchmark 4.0\\Parkour_game\\desertFps\\Components\\AmmoPack.cs",
+              "RelativeToolTip": "Components\\AmmoPack.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-23T18:56:14.519Z",
+              "EditorCaption": ""
             }
           ]
         }

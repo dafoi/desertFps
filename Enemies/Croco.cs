@@ -6,13 +6,16 @@ public partial class Croco : CharacterBody3D
 {
     [Export] Health health;
     [Export] EnemyStats stats;
+    [Export] int damage = 20;
     [Export] NavigationAgent3D navAgent;
     [Export] AnimationPlayer animPlayer;
     [Export] Area3D detectArea;
+    [Export] Area3D attackArea;
+    [Export] Timer attackTimer;
     [Export] PhysicalBoneSimulator3D ragdollSimulator;
-
     [Export] CollisionShape3D[] collisionShape;
     [Export] Node3D helperNode;
+    [Export] playerResource pr;
     public bool ragdolled = false;
 
     Vector3 velocity = Vector3.Zero;
@@ -41,7 +44,7 @@ public partial class Croco : CharacterBody3D
     {
         health.hit += gotHit;
         health.died += onDeath;
-        
+        attackTimer.Timeout += attack;
 
         targetNode = GetTree().GetFirstNodeInGroup("Player") as Node3D;
 
@@ -51,6 +54,20 @@ public partial class Croco : CharacterBody3D
         iteration = new Random().Next(0, navUpdateAfterNumberOfIterations);
 
 
+    }
+    public void attack()
+    {
+        if (attackArea.HasOverlappingBodies())
+        {
+            var bodies = attackArea.GetOverlappingBodies();
+            foreach(var body in bodies)
+            {
+                if(body is player)
+                {
+                    pr.hp-=damage;
+                }
+            }
+        }
     }
     public override void _PhysicsProcess(double delta)
     {

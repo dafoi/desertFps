@@ -1,15 +1,14 @@
 using Godot;
 using System;
 
-public partial class PuHp : Node3D
+public partial class PuHp : Area3D
 {
     [Export] Node3D node;
     [Export] playerResource pr;
     [Export] int hp;
-    [Export] Area3D area;
     public override void _Ready()
     {
-        area.BodyEntered += enter;
+        BodyEntered += enter;
     }
     public override void _PhysicsProcess(double delta)
     {
@@ -20,9 +19,9 @@ public partial class PuHp : Node3D
     public void enter(Node3D body)
     {
         GD.Print("body enterd;");
-        if(body is player)
+        if(body is player p)
         {
-            pr.hp += hp;
+            p.playerResource.hp += hp;
             QueueFree();
         }
 

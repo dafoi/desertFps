@@ -619,8 +619,10 @@ sky = SubResource("Sky_i2t4f")
 ambient_light_source = 3
 tonemap_mode = 3
 ssao_enabled = true
-volumetric_fog_enabled = true
-volumetric_fog_density = 0.1
+fog_enabled = true
+fog_mode = 1
+fog_density = 1.0
+volumetric_fog_density = 0.02
 volumetric_fog_albedo = Color(0.668387, 0.56226, 0.423017, 1)
 
 [node name="Level" type="Node3D"]
@@ -1155,3 +1157,27 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 110.642, 9.38337, -0.975782)
 
 [node name="revolver_ammo16" parent="." instance=ExtResource("5_1ainy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 110.423, 9.38337, 1.962)
+
+[node name="Croco10" parent="." instance=ExtResource("18_ait7k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.8632, -1.96294, -9.11094)
+
+[node name="Croco11" parent="." instance=ExtResource("18_ait7k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.8507, -1.96294, 10.0974)
+
+[node name="Croco12" parent="." instance=ExtResource("18_ait7k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 100.666, 9.10337, -3.62096)
+
+[node name="Croco13" parent="." instance=ExtResource("18_ait7k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 123.49, 9.10337, 4.47632)
+
+[node name="Croco14" parent="." instance=ExtResource("18_ait7k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 134.972, 9.10337, -3.31673)
+
+[node name="revolver_ammo17" parent="." instance=ExtResource("5_1ainy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 97.5417, 9.13632, 0.113624)
+
+[node name="db_ammo14" parent="." instance=ExtResource("6_n6hdu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 93.5562, 7.28468, -0.126515)
+
+[node name="revolver_ammo18" parent="." instance=ExtResource("5_1ainy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 90.5231, 6.00183, -0.242519)
