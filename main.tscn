@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://jah1oqvul6fq"]
 
-[ext_resource type="Script" uid="uid://bbjk6v7kn4hbu" path="res://SceneManager.cs" id="1_vivmo"]
+[ext_resource type="Script" uid="uid://bbjk6v7kn4hbu" path="res://Components/SceneManager.cs" id="1_vivmo"]
 [ext_resource type="PackedScene" uid="uid://c581uqcnvuihs" path="res://level1.tscn" id="2_0xm2m"]
 [ext_resource type="Texture2D" uid="uid://c0o6567u18j1i" path="res://Assets/Map/Skybox/sky_linekotsi_18.png" id="3_h2yge"]
 [ext_resource type="PackedScene" uid="uid://dmilavgdouvhg" path="res://Enemies/cannon_man.tscn" id="5_lquwl"]

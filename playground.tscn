@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dqohd0gwpmbbr"]
+[gd_scene load_steps=14 format=3 uid="uid://dqohd0gwpmbbr"]
 
 [ext_resource type="Script" uid="uid://cmnnx6xfirnca" path="res://Playground.cs" id="1_is3ju"]
 [ext_resource type="Material" uid="uid://bpuou5s8cd5yw" path="res://Assets/Map/env/Sand.tres" id="1_wt17y"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dmilavgdouvhg" path="res://Enemies/cannon_man.tscn" id="3_m8u5f"]
 [ext_resource type="PackedScene" uid="uid://bd5jkuduwu87l" path="res://Enemies/croco.tscn" id="5_o00ia"]
 [ext_resource type="PackedScene" uid="uid://opgee7kmyigj" path="res://Scenes/test/hitboxtest.tscn" id="6_4bqqs"]
+[ext_resource type="PackedScene" uid="uid://e5anpu4hx4ae" path="res://Scenes/Spawner.tscn" id="7_ynsuh"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_is3ju"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -76,22 +77,27 @@ skeleton = NodePath("../../..")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Physics/NavigationRegion3D/Floor/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_m8u5f")
 
-[node name="Croco" parent="." instance=ExtResource("5_o00ia")]
+[node name="Croco" parent="." node_paths=PackedStringArray("collisionShape") instance=ExtResource("5_o00ia")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.2922, 9.53674e-07, -11.9546)
+collisionShape = [NodePath("CollisionShape3D"), null, NodePath("CollisionShape3D3")]
 
-[node name="Croco2" parent="." instance=ExtResource("5_o00ia")]
+[node name="Croco2" parent="." node_paths=PackedStringArray("collisionShape") instance=ExtResource("5_o00ia")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.3459, 0, -11.9935)
+collisionShape = [NodePath("CollisionShape3D"), null, NodePath("CollisionShape3D3")]
 
 [node name="Decals" type="Node3D" parent="." groups=["Decals"]]
 
-[node name="Croco3" parent="." instance=ExtResource("5_o00ia")]
+[node name="Croco3" parent="." node_paths=PackedStringArray("collisionShape") instance=ExtResource("5_o00ia")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.7113, 9.53674e-07, -5.35505)
+collisionShape = [NodePath("CollisionShape3D"), null, NodePath("CollisionShape3D3")]
 
-[node name="Croco4" parent="." instance=ExtResource("5_o00ia")]
+[node name="Croco4" parent="." node_paths=PackedStringArray("collisionShape") instance=ExtResource("5_o00ia")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.89764, 9.53674e-07, -18.5617)
+collisionShape = [NodePath("CollisionShape3D"), null, NodePath("CollisionShape3D3")]
 
-[node name="Croco5" parent="." instance=ExtResource("5_o00ia")]
+[node name="Croco5" parent="." node_paths=PackedStringArray("collisionShape") instance=ExtResource("5_o00ia")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.5524, 9.53674e-07, -2.05312)
+collisionShape = [NodePath("CollisionShape3D"), null, NodePath("CollisionShape3D3")]
 
 [node name="Hitboxtest" parent="." node_paths=PackedStringArray("hitBoxes") instance=ExtResource("6_4bqqs")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.4012, 1.80249, 14.8903)
@@ -105,3 +111,15 @@ NodePath("Leg 2/Area3D"): 4,
 NodePath("Arm/Area3D"): 2,
 NodePath("Arm 2/Area3D"): 1
 }
+
+[node name="Spawner" parent="." instance=ExtResource("7_ynsuh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.77048, 8.82426, 27.3021)
+Enabled = false
+interval = 0.5
+node = ExtResource("5_o00ia")
+
+[node name="Spawner2" parent="." instance=ExtResource("7_ynsuh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.77048, 8.82426, 27.3021)
+Enabled = false
+interval = 4.0
+node = ExtResource("3_m8u5f")

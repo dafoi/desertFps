@@ -23,6 +23,7 @@ config/icon="uid://bucdgimkyqc2l"
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
+window/size/mode=3
 window/stretch/mode="viewport"
 window/vsync/vsync_mode=0
 
@@ -109,6 +110,7 @@ b={
 [navigation]
 
 3d/default_cell_size=0.5
+3d/default_cell_height=0.5
 
 [physics]
 
@@ -117,5 +119,4 @@ jolt_physics_3d/simulation/areas_detect_static_bodies=true
 
 [rendering]
 
-anti_aliasing/quality/screen_space_aa=1
 occlusion_culling/use_occlusion_culling=true

@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://bpg6udum3gkhy"]
 
-[ext_resource type="Script" uid="uid://dd2f2ytd55wlw" path="res://delete_timer.gd" id="1_myvlj"]
+[ext_resource type="Script" uid="uid://dd2f2ytd55wlw" path="res://Components/delete_timer.gd" id="1_myvlj"]
 
 [node name="DeleteTimer" type="Timer"]
 one_shot = true

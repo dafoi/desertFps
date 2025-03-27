@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://dysqv3hkow335"]
+
+[ext_resource type="Script" uid="uid://euwm4wfalmks" path="res://PuHp.cs" id="1_pge5k"]
+[ext_resource type="PackedScene" uid="uid://bkukhcdf5n5s1" path="res://Assets/PickUpAble/pu_hp.glb" id="2_d5x33"]
+[ext_resource type="Resource" uid="uid://hx8itknwgcsq" path="res://Resources/player/default_player.tres" id="2_l2qc5"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_pgtbr"]
+size = Vector3(2, 2, 2)
+
+[node name="pu_hp" type="Node3D" node_paths=PackedStringArray("node", "area")]
+script = ExtResource("1_pge5k")
+node = NodePath("pu_hp")
+pr = ExtResource("2_l2qc5")
+hp = 10
+area = NodePath("Area3D")
+
+[node name="pu_hp" parent="." instance=ExtResource("2_d5x33")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+
+[node name="Area3D" type="Area3D" parent="."]
+collision_layer = 0
+monitorable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("BoxShape3D_pgtbr")
+disabled = true
+
+[connection signal="body_entered" from="Area3D" to="." method="enter"]
