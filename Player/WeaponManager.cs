@@ -13,7 +13,7 @@ public partial class WeaponManager : Node3D
 	[Export] Godot.Collections.Dictionary<string, Wep> wep_resources;
 	[Export] Godot.Collections.Dictionary<string, string> wep_paths;
 	[Export] string[] wep_have;
-	[Export] Crosshair crosshair;
+	[Export] DynamicCrosshair crosshair;
 	[ExportGroup("Labels")]
 	[Export] Label label;
 	[Export] Label ui_ammo;
@@ -125,7 +125,7 @@ public partial class WeaponManager : Node3D
 		next_weapon = "";
 		if(crosshair != null)
 		{
-			crosshair.targetSize = wep_current.crosshairSize;
+			crosshair.target_size = wep_current.crosshairSize;
 		}
 	}
 	void exit()

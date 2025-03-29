@@ -3,6 +3,8 @@ using System;
 [GlobalClass]
 public partial class ShootManager : Node
 {
+	[Signal] public delegate void didHitEventHandler();
+
 	[Export] Camera3D camera;
 	[Export] RayCast3D rayCast;
 	[Export] PackedScene decal;
@@ -32,6 +34,7 @@ public partial class ShootManager : Node
 				if (body.HasNode("Health"))
 				{	
 					body.GetNode<Health>("Health").getDamage(damage);
+					EmitSignal(SignalName.didHit);
 				}
 			}
 			

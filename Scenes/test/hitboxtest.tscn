@@ -50,7 +50,7 @@ shape = SubResource("ConvexPolygonShape3D_b1ifo")
 [node name="Health" type="Node" parent="Torso/Area3D" node_paths=PackedStringArray("deleteNodeOnDeath")]
 script = ExtResource("2_dbrv4")
 restoreHealthOnStart = true
-deleteNodeOnDeath = NodePath("../..")
+deleteNodeOnDeath = []
 metadata/_custom_type_script = "uid://wnhx2ckfxlrk"
 
 [node name="Head" type="MeshInstance3D" parent="."]
@@ -65,7 +65,7 @@ shape = SubResource("ConvexPolygonShape3D_db6cv")
 [node name="Health" type="Node" parent="Head/Area3D" node_paths=PackedStringArray("deleteNodeOnDeath")]
 script = ExtResource("2_dbrv4")
 restoreHealthOnStart = true
-deleteNodeOnDeath = NodePath("../..")
+deleteNodeOnDeath = []
 metadata/_custom_type_script = "uid://wnhx2ckfxlrk"
 
 [node name="Leg" type="MeshInstance3D" parent="."]

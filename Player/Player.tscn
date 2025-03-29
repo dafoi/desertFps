@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://c01q4ie2e0pxi"]
+[gd_scene load_steps=37 format=3 uid="uid://c01q4ie2e0pxi"]
 
 [ext_resource type="Script" uid="uid://bpy0e0x4mv0g3" path="res://Player/scripts/player.cs" id="1_3qydi"]
 [ext_resource type="Resource" uid="uid://hx8itknwgcsq" path="res://Resources/player/default_player.tres" id="2_3nb2p"]
@@ -21,7 +21,7 @@
 [ext_resource type="PackedScene" uid="uid://dlxesjwxunooj" path="res://Assets/Rig/arms_Rig.gltf" id="11_3nb2p"]
 [ext_resource type="Theme" uid="uid://7yd65svu8utm" path="res://Assets/Theme/MyTheme.tres" id="15_3mea3"]
 [ext_resource type="Script" uid="uid://cwov2ifsi1bkn" path="res://Player/healthBar.cs" id="21_roy6y"]
-[ext_resource type="Script" uid="uid://ci5bb1210bb6n" path="res://Player/Crosshair.cs" id="22_u5tep"]
+[ext_resource type="Script" uid="uid://dqoxegu5jjpw6" path="res://Player/DynamicCrosshair.cs" id="23_ps8ct"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_fo8cm"]
 
@@ -148,6 +148,10 @@ orientation = 2
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_roy6y"]
 bg_color = Color(0.858824, 0.278431, 0.262745, 1)
 
+[sub_resource type="Curve" id="Curve_ps8ct"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
 [node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("cam", "Bob", "wep_player", "jumpsound", "footparticles", "HPProgressbar", "cameraAnimationPlayer") groups=["Player"]]
 wall_min_slide_angle = 0.808087
 script = ExtResource("1_3qydi")
@@ -204,7 +208,7 @@ wep_paths = Dictionary[String, String]({
 "revolver": "../revolver2"
 })
 wep_have = PackedStringArray("db", "revolver")
-crosshair = NodePath("../../../../UI/Crosshair")
+crosshair = NodePath("../../../../UI/DynamicCrosshair")
 label = NodePath("../../../../Label")
 ui_ammo = NodePath("../../../../UI/Ammo/ammo")
 wep_activate_sound = NodePath("../../../../wep_activate_sound")
@@ -548,21 +552,6 @@ size_flags_horizontal = 4
 theme = ExtResource("15_3mea3")
 text = "6/70"
 
-[node name="ColorRect" type="ColorRect" parent="UI"]
-modulate = Color(0.637293, 0.3493, 0.156029, 1)
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -2.0
-offset_top = -2.0
-offset_right = 2.0
-offset_bottom = 2.0
-grow_horizontal = 2
-grow_vertical = 2
-
 [node name="Health" type="MarginContainer" parent="UI"]
 custom_minimum_size = Vector2(640, 91.215)
 layout_mode = 1
@@ -618,107 +607,41 @@ value = 100.0
 show_percentage = false
 script = ExtResource("21_roy6y")
 
-[node name="Crosshair" type="Control" parent="UI" node_paths=PackedStringArray("center")]
-custom_minimum_size = Vector2(64, 64)
+[node name="DynamicCrosshair" type="CenterContainer" parent="UI" node_paths=PackedStringArray("shootManager", "lines")]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("22_u5tep")
-center = NodePath("HBoxContainer/VBoxContainer2/Center")
+script = ExtResource("23_ps8ct")
+hit_color = Color(1, 0, 0, 1)
+hit_color_time = 0.2
+shootManager = NodePath("../../Head/Camera3D/WeaponSway/WeaponManager/ShootManager")
+lines = [NodePath("Top"), NodePath("Right"), NodePath("Bottom"), NodePath("Left")]
+metadata/_edit_use_anchors_ = true
 
-[node name="HBoxContainer" type="HBoxContainer" parent="UI/Crosshair"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -22.0
-offset_top = -22.0
-offset_right = 22.0
-offset_bottom = 22.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="Top" type="Line2D" parent="UI/DynamicCrosshair"]
+points = PackedVector2Array(0, -2, 0, -12)
+width = 2.0
+width_curve = SubResource("Curve_ps8ct")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="UI/Crosshair/HBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 3
+[node name="Right" type="Line2D" parent="UI/DynamicCrosshair"]
+points = PackedVector2Array(2, 0, 12, 0)
+width = 2.0
+width_curve = SubResource("Curve_ps8ct")
 
-[node name="ColorRect" type="ColorRect" parent="UI/Crosshair/HBoxContainer/VBoxContainer"]
-custom_minimum_size = Vector2(12, 12)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 6
-color = Color(1, 1, 1, 0)
+[node name="Bottom" type="Line2D" parent="UI/DynamicCrosshair"]
+points = PackedVector2Array(0, 2, 0, 12)
+width = 2.0
+width_curve = SubResource("Curve_ps8ct")
 
-[node name="L" type="ColorRect" parent="UI/Crosshair/HBoxContainer/VBoxContainer"]
-custom_minimum_size = Vector2(16, 4)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-
-[node name="ColorRect3" type="ColorRect" parent="UI/Crosshair/HBoxContainer/VBoxContainer"]
-custom_minimum_size = Vector2(12, 12)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 6
-color = Color(1, 1, 1, 0)
-
-[node name="VBoxContainer2" type="VBoxContainer" parent="UI/Crosshair/HBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-
-[node name="U" type="ColorRect" parent="UI/Crosshair/HBoxContainer/VBoxContainer2"]
-custom_minimum_size = Vector2(4, 16)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-
-[node name="Center" type="ColorRect" parent="UI/Crosshair/HBoxContainer/VBoxContainer2"]
-modulate = Color(1, 1, 1, 0)
-custom_minimum_size = Vector2(12, 12)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 6
-
-[node name="D" type="ColorRect" parent="UI/Crosshair/HBoxContainer/VBoxContainer2"]
-custom_minimum_size = Vector2(4, 16)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 6
-
-[node name="VBoxContainer3" type="VBoxContainer" parent="UI/Crosshair/HBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-
-[node name="ColorRect" type="ColorRect" parent="UI/Crosshair/HBoxContainer/VBoxContainer3"]
-custom_minimum_size = Vector2(12, 12)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 6
-color = Color(1, 1, 1, 0)
-
-[node name="R" type="ColorRect" parent="UI/Crosshair/HBoxContainer/VBoxContainer3"]
-custom_minimum_size = Vector2(16, 4)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-
-[node name="ColorRect3" type="ColorRect" parent="UI/Crosshair/HBoxContainer/VBoxContainer3"]
-custom_minimum_size = Vector2(12, 12)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 6
-color = Color(1, 1, 1, 0)
+[node name="Left" type="Line2D" parent="UI/DynamicCrosshair"]
+points = PackedVector2Array(-2, 0, -12, 0)
+width = 2.0
+width_curve = SubResource("Curve_ps8ct")
 
 [connection signal="animation_finished" from="Head/Camera3D/WeaponSway/WeaponManager/AnimationPlayer" to="Head/Camera3D/WeaponSway/WeaponManager" method="finished"]
 [connection signal="timeout" from="Head/Camera3D/WeaponSway/WeaponManager/reloadTimer" to="Head/Camera3D/WeaponSway/WeaponManager" method="onreloadTimer"]

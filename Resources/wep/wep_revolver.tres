@@ -29,5 +29,5 @@ Shoot_speed = 2.0
 damage = 30.0
 amountOfBullets = 1
 accuracy = 0.1
-crosshairSize = 12
+crosshairSize = 0
 metadata/_custom_type_script = "uid://bshdmuedc85xx"

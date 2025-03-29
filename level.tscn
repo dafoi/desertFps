@@ -1104,14 +1104,17 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 74.0458, 13.2373, 4.64236)
 [node name="Croco" parent="." node_paths=PackedStringArray("collisionShape") instance=ExtResource("18_ait7k")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 73.1155, 13.1623, 8.25142)
 collisionShape = []
+pr = null
 
 [node name="Croco2" parent="." node_paths=PackedStringArray("collisionShape") instance=ExtResource("18_ait7k")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 69.1621, 14.9339, -3.44416)
 collisionShape = []
+pr = null
 
 [node name="Croco3" parent="." node_paths=PackedStringArray("collisionShape") instance=ExtResource("18_ait7k")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.6915, 13.9081, 25.9851)
 collisionShape = []
+pr = null
 
 [node name="CannonMan15" parent="." instance=ExtResource("3_f2txt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.4975, 13.9572, -15.2277)
@@ -1119,26 +1122,32 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.4975, 13.9572, -15.2277)
 [node name="Croco4" parent="." node_paths=PackedStringArray("collisionShape") instance=ExtResource("18_ait7k")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.506, 2.96641, -76.1938)
 collisionShape = []
+pr = null
 
 [node name="Croco5" parent="." node_paths=PackedStringArray("collisionShape") instance=ExtResource("18_ait7k")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.0085, 2.97489, -70.8806)
 collisionShape = []
+pr = null
 
 [node name="Croco6" parent="." node_paths=PackedStringArray("collisionShape") instance=ExtResource("18_ait7k")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.0987, 2.98009, -67.0116)
 collisionShape = []
+pr = null
 
 [node name="Croco7" parent="." node_paths=PackedStringArray("collisionShape") instance=ExtResource("18_ait7k")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.3474, 2.98529, -64.0033)
 collisionShape = []
+pr = null
 
 [node name="Croco8" parent="." node_paths=PackedStringArray("collisionShape") instance=ExtResource("18_ait7k")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.0468, 2.95535, -82.8608)
 collisionShape = []
+pr = null
 
 [node name="Croco9" parent="." node_paths=PackedStringArray("collisionShape") instance=ExtResource("18_ait7k")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34.3223, 2.99285, -58.923)
 collisionShape = []
+pr = null
 
 [node name="pu_hp" parent="." instance=ExtResource("19_ait7k")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 61.8655, 0.900977, 0.233889)
@@ -1160,18 +1169,23 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 110.423, 9.38337, 1.962)
 
 [node name="Croco10" parent="." instance=ExtResource("18_ait7k")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.8632, -1.96294, -9.11094)
+pr = null
 
 [node name="Croco11" parent="." instance=ExtResource("18_ait7k")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.8507, -1.96294, 10.0974)
+pr = null
 
 [node name="Croco12" parent="." instance=ExtResource("18_ait7k")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 100.666, 9.10337, -3.62096)
+pr = null
 
 [node name="Croco13" parent="." instance=ExtResource("18_ait7k")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 123.49, 9.10337, 4.47632)
+pr = null
 
 [node name="Croco14" parent="." instance=ExtResource("18_ait7k")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 134.972, 9.10337, -3.31673)
+pr = null
 
 [node name="revolver_ammo17" parent="." instance=ExtResource("5_1ainy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 97.5417, 9.13632, 0.113624)
