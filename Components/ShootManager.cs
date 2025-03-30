@@ -42,11 +42,13 @@ public partial class ShootManager : Node
 	}
 	public void spawnDecal(Vector3 collisionPoint, Vector3 normal)
 	{
-		Node3D dec = decal.Instantiate() as Node3D;
-		dec.GlobalPosition = collisionPoint;
-		GetTree().GetFirstNodeInGroup("Decals").AddChild(dec);
-		dec.LookAt(collisionPoint + normal, Vector3.Up);
-		dec.Transform = dec.Transform.RotatedLocal(Vector3.Right, 3.14f / 2.0f);
+
+		Decals decals = GetTree().GetFirstNodeInGroup("Decals") as Decals;
+		if(decals != null)
+		{
+			decals.place(collisionPoint, normal);
+		}
+		
 	}
 	public override void _Ready()
 	{

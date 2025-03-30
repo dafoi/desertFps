@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="RandomSound" load_steps=4 format=3 uid="uid://kfpw4incsr68"]
+
+[ext_resource type="Script" uid="uid://x4hrc770hkea" path="res://Resources/sounds/RandomSound.cs" id="1_rodf7"]
+[ext_resource type="AudioStream" uid="uid://tau76pedy13u" path="res://Assets/Sounds/HitSound/diedEnemy2.mp3" id="2_auepv"]
+[ext_resource type="AudioStream" uid="uid://nrnpyonxm2s4" path="res://Assets/Sounds/HitSound/diedEnemy.mp3" id="3_ukmbi"]
+
+[resource]
+script = ExtResource("1_rodf7")
+sounds = Array[AudioStream]([ExtResource("2_auepv"), ExtResource("3_ukmbi")])
+metadata/_custom_type_script = "uid://x4hrc770hkea"

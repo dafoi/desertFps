@@ -30,7 +30,7 @@ public partial class Health : Node
 	[ExportGroup("Additional")]
 	[Export] PackedScene bloodParticles;
 	[Export] Node3D bloodPosition;
-	[Export] AudioStreamPlayer3D hitsound;
+
 	public override void _Ready()
 	{
 		if (restoreHealthOnStart)
@@ -69,8 +69,6 @@ public partial class Health : Node
 	}
 	public void checkFX()
 	{
-		if (hitsound != null) hitsound.Play();
-
 		if (bloodParticles != null && bloodPosition != null) spawnBlood();
 	}
 	public void restore()

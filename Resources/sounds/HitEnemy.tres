@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="RandomSound" load_steps=5 format=3 uid="uid://d3slkc6konp1d"]
+
+[ext_resource type="Script" uid="uid://x4hrc770hkea" path="res://Resources/sounds/RandomSound.cs" id="1_w6m1h"]
+[ext_resource type="AudioStream" uid="uid://brx8drq4xs64e" path="res://Assets/Sounds/HitSound/hitEnemy2.mp3" id="2_bdkbf"]
+[ext_resource type="AudioStream" uid="uid://dpow4u2a16v4b" path="res://Assets/Sounds/HitSound/hitEnemy3.mp3" id="3_t4rr8"]
+[ext_resource type="AudioStream" uid="uid://q15qumusvgo2" path="res://Assets/Sounds/HitSound/hitEnemyt.mp3" id="4_kyu1k"]
+
+[resource]
+script = ExtResource("1_w6m1h")
+sounds = Array[AudioStream]([ExtResource("2_bdkbf"), ExtResource("3_t4rr8"), ExtResource("4_kyu1k")])
+metadata/_custom_type_script = "uid://x4hrc770hkea"

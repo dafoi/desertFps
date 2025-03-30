@@ -1,7 +1,9 @@
-[gd_scene load_steps=77 format=4 uid="uid://dce3wwvm6ov43"]
+[gd_scene load_steps=79 format=4 uid="uid://dce3wwvm6ov43"]
 
+[ext_resource type="Script" uid="uid://bhcyp4b56wn4o" path="res://Decals.cs" id="1_42xju"]
 [ext_resource type="PackedScene" uid="uid://c01q4ie2e0pxi" path="res://Player/Player.tscn" id="1_oi3di"]
 [ext_resource type="Texture2D" uid="uid://msocq38dln2o" path="res://Assets/Map/env/Mossy sandstone_ColorMap.jpg" id="2_h6smj"]
+[ext_resource type="PackedScene" uid="uid://3wf70dl40kv0" path="res://Particles/decal.tscn" id="2_v7sqt"]
 [ext_resource type="PackedScene" uid="uid://dmilavgdouvhg" path="res://Enemies/cannon_man.tscn" id="3_f2txt"]
 [ext_resource type="Texture2D" uid="uid://bn3328pkkdh1r" path="res://Assets/Map/env/Mossy sandstone_NormalMap.jpg" id="3_v5j5c"]
 [ext_resource type="PackedScene" uid="uid://yhwl5ovd582l" path="res://Particles/sand_particles.tscn" id="4_0b4ue"]
@@ -627,6 +629,12 @@ volumetric_fog_albedo = Color(0.668387, 0.56226, 0.423017, 1)
 
 [node name="Level" type="Node3D"]
 
+[node name="Decals" type="Node3D" parent="." groups=["Decals"]]
+script = ExtResource("1_42xju")
+max_amount = 40
+decal = ExtResource("2_v7sqt")
+time = 0.5
+
 [node name="Player" parent="." instance=ExtResource("1_oi3di")]
 transform = Transform3D(-0.0772063, 0, -0.997015, 0, 1, 0, 0.997015, 0, -0.0772063, 1.38813, 2.27567, 0.0244775)
 can_die = true
@@ -1056,8 +1064,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.31748, 14.821, -202.038)
 
 [node name="SandParticles14" parent="." instance=ExtResource("4_0b4ue")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.90517, 20.4696, -279)
-
-[node name="Decals" type="Node3D" parent="." groups=["Decals"]]
 
 [node name="CannonMan" parent="." instance=ExtResource("3_f2txt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34.1577, -1.88794, 6.94062)

@@ -15,6 +15,7 @@ public partial class Enemy : CharacterBody3D
 	[Export] PackedScene projectile;
 	[Export] Timer aimingTimer;
 	[Export] Timer shootTimer;
+	[Export] Timer deleteTimer;
 	[Export] PhysicalBoneSimulator3D ragdollSimulator;
 
 	[Export] CollisionShape3D collisionShape;
@@ -221,5 +222,6 @@ public partial class Enemy : CharacterBody3D
 		animPlayer.QueueFree();
 		navAgent.QueueFree();
 		collisionShape.Disabled = true;
+		deleteTimer.Start();
 	}
 }

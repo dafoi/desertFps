@@ -12,6 +12,7 @@ public partial class Croco : CharacterBody3D
     [Export] Area3D detectArea;
     [Export] Area3D attackArea;
     [Export] Timer attackTimer;
+    [Export] Timer deleteTimer;
     [Export] PhysicalBoneSimulator3D ragdollSimulator;
     [Export] CollisionShape3D[] collisionShape;
     [Export] Node3D helperNode;
@@ -171,6 +172,7 @@ public partial class Croco : CharacterBody3D
         detectArea.QueueFree();
         animPlayer.QueueFree();
         navAgent.QueueFree();
+        deleteTimer.Start();
         foreach(var i in collisionShape)
         {
             i.Disabled = true;

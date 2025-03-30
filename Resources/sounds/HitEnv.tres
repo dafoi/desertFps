@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="RandomSound" load_steps=2 format=3 uid="uid://b5rl8rkq0t0od"]
+
+[ext_resource type="Script" uid="uid://x4hrc770hkea" path="res://Resources/sounds/RandomSound.cs" id="1_lugp5"]
+
+[resource]
+script = ExtResource("1_lugp5")
+sounds = null
+metadata/_custom_type_script = "uid://x4hrc770hkea"

@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=4 uid="uid://dmilavgdouvhg"]
+[gd_scene load_steps=39 format=4 uid="uid://dmilavgdouvhg"]
 
 [ext_resource type="Script" uid="uid://cqycv1h84aqfb" path="res://Enemies/Enemy.cs" id="1_b7hsr"]
 [ext_resource type="Resource" uid="uid://cng242cmb88qu" path="res://Resources/enemies/CannonManStats.tres" id="2_aym7q"]
@@ -6,16 +6,18 @@
 [ext_resource type="PackedScene" uid="uid://byupw6he2ky4g" path="res://Enemies/BallProjectile.tscn" id="3_7dqiw"]
 [ext_resource type="PackedScene" uid="uid://byyk5256wud6q" path="res://Assets/Particles/blood_particlesles_blob.tscn" id="5_702vx"]
 [ext_resource type="Texture2D" uid="uid://c30o666y5b1rp" path="res://Assets/Enemies/cannon man_cannonman_ColorMap.jpg" id="6_2nbyp"]
-[ext_resource type="AudioStream" uid="uid://cyrwnrjiawhoo" path="res://Assets/Sounds/HitSound/hitsound.wav" id="7_6eme1"]
+[ext_resource type="Script" uid="uid://bgv3rjrcg25fp" path="res://Enemies/HitSound.cs" id="6_65s4r"]
+[ext_resource type="Resource" uid="uid://d3slkc6konp1d" path="res://Resources/sounds/HitEnemy.tres" id="7_2aema"]
 [ext_resource type="Texture2D" uid="uid://cu4pg6o7hq2ub" path="res://Assets/Enemies/cannon man_cannonman_MetalnessMap-cannonman_RoughnessMap.png" id="7_84jua"]
 [ext_resource type="AudioStream" uid="uid://nd3kff4b76y5" path="res://Enemies/Cannon Sound Effect.mp3" id="8_702vx"]
 [ext_resource type="Texture2D" uid="uid://cbwsakxr0wlxl" path="res://Assets/Enemies/cannon man_cannonman_NormalMap.jpg" id="8_a4wq6"]
+[ext_resource type="Script" uid="uid://bc7rwemrs13q5" path="res://Enemies/DiedSound.cs" id="8_pjsro"]
+[ext_resource type="Resource" uid="uid://kfpw4incsr68" path="res://Resources/sounds/DiedEnemy.tres" id="9_544li"]
 [ext_resource type="Animation" uid="uid://djs0d5uybtjq8" path="res://Assets/Enemies/Idle.res" id="10_65s4r"]
 [ext_resource type="Animation" uid="uid://c1a4t7psegblv" path="res://Assets/Enemies/Run.res" id="11_2aema"]
-[ext_resource type="Script" uid="uid://cbvvo77p6y6b0" path="res://Components/Hitbox.cs" id="11_84jua"]
-[ext_resource type="PackedScene" uid="uid://cxp8pm8asya02" path="res://Particles/BloodParticles.tscn" id="12_a4wq6"]
 [ext_resource type="Animation" uid="uid://dgb1k0kxmld33" path="res://Assets/Enemies/Shoot.res" id="12_pjsro"]
 [ext_resource type="PackedScene" uid="uid://po1qvdauwfgj" path="res://Particles/cannon_ball_particles.tscn" id="14_2nbyp"]
+[ext_resource type="PackedScene" uid="uid://bpg6udum3gkhy" path="res://Components/delete_timer.tscn" id="18_2aema"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_b7hsr"]
 radius = 0.468899
@@ -157,9 +159,6 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_2nbyp"]
-points = PackedVector3Array(-0.201161, 2.21918, -0.256394, 0.293515, 2.27628, 0.788907, 0.275237, 2.35391, 0.791127, -0.278899, 2.09629, 0.776642, -0.177804, 2.50063, 0.756368, 0.194926, 2.21878, -0.323699, 0.145737, 1.9547, 0.73622, 0.0228457, 2.44382, -0.295494, -0.0704902, 2.05113, -0.293697, 0.186187, 2.50069, 0.73622, -0.137354, 1.9547, 0.776642, 0.186934, 2.07334, -0.0819527, -0.21859, 2.33055, -0.105215, 0.22506, 2.34819, -0.102506, 0.287341, 2.09629, 0.715819, -0.278899, 2.37929, 0.73622, -0.0927483, 2.47046, 0.831007, 0.179384, 2.06259, 0.833419, 0.00419128, 1.99512, -0.0883339, -0.109956, 2.39002, -0.322592, -0.160294, 2.07335, -0.136773, -0.0331235, 2.48026, -0.0880804, 0.0427735, 2.2764, -0.407934, 0.247092, 2.21916, -0.107283, -0.226878, 2.14158, 0.826595, 0.0791719, 2.05025, -0.296088, 0.0427097, 2.52708, 0.788941, 0.114586, 2.45864, -0.102548, -0.238488, 2.23782, -0.0882785, -0.160191, 2.42042, -0.0818462, 0.287341, 2.37935, 0.695671, 0.15339, 2.38695, -0.293144)
-
 [sub_resource type="ArrayMesh" id="ArrayMesh_dreqj"]
 resource_name = "cannon man_Icosphere_001"
 _surfaces = [{
@@ -279,7 +278,7 @@ _data = {
 &"Shoot": ExtResource("12_pjsro")
 }
 
-[node name="CannonMan" type="CharacterBody3D" node_paths=PackedStringArray("health", "shootingPoint", "navAgent", "animPlayer", "detectArea", "shootArea", "aimingTimer", "shootTimer", "ragdollSimulator", "collisionShape", "shootSound", "particles_Shoot") groups=["Enemy"]]
+[node name="CannonMan" type="CharacterBody3D" node_paths=PackedStringArray("health", "shootingPoint", "navAgent", "animPlayer", "detectArea", "shootArea", "aimingTimer", "shootTimer", "deleteTimer", "ragdollSimulator", "collisionShape", "shootSound", "particles_Shoot") groups=["Enemy"]]
 slide_on_ceiling = false
 wall_min_slide_angle = 1.35438
 floor_max_angle = 1.54462
@@ -294,6 +293,7 @@ shootArea = NodePath("ShootArea")
 projectile = ExtResource("3_7dqiw")
 aimingTimer = NodePath("AimingTimer")
 shootTimer = NodePath("ShootTimer")
+deleteTimer = NodePath("DeleteTimer")
 ragdollSimulator = NodePath("Visual/cannon man/cannonman/Skeleton3D/PhysicalBoneSimulator3D")
 collisionShape = NodePath("CollisionShape3D")
 shootSound = NodePath("Visual/ShootSound")
@@ -303,7 +303,7 @@ particles_Shoot = NodePath("Visual/CannonBall Particles")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.37005, -0.00615336)
 shape = SubResource("CapsuleShape3D_b7hsr")
 
-[node name="Health" type="Node" parent="." node_paths=PackedStringArray("deleteNodeOnDeath", "bloodPosition", "hitsound")]
+[node name="Health" type="Node" parent="." node_paths=PackedStringArray("deleteNodeOnDeath", "bloodPosition")]
 script = ExtResource("2_b7hsr")
 health = 52.0
 startHealth = 52.0
@@ -312,7 +312,6 @@ deleteParentOnDeath = false
 deleteNodeOnDeath = []
 bloodParticles = ExtResource("5_702vx")
 bloodPosition = NodePath("../Marker3D")
-hitsound = NodePath("../Visual/HitSound")
 metadata/_custom_type_script = "uid://wnhx2ckfxlrk"
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
@@ -347,9 +346,17 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.35083, 0)
 
 [node name="Visual" type="Node3D" parent="."]
 
-[node name="HitSound" type="AudioStreamPlayer3D" parent="Visual"]
-stream = ExtResource("7_6eme1")
+[node name="HitSound" type="AudioStreamPlayer3D" parent="Visual" node_paths=PackedStringArray("healths")]
 volume_db = 10.435
+script = ExtResource("6_65s4r")
+randomSound = ExtResource("7_2aema")
+healths = [NodePath("../../Health")]
+
+[node name="DiedSound" type="AudioStreamPlayer3D" parent="Visual" node_paths=PackedStringArray("healths")]
+volume_db = 10.435
+script = ExtResource("8_pjsro")
+randomSound = ExtResource("9_544li")
+healths = [NodePath("../../Health")]
 
 [node name="ShootSound" type="AudioStreamPlayer3D" parent="Visual"]
 stream = ExtResource("8_702vx")
@@ -460,25 +467,6 @@ lod_bias = 0.5
 mesh = SubResource("ArrayMesh_pb23o")
 skin = SubResource("Skin_rnwtx")
 
-[node name="HeadHitbox" type="Area3D" parent="Visual/cannon man/cannonman/Skeleton3D/Head" node_paths=PackedStringArray("bodyPart")]
-script = ExtResource("11_84jua")
-bodyPart = NodePath("..")
-hitParticles = ExtResource("12_a4wq6")
-metadata/_custom_type_script = "uid://cbvvo77p6y6b0"
-
-[node name="HeadCollision" type="CollisionShape3D" parent="Visual/cannon man/cannonman/Skeleton3D/Head/HeadHitbox"]
-transform = Transform3D(1.035, 0, 0, 0, 1.035, 0, 0, 0, 1.035, 0, -0.06, 0)
-shape = SubResource("ConvexPolygonShape3D_2nbyp")
-disabled = true
-
-[node name="Health" type="Node" parent="Visual/cannon man/cannonman/Skeleton3D/Head/HeadHitbox" node_paths=PackedStringArray("deleteNodeOnDeath")]
-script = ExtResource("2_b7hsr")
-maxHealth = 15.0
-startHealth = 15.0
-restoreHealthOnStart = true
-deleteNodeOnDeath = []
-metadata/_custom_type_script = "uid://wnhx2ckfxlrk"
-
 [node name="Icosphere" type="MeshInstance3D" parent="Visual/cannon man/cannonman/Skeleton3D"]
 cast_shadow = 0
 lod_bias = 0.01
@@ -581,11 +569,11 @@ transform = Transform3D(1, 0, -1.16351e-13, -1.42109e-14, 1, 0, 1.15907e-13, 0, 
 shape = SubResource("CapsuleShape3D_pjsro")
 
 [node name="Thigh L" type="PhysicalBone3D" parent="Visual/cannon man/cannonman/Skeleton3D/PhysicalBoneSimulator3D"]
-transform = Transform3D(0.79607, -0.000212413, -0.079199, 0.0787388, -0.0840148, 0.79167, -0.00852756, -0.795576, -0.0835812, 0.20469, 0.820283, 0.0105458)
+transform = Transform3D(0.79607, -0.000212331, -0.079199, 0.0787388, -0.0840156, 0.79167, -0.00852756, -0.795576, -0.083582, 0.20469, 0.820283, 0.0105458)
 collision_layer = 0
 joint_type = 5
-joint_offset = Transform3D(1, 0, 0, 0, 0.999999, 0, 0, 0, 0.999999, -2.67898e-05, -6.78148e-05, 0.320976)
-body_offset = Transform3D(0.8, 4.47966e-07, -9.16072e-07, -9.14966e-07, 2.6077e-07, -0.8, -4.45172e-07, 0.8, 2.68221e-07, 2.17259e-05, 0.256781, 5.41657e-05)
+joint_offset = Transform3D(1, 0, 0, 0, 0.999999, 0, 0, 0, 0.999999, -2.67843e-05, -6.81526e-05, 0.320976)
+body_offset = Transform3D(0.8, 4.46104e-07, -9.29635e-07, -9.14966e-07, 1.09524e-06, -0.8, -4.45172e-07, 0.8, 1.11014e-06, 2.17259e-05, 0.256781, 5.41657e-05)
 bone_name = "ORG-thigh.L"
 joint_constraints/x/linear_limit_enabled = true
 joint_constraints/x/linear_limit_upper = 0.0
@@ -731,11 +719,11 @@ transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 0, 0)
 shape = SubResource("CapsuleShape3D_544li")
 
 [node name="Spine 1" type="PhysicalBone3D" parent="Visual/cannon man/cannonman/Skeleton3D/PhysicalBoneSimulator3D"]
-transform = Transform3D(0.8, 1.90735e-07, -3.19744e-14, 4.76151e-08, -0.199712, -0.774671, -1.84696e-07, 0.774671, -0.199712, 6.52402e-09, 1.21962, -0.0473737)
+transform = Transform3D(0.8, 1.90735e-07, -3.19744e-14, 4.76151e-08, -0.199712, -0.774671, -1.84696e-07, 0.774671, -0.199712, 7.22495e-09, 1.21962, -0.0473737)
 collision_layer = 0
 joint_type = 5
-joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.15497e-09, -1.95541e-07, 0.124501)
-body_offset = Transform3D(0.8, 8.52651e-14, -1.42109e-14, -1.42109e-14, 5.96046e-08, -0.8, -2.84217e-14, 0.8, 5.96046e-08, 6.52398e-09, 0.0996007, 1.49012e-07)
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.03114e-09, -1.95541e-07, 0.124501)
+body_offset = Transform3D(0.8, 8.52651e-14, -1.42109e-14, -1.42109e-14, 5.96046e-08, -0.8, -2.84217e-14, 0.8, 5.96046e-08, 7.22491e-09, 0.0996007, 1.49012e-07)
 bone_name = "ORG-spine"
 joint_constraints/x/linear_limit_enabled = true
 joint_constraints/x/linear_limit_upper = 0.0
@@ -806,11 +794,11 @@ transform = Transform3D(-4.37114e-08, -1, 0, -4.37114e-08, 1.91069e-15, 1, -1, 4
 shape = SubResource("CapsuleShape3D_a4wq6")
 
 [node name="Spine 2" type="PhysicalBone3D" parent="Visual/cannon man/cannonman/Skeleton3D/PhysicalBoneSimulator3D"]
-transform = Transform3D(0.8, 1.90925e-07, 1.27844e-10, -2.74896e-08, 0.115715, -0.791587, -1.88936e-07, 0.791587, 0.115715, 1.38496e-09, 1.51151, -0.0510052)
+transform = Transform3D(0.8, 1.90925e-07, 1.27844e-10, -2.74896e-08, 0.115715, -0.791587, -1.88936e-07, 0.791587, 0.115715, 1.5602e-09, 1.51151, -0.0510051)
 collision_layer = 0
 joint_type = 5
-joint_offset = Transform3D(1, 0, 0, 0, 0.999999, 0, 0, 0, 0.999999, -1.74903e-09, -9.05928e-05, 0.246882)
-body_offset = Transform3D(0.8, 1.89857e-10, 1.27905e-10, 1.27898e-10, 4.02331e-07, -0.8, -1.898e-10, 0.8, 4.02331e-07, 1.36766e-09, 0.197506, 7.23749e-05)
+joint_offset = Transform3D(1, 0, 0, 0, 0.999999, 0, 0, 0, 0.999999, -1.96806e-09, -9.06115e-05, 0.246883)
+body_offset = Transform3D(0.8, 1.89857e-10, 1.27905e-10, 1.27898e-10, 4.02331e-07, -0.8, -1.898e-10, 0.8, 4.02331e-07, 1.54289e-09, 0.197506, 7.23898e-05)
 bone_name = "ORG-spine.001"
 joint_constraints/x/linear_limit_enabled = true
 joint_constraints/x/linear_limit_upper = 0.0
@@ -881,7 +869,7 @@ transform = Transform3D(-4.37114e-08, -1, 0, -4.37114e-08, 1.91069e-15, 1, -1, 4
 shape = SubResource("CapsuleShape3D_65s4r")
 
 [node name="Spine 3" type="PhysicalBone3D" parent="Visual/cannon man/cannonman/Skeleton3D/PhysicalBoneSimulator3D"]
-transform = Transform3D(0.8, -7.7911e-11, -1.98952e-12, 5.51692e-11, 0.580543, -0.550427, 5.50386e-11, 0.550427, 0.580543, -3.12657e-11, 1.78149, -0.161313)
+transform = Transform3D(0.8, -7.7911e-11, -1.98952e-12, 5.51692e-11, 0.580543, -0.550427, 5.50386e-11, 0.550427, 0.580543, -3.12674e-11, 1.78149, -0.161313)
 collision_layer = 0
 joint_type = 5
 joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.95471e-11, 4.7357e-05, 0.141454)
@@ -966,6 +954,10 @@ blend_times = [&"Idle", &"Shoot", 0.5, &"Shoot", &"Idle", 0.5, &"Shoot", &"Run",
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.08106, -1.57128)
 emitting = false
 one_shot = true
+
+[node name="DeleteTimer" parent="." instance=ExtResource("18_2aema")]
+wait_time = 10.0
+autostart = false
 
 [connection signal="body_entered" from="DetectArea" to="." method="bodyEntered"]
 [connection signal="body_entered" from="ShootArea" to="." method="bodyEntered"]

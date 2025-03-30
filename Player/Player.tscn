@@ -617,6 +617,7 @@ anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("23_ps8ct")
+width = 6
 hit_color = Color(1, 0, 0, 1)
 hit_color_time = 0.2
 shootManager = NodePath("../../Head/Camera3D/WeaponSway/WeaponManager/ShootManager")

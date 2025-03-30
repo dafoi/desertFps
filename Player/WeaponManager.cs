@@ -108,6 +108,7 @@ public partial class WeaponManager : Node3D
 		player.RootNode = wep_paths[wep_have[id]];
 		player.Queue(wep_current.Activate_anim);
 		weapon = wep_current.name;
+		crosshair.target_size = wep_current.crosshairSize;
 
 
 	}
