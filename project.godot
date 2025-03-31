@@ -19,6 +19,10 @@ run/main_scene="uid://dce3wwvm6ov43"
 config/features=PackedStringArray("4.4", "C#", "Forward Plus")
 config/icon="uid://bucdgimkyqc2l"
 
+[autoload]
+
+Settings="*res://Global/Settings.cs"
+
 [display]
 
 window/size/viewport_width=1920
@@ -118,4 +122,8 @@ jolt_physics_3d/simulation/areas_detect_static_bodies=true
 
 [rendering]
 
+lights_and_shadows/directional_shadow/size=2048
+lights_and_shadows/directional_shadow/soft_shadow_filter_quality=1
+lights_and_shadows/positional_shadow/soft_shadow_filter_quality=0
+anti_aliasing/quality/screen_space_aa=1
 occlusion_culling/use_occlusion_culling=true

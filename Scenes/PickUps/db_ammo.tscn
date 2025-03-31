@@ -8,6 +8,11 @@
 [node name="db_Ammo" parent="." instance=ExtResource("1_7bq4x")]
 transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, 0, 0, 0)
 
+[node name="ammobox" parent="db_Ammo" index="0"]
+layers = 2
+
 [node name="ammoPack" parent="db_Ammo" node_paths=PackedStringArray("model") instance=ExtResource("2_k3fpp")]
 model = NodePath("../..")
 amount_of_ammo = 4
+
+[editable path="db_Ammo"]

@@ -34,7 +34,7 @@ public partial class Enemy : CharacterBody3D
 
 	bool aimingTimerStarted = false;
 
-	int navUpdateAfterNumberOfIterations = 12;
+	int navUpdateAfterNumberOfIterations = 20;
 	int iteration = 0;
 	int navAgentUpdateOffset = 0;
 	
@@ -155,7 +155,6 @@ public partial class Enemy : CharacterBody3D
 		ball.GlobalPosition = shootingPoint.GlobalPosition;
 		ball.direction = (targetNode.GlobalPosition - shootingPoint.GlobalPosition).Normalized();
 		GetParent().AddChild(ball);
-		GD.Print($"target : {targetNode.GlobalPosition} ,spawn at: {ball.GlobalPosition},");
 
 	}
 	void applyGravity(double delta)

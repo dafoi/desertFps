@@ -1,9 +1,10 @@
 [gd_scene load_steps=3 format=3 uid="uid://cibpyjfct7rsu"]
 
-[ext_resource type="Script" uid="uid://ban40ht142evj" path="res://Scenes/UI/Settings.cs" id="1_ma1v7"]
-[ext_resource type="Theme" uid="uid://7yd65svu8utm" path="res://Assets/Theme/MyTheme.tres" id="2_p46qs"]
+[ext_resource type="Script" uid="uid://ban40ht142evj" path="res://Scenes/UI/SettingsWindow.cs" id="1_ma1v7"]
+[ext_resource type="Theme" uid="uid://7yd65svu8utm" path="res://Assets/Theme/MyTheme.tres" id="2_ma1v7"]
 
-[node name="Settings" type="Control" node_paths=PackedStringArray("crosshair_button", "crosshair_color")]
+[node name="Settings Window" type="Control" node_paths=PackedStringArray("save", "exit", "ssao", "decals", "volume", "brightness")]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -11,56 +12,141 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ma1v7")
-crosshair_button = NodePath("MarginContainer/Panel/MarginContainer/HBoxContainer/VScrollBar/VBoxContainer/crosshair color")
-crosshair_color = NodePath("MarginContainer/Panel/MarginContainer/HBoxContainer/VScrollBar/VBoxContainer/ColorPicker")
+save = NodePath("MarginContainer/Panel/VBoxContainer/HBoxContainer5/Save")
+exit = NodePath("MarginContainer/Panel/VBoxContainer/HBoxContainer5/Exit")
+ssao = NodePath("MarginContainer/Panel/VBoxContainer/MarginContainer/VScrollBar/VBoxContainer/SSAOBOX/ssao")
+decals = NodePath("MarginContainer/Panel/VBoxContainer/MarginContainer/VScrollBar/VBoxContainer/DECALSBOX/decals")
+volume = NodePath("MarginContainer/Panel/VBoxContainer/MarginContainer/VScrollBar/VBoxContainer/HBoxContainer4/Volume")
+brightness = NodePath("MarginContainer/Panel/VBoxContainer/MarginContainer/VScrollBar/VBoxContainer/HBoxContainer3/Brightness")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
-anchors_preset = 4
+anchors_preset = 8
+anchor_left = 0.5
 anchor_top = 0.5
+anchor_right = 0.5
 anchor_bottom = 0.5
+offset_left = -302.517
 offset_top = -275.078
-offset_right = 605.035
+offset_right = 302.517
 offset_bottom = 275.078
+grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/margin_left = 30
-theme_override_constants/margin_top = 305
+theme_override_constants/margin_left = 0
 
 [node name="Panel" type="Panel" parent="MarginContainer"]
-custom_minimum_size = Vector2(605.035, 550.155)
+custom_minimum_size = Vector2(500, 400)
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 
-[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/Panel"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/Panel"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 8.0
+offset_right = -9.0
+offset_bottom = -16.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/margin_left = 15
-theme_override_constants/margin_top = 15
-theme_override_constants/margin_right = 15
-theme_override_constants/margin_bottom = 15
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/Panel/MarginContainer"]
+[node name="Label" type="Label" parent="MarginContainer/Panel/VBoxContainer"]
 layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("2_ma1v7")
+text = "Settings"
 
-[node name="VScrollBar" type="VScrollBar" parent="MarginContainer/Panel/MarginContainer/HBoxContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/Panel/VBoxContainer"]
 layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 3
+theme_override_constants/margin_left = 30
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/VScrollBar"]
+[node name="VScrollBar" type="VScrollBar" parent="MarginContainer/Panel/VBoxContainer/MarginContainer"]
 layout_mode = 2
-offset_left = 12.0
-offset_right = 575.0
-offset_bottom = 520.0
+size_flags_horizontal = 8
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/Panel/VBoxContainer/MarginContainer/VScrollBar"]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_left = 25.0
+offset_right = 459.0
+grow_vertical = 2
 size_flags_horizontal = 3
 
-[node name="crosshair color" type="Button" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/VScrollBar/VBoxContainer"]
+[node name="SSAOBOX" type="HBoxContainer" parent="MarginContainer/Panel/VBoxContainer/MarginContainer/VScrollBar/VBoxContainer"]
 layout_mode = 2
-theme = ExtResource("2_p46qs")
-theme_override_font_sizes/font_size = 32
-text = "Crosshair color"
+size_flags_horizontal = 0
 
-[node name="ColorPicker" type="ColorPicker" parent="MarginContainer/Panel/MarginContainer/HBoxContainer/VScrollBar/VBoxContainer"]
-visible = false
+[node name="SSAO" type="Label" parent="MarginContainer/Panel/VBoxContainer/MarginContainer/VScrollBar/VBoxContainer/SSAOBOX"]
 layout_mode = 2
+theme = ExtResource("2_ma1v7")
+text = "SSAO"
+
+[node name="ssao" type="CheckButton" parent="MarginContainer/Panel/VBoxContainer/MarginContainer/VScrollBar/VBoxContainer/SSAOBOX"]
+layout_mode = 2
+size_flags_horizontal = 8
+
+[node name="DECALSBOX" type="HBoxContainer" parent="MarginContainer/Panel/VBoxContainer/MarginContainer/VScrollBar/VBoxContainer"]
+layout_mode = 2
+
+[node name="Decals" type="Label" parent="MarginContainer/Panel/VBoxContainer/MarginContainer/VScrollBar/VBoxContainer/DECALSBOX"]
+layout_mode = 2
+theme = ExtResource("2_ma1v7")
+text = "Decals"
+
+[node name="decals" type="CheckButton" parent="MarginContainer/Panel/VBoxContainer/MarginContainer/VScrollBar/VBoxContainer/DECALSBOX"]
+layout_mode = 2
+size_flags_horizontal = 8
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="MarginContainer/Panel/VBoxContainer/MarginContainer/VScrollBar/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/Panel/VBoxContainer/MarginContainer/VScrollBar/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+theme = ExtResource("2_ma1v7")
+text = "Brightness"
+
+[node name="Brightness" type="HSlider" parent="MarginContainer/Panel/VBoxContainer/MarginContainer/VScrollBar/VBoxContainer/HBoxContainer3"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+size_flags_vertical = 4
+max_value = 4.0
+step = 0.01
+value = 1.0
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="MarginContainer/Panel/VBoxContainer/MarginContainer/VScrollBar/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/Panel/VBoxContainer/MarginContainer/VScrollBar/VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+theme = ExtResource("2_ma1v7")
+text = "Volume"
+
+[node name="Volume" type="HSlider" parent="MarginContainer/Panel/VBoxContainer/MarginContainer/VScrollBar/VBoxContainer/HBoxContainer4"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+max_value = 12.0
+value = 1.0
+
+[node name="HBoxContainer5" type="HBoxContainer" parent="MarginContainer/Panel/VBoxContainer"]
+layout_mode = 2
+
+[node name="Save" type="Button" parent="MarginContainer/Panel/VBoxContainer/HBoxContainer5"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("2_ma1v7")
+theme_override_font_sizes/font_size = 46
+text = "Save"
+
+[node name="Exit" type="Button" parent="MarginContainer/Panel/VBoxContainer/HBoxContainer5"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("2_ma1v7")
+theme_override_font_sizes/font_size = 46
+text = "Back"

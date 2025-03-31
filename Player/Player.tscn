@@ -167,6 +167,7 @@ cameraAnimationPlayer = NodePath("Head/Camera3D/CameraEffects")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+layers = 2
 ignore_occlusion_culling = true
 mesh = SubResource("CapsuleMesh_fo8cm")
 
@@ -227,6 +228,15 @@ metadata/_custom_type_script = "uid://bijbu3j0fggge"
 bones/0/position = Vector3(-0.0489671, 0, 0)
 bones/0/rotation = Quaternion(0, 0, 0, 1)
 
+[node name="Barrel" parent="Head/Camera3D/WeaponSway/WeaponManager/db/wep_db/Skeleton3D" index="0"]
+layers = 2
+
+[node name="Handle" parent="Head/Camera3D/WeaponSway/WeaponManager/db/wep_db/Skeleton3D" index="1"]
+layers = 2
+
+[node name="Trigger" parent="Head/Camera3D/WeaponSway/WeaponManager/db/wep_db/Skeleton3D" index="2"]
+layers = 2
+
 [node name="AnimationPlayer" parent="Head/Camera3D/WeaponSway/WeaponManager/db" index="1"]
 autoplay = "Idle"
 
@@ -236,6 +246,15 @@ autoplay = "Idle"
 bones/0/position = Vector3(-1.31433e-08, -0.785608, -0.887985)
 bones/0/rotation = Quaternion(0.179446, 0.462667, 0.36988, 0.785447)
 bones/1/rotation = Quaternion(0.946726, 5.69984e-11, -4.4871e-07, -0.322039)
+
+[node name="base" parent="Head/Camera3D/WeaponSway/WeaponManager/revolver2/revolver/Skeleton3D" index="0"]
+layers = 2
+
+[node name="Hammer" parent="Head/Camera3D/WeaponSway/WeaponManager/revolver2/revolver/Skeleton3D" index="1"]
+layers = 2
+
+[node name="trigger" parent="Head/Camera3D/WeaponSway/WeaponManager/revolver2/revolver/Skeleton3D" index="2"]
+layers = 2
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Head/Camera3D/WeaponSway/WeaponManager"]
 root_node = NodePath("../db")
@@ -478,6 +497,10 @@ bones/260/rotation = Quaternion(-0.987676, 0.118683, -0.0621033, 0.0809557)
 bones/260/scale = Vector3(0.511528, 0.511527, 0.511527)
 bones/262/position = Vector3(1.40099, 0.71294, -0.310161)
 bones/262/rotation = Quaternion(-1.05069e-08, 0.707107, 0.707107, 1.05274e-08)
+
+[node name="Arms" parent="Head/Camera3D/WeaponSway/WeaponManager/arms_Rig/rig/Skeleton3D" index="0"]
+layers = 2
+cast_shadow = 0
 
 [node name="shootRay" type="RayCast3D" parent="Head/Camera3D"]
 transform = Transform3D(0.999649, 0, 0.026491, 0, 1, 0, -0.026491, 0, 0.999649, 0, 0, 3.57628e-07)

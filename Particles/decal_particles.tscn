@@ -34,6 +34,7 @@ material = SubResource("StandardMaterial3D_5348d")
 size = Vector2(2, 2)
 
 [node name="DecalParticles" type="GPUParticles3D"]
+amount = 1
 lifetime = 2.0
 explosiveness = 0.89
 process_material = SubResource("ParticleProcessMaterial_84be7")

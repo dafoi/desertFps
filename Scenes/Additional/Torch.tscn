@@ -88,10 +88,8 @@ mesh = SubResource("BoxMesh_ttt6x")
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.13987, -1.09098)
 light_color = Color(0.877705, 0.678333, 0.529731, 1)
-light_energy = 10.067
-light_volumetric_fog_energy = 2.158
-shadow_enabled = true
-omni_range = 20.0
+light_energy = 10.0
+omni_range = 12.683
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="."]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0.611386, -0.24439)

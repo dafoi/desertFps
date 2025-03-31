@@ -8,9 +8,29 @@ public partial class Decals : Node3D
     [Export] int max_amount = 20;
     [Export] PackedScene decal;
     [Export] float time;
+    public bool decalsEnabled = true;
     public override void _Ready()
     {
         createTimer();
+        Settings.Instance.SettingsChanged += update;
+    }
+    void update(SettingsRes res)
+    {
+        decalsEnabled = res.decals;
+        if(decalsEnabled)
+        {
+            createTimer();
+        }
+        else
+        {
+            var nodes = GetChildren();
+            foreach(var node in nodes) 
+            {
+                node.QueueFree();
+            }
+        }
+        
+        
     }
     public void onTimeOut()
     {
@@ -19,7 +39,7 @@ public partial class Decals : Node3D
     }
     public void createTimer()
     {
-
+        if (!decalsEnabled) return;
         GetTree().CreateTimer(time).Timeout += onTimeOut;
 
     }
@@ -36,6 +56,10 @@ public partial class Decals : Node3D
     }
     public void place(Vector3 collisionPoint, Vector3 normal)
     {
+        if (!decalsEnabled)
+        {
+            return;
+        }
         var decalInstance = decal.Instantiate() as Decal;
         Quaternion quat = new Quaternion(Vector3.Up, normal);
         Basis basis = new Basis(quat);

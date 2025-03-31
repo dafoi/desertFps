@@ -9,7 +9,12 @@
 [node name="revolver_ap2" parent="." instance=ExtResource("1_hrxc2")]
 transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, 0, 0, 0)
 
+[node name="revolver_ap" parent="revolver_ap2" index="0"]
+layers = 2
+
 [node name="ammoPack" parent="revolver_ap2" node_paths=PackedStringArray("model") instance=ExtResource("2_0yhwl")]
 weapon_resource = ExtResource("3_c2ux4")
 model = NodePath("../..")
 amount_of_ammo = 4
+
+[editable path="revolver_ap2"]

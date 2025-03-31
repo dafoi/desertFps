@@ -5,6 +5,7 @@ public partial class PuHp : Area3D
 {
     [Export] Node3D node;
     [Export] playerResource pr;
+    [Signal] public delegate void PickedUpEventHandler();
     [Export] int hp;
     public override void _Ready()
     {
@@ -22,6 +23,7 @@ public partial class PuHp : Area3D
         if(body is player p)
         {
             p.playerResource.hp += hp;
+            EmitSignal(SignalName.PickedUp);
             QueueFree();
         }
 

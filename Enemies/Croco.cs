@@ -26,7 +26,7 @@ public partial class Croco : CharacterBody3D
 
     bool aimingTimerStarted = false;
 
-    int navUpdateAfterNumberOfIterations = 12;
+    int navUpdateAfterNumberOfIterations = 20;
     int iteration = 0;
     int navAgentUpdateOffset = 0;
 
@@ -43,7 +43,8 @@ public partial class Croco : CharacterBody3D
     public override void _Ready()
 
     {
-        health.hit += gotHit;
+
+        health.hit += gotHit; 
         health.died += onDeath;
         attackTimer.Timeout += attack;
 
@@ -72,7 +73,7 @@ public partial class Croco : CharacterBody3D
     }
     public override void _PhysicsProcess(double delta)
     {
-        LookAt(nextPosition,Vector3.Up);
+        LookAt(targetNode.GlobalPosition,Vector3.Up);
         var rot = Rotation; rot.X = 0; Rotation = rot;
 
         applyGravity(delta);

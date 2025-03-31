@@ -1,8 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://dysqv3hkow335"]
+[gd_scene load_steps=6 format=3 uid="uid://dysqv3hkow335"]
 
 [ext_resource type="Script" uid="uid://euwm4wfalmks" path="res://PuHp.cs" id="1_pge5k"]
 [ext_resource type="PackedScene" uid="uid://bkukhcdf5n5s1" path="res://Assets/PickUpAble/pu_hp.glb" id="2_d5x33"]
 [ext_resource type="Resource" uid="uid://hx8itknwgcsq" path="res://Resources/player/default_player.tres" id="2_l2qc5"]
+[ext_resource type="AudioStream" uid="uid://tp24gshw4k5f" path="res://Assets/Sounds/Pickups/Retro Instrument - crystal - C00.wav" id="4_l2qc5"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_d5x33"]
+height = 1.10229
+radius = 0.80957
 
 [node name="pu_hp" type="Area3D" node_paths=PackedStringArray("node")]
 script = ExtResource("1_pge5k")
@@ -13,4 +18,11 @@ hp = 10
 [node name="pu_hp" parent="." instance=ExtResource("2_d5x33")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 
-[node name="Area3D" type="Area3D" parent="."]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.17688, 0)
+shape = SubResource("CylinderShape3D_d5x33")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_l2qc5")
+
+[connection signal="PickedUp" from="." to="AudioStreamPlayer" method="play"]

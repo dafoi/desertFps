@@ -3,6 +3,22 @@
   "WorkspaceRootPath": "C:\\Users\\Ruslan\\Desktop\\game\\desertFps\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{4B0AA5FA-1904-44AA-AA06-EF9FD12E2C34}|fps.csproj|C:\\Users\\Ruslan\\Desktop\\game\\desertFps\\scenes\\ui\\settingswindow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4B0AA5FA-1904-44AA-AA06-EF9FD12E2C34}|fps.csproj|solutionrelative:scenes\\ui\\settingswindow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4B0AA5FA-1904-44AA-AA06-EF9FD12E2C34}|fps.csproj|C:\\Users\\Ruslan\\Desktop\\game\\desertFps\\Scenes\\WorldEnvironment\\WE.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4B0AA5FA-1904-44AA-AA06-EF9FD12E2C34}|fps.csproj|solutionrelative:Scenes\\WorldEnvironment\\WE.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4B0AA5FA-1904-44AA-AA06-EF9FD12E2C34}|fps.csproj|C:\\Users\\Ruslan\\Desktop\\game\\desertFps\\global\\settings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4B0AA5FA-1904-44AA-AA06-EF9FD12E2C34}|fps.csproj|solutionrelative:global\\settings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4B0AA5FA-1904-44AA-AA06-EF9FD12E2C34}|fps.csproj|C:\\Users\\Ruslan\\Desktop\\game\\desertFps\\components\\shootmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4B0AA5FA-1904-44AA-AA06-EF9FD12E2C34}|fps.csproj|solutionrelative:components\\shootmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{4B0AA5FA-1904-44AA-AA06-EF9FD12E2C34}|fps.csproj|C:\\Users\\Ruslan\\Desktop\\game\\desertFps\\enemies\\croco.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4B0AA5FA-1904-44AA-AA06-EF9FD12E2C34}|fps.csproj|solutionrelative:enemies\\croco.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -11,36 +27,32 @@
       "RelativeMoniker": "D:0:0:{4B0AA5FA-1904-44AA-AA06-EF9FD12E2C34}|fps.csproj|solutionrelative:enemies\\enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4B0AA5FA-1904-44AA-AA06-EF9FD12E2C34}|fps.csproj|C:\\Users\\Ruslan\\Desktop\\game\\desertFps\\player\\weaponmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4B0AA5FA-1904-44AA-AA06-EF9FD12E2C34}|fps.csproj|solutionrelative:player\\weaponmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4B0AA5FA-1904-44AA-AA06-EF9FD12E2C34}|fps.csproj|c:\\users\\ruslan\\desktop\\game\\desertfps\\puhp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4B0AA5FA-1904-44AA-AA06-EF9FD12E2C34}|fps.csproj|solutionrelative:puhp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4B0AA5FA-1904-44AA-AA06-EF9FD12E2C34}|fps.csproj|C:\\Users\\Ruslan\\Desktop\\game\\desertFps\\components\\shootmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4B0AA5FA-1904-44AA-AA06-EF9FD12E2C34}|fps.csproj|solutionrelative:components\\shootmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Ruslan\\Desktop\\game\\desertFps\\PauseMenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:PauseMenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4B0AA5FA-1904-44AA-AA06-EF9FD12E2C34}|fps.csproj|c:\\users\\ruslan\\desktop\\game\\desertfps\\player\\dynamiccrosshair.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4B0AA5FA-1904-44AA-AA06-EF9FD12E2C34}|fps.csproj|solutionrelative:player\\dynamiccrosshair.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4B0AA5FA-1904-44AA-AA06-EF9FD12E2C34}|fps.csproj|c:\\users\\ruslan\\desktop\\game\\desertfps\\decals.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4B0AA5FA-1904-44AA-AA06-EF9FD12E2C34}|fps.csproj|solutionrelative:decals.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Ruslan\\Desktop\\game\\desertFps\\Enemies\\HitSound.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Enemies\\HitSound.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Ruslan\\Desktop\\game\\desertFps\\Resources\\sounds\\RandomSound.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Resources\\sounds\\RandomSound.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Ruslan\\Desktop\\game\\desertFps\\Enemies\\DiedSound.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Enemies\\DiedSound.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Ruslan\\Desktop\\game\\desertFps\\Decals.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Decals.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4B0AA5FA-1904-44AA-AA06-EF9FD12E2C34}|fps.csproj|C:\\Users\\Ruslan\\Desktop\\game\\desertFps\\Enemies\\DiedSound.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4B0AA5FA-1904-44AA-AA06-EF9FD12E2C34}|fps.csproj|solutionrelative:Enemies\\DiedSound.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{4B0AA5FA-1904-44AA-AA06-EF9FD12E2C34}|fps.csproj|C:\\Users\\Ruslan\\Desktop\\game\\desertFps\\components\\health.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4B0AA5FA-1904-44AA-AA06-EF9FD12E2C34}|fps.csproj|solutionrelative:components\\health.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4B0AA5FA-1904-44AA-AA06-EF9FD12E2C34}|fps.csproj|C:\\Users\\Ruslan\\Desktop\\game\\desertFps\\player\\weaponmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4B0AA5FA-1904-44AA-AA06-EF9FD12E2C34}|fps.csproj|solutionrelative:player\\weaponmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4B0AA5FA-1904-44AA-AA06-EF9FD12E2C34}|fps.csproj|C:\\Users\\Ruslan\\Desktop\\game\\desertFps\\player\\dynamiccrosshair.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4B0AA5FA-1904-44AA-AA06-EF9FD12E2C34}|fps.csproj|solutionrelative:player\\dynamiccrosshair.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{4B0AA5FA-1904-44AA-AA06-EF9FD12E2C34}|fps.csproj|C:\\Users\\Ruslan\\Desktop\\game\\desertFps\\components\\spawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -53,6 +65,14 @@
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Ruslan\\Desktop\\game\\desertFps\\again.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:again.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4B0AA5FA-1904-44AA-AA06-EF9FD12E2C34}|fps.csproj|C:\\Users\\Ruslan\\Desktop\\game\\desertFps\\Enemies\\HitSound.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4B0AA5FA-1904-44AA-AA06-EF9FD12E2C34}|fps.csproj|solutionrelative:Enemies\\HitSound.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4B0AA5FA-1904-44AA-AA06-EF9FD12E2C34}|fps.csproj|C:\\Users\\Ruslan\\Desktop\\game\\desertFps\\Resources\\sounds\\RandomSound.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4B0AA5FA-1904-44AA-AA06-EF9FD12E2C34}|fps.csproj|solutionrelative:Resources\\sounds\\RandomSound.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -62,11 +82,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 15,
+          "SelectedChildIndex": 10,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 13,
               "Title": "Spawner.cs",
               "DocumentMoniker": "C:\\Users\\Ruslan\\Desktop\\game\\desertFps\\Components\\Spawner.cs",
               "RelativeDocumentMoniker": "Components\\Spawner.cs",
@@ -75,12 +95,11 @@
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-27T09:43:48.773Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "Health.cs",
               "DocumentMoniker": "C:\\Users\\Ruslan\\Desktop\\game\\desertFps\\Components\\Health.cs",
               "RelativeDocumentMoniker": "Components\\Health.cs",
@@ -89,7 +108,32 @@
               "ViewState": "AQIAAD8AAAAAAAAAAAAowEYAAAACAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-17T19:09:08.74Z",
-              "IsPinned": true,
+              "IsPinned": true
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "PuHp.cs",
+              "DocumentMoniker": "C:\\Users\\Ruslan\\Desktop\\game\\desertFps\\PuHp.cs",
+              "RelativeDocumentMoniker": "PuHp.cs",
+              "ToolTip": "C:\\Users\\Ruslan\\Desktop\\game\\desertFps\\PuHp.cs",
+              "RelativeToolTip": "PuHp.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABkAAAAqAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-31T16:14:28.487Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "PauseMenu.cs",
+              "DocumentMoniker": "C:\\Users\\Ruslan\\Desktop\\game\\desertFps\\PauseMenu.cs",
+              "RelativeDocumentMoniker": "PauseMenu.cs",
+              "ToolTip": "C:\\Users\\Ruslan\\Desktop\\game\\desertFps\\PauseMenu.cs",
+              "RelativeToolTip": "PauseMenu.cs",
+              "ViewState": "AQIAABUAAAAAAAAAAAAowDAAAAAqAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-31T14:49:28.612Z",
               "EditorCaption": ""
             },
             {
@@ -118,20 +162,59 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "SettingsWindow.cs",
+              "DocumentMoniker": "C:\\Users\\Ruslan\\Desktop\\game\\desertFps\\Scenes\\UI\\SettingsWindow.cs",
+              "RelativeDocumentMoniker": "Scenes\\UI\\SettingsWindow.cs",
+              "ToolTip": "C:\\Users\\Ruslan\\Desktop\\game\\desertFps\\Scenes\\UI\\SettingsWindow.cs",
+              "RelativeToolTip": "Scenes\\UI\\SettingsWindow.cs",
+              "ViewState": "AQIAABMAAAAAAAAAAAApwCQAAAAnAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-31T12:14:21.01Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 8,
               "Title": "Decals.cs",
               "DocumentMoniker": "C:\\Users\\Ruslan\\Desktop\\game\\desertFps\\Decals.cs",
               "RelativeDocumentMoniker": "Decals.cs",
               "ToolTip": "C:\\Users\\Ruslan\\Desktop\\game\\desertFps\\Decals.cs",
               "RelativeToolTip": "Decals.cs",
-              "ViewState": "AQIAAA8AAAAAAAAAAAAowCoAAAAgAAAA",
+              "ViewState": "AQIAAAUAAAAAAAAAAAAxwA4AAAA0AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-30T10:13:09.137Z",
+              "WhenOpened": "2025-03-31T11:58:05.685Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 1,
+              "Title": "WE.cs",
+              "DocumentMoniker": "C:\\Users\\Ruslan\\Desktop\\game\\desertFps\\Scenes\\WorldEnvironment\\WE.cs",
+              "RelativeDocumentMoniker": "Scenes\\WorldEnvironment\\WE.cs",
+              "ToolTip": "C:\\Users\\Ruslan\\Desktop\\game\\desertFps\\Scenes\\WorldEnvironment\\WE.cs",
+              "RelativeToolTip": "Scenes\\WorldEnvironment\\WE.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-31T11:54:33.346Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Settings.cs",
+              "DocumentMoniker": "C:\\Users\\Ruslan\\Desktop\\game\\desertFps\\Global\\Settings.cs",
+              "RelativeDocumentMoniker": "Global\\Settings.cs",
+              "ToolTip": "C:\\Users\\Ruslan\\Desktop\\game\\desertFps\\Global\\Settings.cs",
+              "RelativeToolTip": "Global\\Settings.cs",
+              "ViewState": "AQIAABEAAAAAAAAAAAAwwCMAAAA7AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-31T10:27:00.373Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
               "Title": "DiedSound.cs",
               "DocumentMoniker": "C:\\Users\\Ruslan\\Desktop\\game\\desertFps\\Enemies\\DiedSound.cs",
               "RelativeDocumentMoniker": "Enemies\\DiedSound.cs",
@@ -139,12 +222,11 @@
               "RelativeToolTip": "Enemies\\DiedSound.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAgAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-30T10:00:28.03Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-30T10:00:28.03Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 16,
               "Title": "HitSound.cs",
               "DocumentMoniker": "C:\\Users\\Ruslan\\Desktop\\game\\desertFps\\Enemies\\HitSound.cs",
               "RelativeDocumentMoniker": "Enemies\\HitSound.cs",
@@ -152,12 +234,11 @@
               "RelativeToolTip": "Enemies\\HitSound.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAAxAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-30T09:57:21.518Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-30T09:57:21.518Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 17,
               "Title": "RandomSound.cs",
               "DocumentMoniker": "C:\\Users\\Ruslan\\Desktop\\game\\desertFps\\Resources\\sounds\\RandomSound.cs",
               "RelativeDocumentMoniker": "Resources\\sounds\\RandomSound.cs",
@@ -165,12 +246,11 @@
               "RelativeToolTip": "Resources\\sounds\\RandomSound.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAArAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-30T09:12:36.93Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-30T09:12:36.93Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 12,
               "Title": "DynamicCrosshair.cs",
               "DocumentMoniker": "C:\\Users\\Ruslan\\Desktop\\game\\desertFps\\Player\\DynamicCrosshair.cs",
               "RelativeDocumentMoniker": "Player\\DynamicCrosshair.cs",
@@ -178,12 +258,11 @@
               "RelativeToolTip": "Player\\DynamicCrosshair.cs",
               "ViewState": "AQIAABUAAAAAAAAAAAAowBsAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-29T19:25:53.627Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-29T19:25:53.627Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 14,
               "Title": "BallProjectile.cs",
               "DocumentMoniker": "C:\\Users\\Ruslan\\Desktop\\game\\desertFps\\Enemies\\BallProjectile.cs",
               "RelativeDocumentMoniker": "Enemies\\BallProjectile.cs",
@@ -195,7 +274,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 15,
               "Title": "again.cs",
               "DocumentMoniker": "C:\\Users\\Ruslan\\Desktop\\game\\desertFps\\again.cs",
               "RelativeDocumentMoniker": "again.cs",
@@ -207,13 +286,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 4,
               "Title": "Croco.cs",
               "DocumentMoniker": "C:\\Users\\Ruslan\\Desktop\\game\\desertFps\\Enemies\\Croco.cs",
               "RelativeDocumentMoniker": "Enemies\\Croco.cs",
               "ToolTip": "C:\\Users\\Ruslan\\Desktop\\game\\desertFps\\Enemies\\Croco.cs",
               "RelativeToolTip": "Enemies\\Croco.cs",
-              "ViewState": "AQIAAJIAAAAAAAAAAAAAAK4AAAAcAAAA",
+              "ViewState": "AQIAABoAAAAAAAAAAAAQwC4AAAAeAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-26T09:06:39.683Z",
               "EditorCaption": ""
@@ -233,7 +312,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 11,
               "Title": "WeaponManager.cs",
               "DocumentMoniker": "C:\\Users\\Ruslan\\Desktop\\game\\desertFps\\Player\\WeaponManager.cs",
               "RelativeDocumentMoniker": "Player\\WeaponManager.cs",
@@ -241,18 +320,17 @@
               "RelativeToolTip": "Player\\WeaponManager.cs",
               "ViewState": "AQIAAFgAAAAAAAAAAAAgwG4AAAA0AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-15T20:40:54.316Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-15T20:40:54.316Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 5,
               "Title": "Enemy.cs",
               "DocumentMoniker": "C:\\Users\\Ruslan\\Desktop\\game\\desertFps\\Enemies\\Enemy.cs",
               "RelativeDocumentMoniker": "Enemies\\Enemy.cs",
               "ToolTip": "C:\\Users\\Ruslan\\Desktop\\game\\desertFps\\Enemies\\Enemy.cs",
               "RelativeToolTip": "Enemies\\Enemy.cs",
-              "ViewState": "AQIAAMUAAAAAAAAAAADwv+AAAAAWAAAA",
+              "ViewState": "AQIAAIUAAAAAAAAAAAAcwEQAAABFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-24T16:41:40.303Z",
               "EditorCaption": ""

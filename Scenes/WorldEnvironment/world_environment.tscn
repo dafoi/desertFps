@@ -1,0 +1,25 @@
+[gd_scene load_steps=6 format=3 uid="uid://dj4h5t54kmjou"]
+
+[ext_resource type="Texture2D" uid="uid://c0o6567u18j1i" path="res://Assets/Map/Skybox/sky_linekotsi_18.png" id="1_h0766"]
+[ext_resource type="Script" uid="uid://c6l7haroty5cc" path="res://Scenes/WorldEnvironment/WE.cs" id="2_nif36"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_42xju"]
+panorama = ExtResource("1_h0766")
+
+[sub_resource type="Sky" id="Sky_i2t4f"]
+sky_material = SubResource("PanoramaSkyMaterial_42xju")
+
+[sub_resource type="Environment" id="Environment_f2txt"]
+background_mode = 2
+sky = SubResource("Sky_i2t4f")
+ambient_light_source = 3
+tonemap_mode = 3
+fog_enabled = true
+fog_mode = 1
+fog_density = 1.0
+volumetric_fog_density = 0.02
+volumetric_fog_albedo = Color(0.668387, 0.56226, 0.423017, 1)
+
+[node name="WorldEnvironment" type="WorldEnvironment"]
+environment = SubResource("Environment_f2txt")
+script = ExtResource("2_nif36")
