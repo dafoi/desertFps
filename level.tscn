@@ -614,7 +614,7 @@ data = PackedVector3Array(-1.85022, 1.30863, -1.00706, 0, 0, 1.00706, 0, 0, -1.0
 [node name="Level" type="Node3D"]
 
 [node name="Player" parent="." instance=ExtResource("1_oi3di")]
-transform = Transform3D(-0.0772063, 0, -0.997015, 0, 1, 0, 0.997015, 0, -0.0772063, 1.38813, 2.27567, 0.0244775)
+transform = Transform3D(-0.0772063, 0, -0.997015, 0, 1, 0, 0.997015, 0, -0.0772063, 0.139519, 2.00001, -0.0138863)
 can_die = true
 
 [node name="WorldEnvironment" parent="." instance=ExtResource("13_v7sqt")]
@@ -852,33 +852,8 @@ pr = null
 [node name="CannonMan15" parent="Map" instance=ExtResource("3_f2txt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.4975, 13.9572, -15.2277)
 
-[node name="Croco4" parent="Map" node_paths=PackedStringArray("collisionShape") instance=ExtResource("18_ait7k")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.506, 2.96641, -76.1938)
-collisionShape = []
-pr = null
-
-[node name="Croco5" parent="Map" node_paths=PackedStringArray("collisionShape") instance=ExtResource("18_ait7k")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.0085, 2.97489, -70.8806)
-collisionShape = []
-pr = null
-
-[node name="Croco6" parent="Map" node_paths=PackedStringArray("collisionShape") instance=ExtResource("18_ait7k")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.0987, 2.98009, -67.0116)
-collisionShape = []
-pr = null
-
-[node name="Croco7" parent="Map" node_paths=PackedStringArray("collisionShape") instance=ExtResource("18_ait7k")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.3474, 2.98529, -64.0033)
-collisionShape = []
-pr = null
-
 [node name="Croco8" parent="Map" node_paths=PackedStringArray("collisionShape") instance=ExtResource("18_ait7k")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.0468, 2.95535, -82.8608)
-collisionShape = []
-pr = null
-
-[node name="Croco9" parent="Map" node_paths=PackedStringArray("collisionShape") instance=ExtResource("18_ait7k")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34.3223, 2.99285, -58.923)
 collisionShape = []
 pr = null
 
@@ -900,24 +875,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 110.642, 9.38337, -0.975782)
 [node name="revolver_ammo16" parent="Map" instance=ExtResource("5_1ainy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 110.423, 9.38337, 1.962)
 
-[node name="Croco10" parent="Map" instance=ExtResource("18_ait7k")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.8632, -1.96294, -9.11094)
-pr = null
-
-[node name="Croco11" parent="Map" instance=ExtResource("18_ait7k")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.8507, -1.96294, 10.0974)
-pr = null
-
-[node name="Croco12" parent="Map" instance=ExtResource("18_ait7k")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 100.666, 9.10337, -3.62096)
-pr = null
-
-[node name="Croco13" parent="Map" instance=ExtResource("18_ait7k")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 123.49, 9.10337, 4.47632)
-pr = null
-
-[node name="Croco14" parent="Map" instance=ExtResource("18_ait7k")]
+[node name="Croco14" parent="Map" node_paths=PackedStringArray("collisionShape") instance=ExtResource("18_ait7k")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 134.972, 9.10337, -3.31673)
+collisionShape = []
 pr = null
 
 [node name="revolver_ammo17" parent="Map" instance=ExtResource("5_1ainy")]
@@ -1279,3 +1239,141 @@ text = "Exit"
 process_mode = 3
 layout_mode = 1
 pauseMenu = NodePath("../PauseMenu")
+
+[node name="Croco" parent="." instance=ExtResource("18_ait7k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 121.553, 16.5063, -8.15458)
+
+[node name="Croco2" parent="." instance=ExtResource("18_ait7k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 121.876, 16.1901, 11.3369)
+
+[node name="Croco3" parent="." instance=ExtResource("18_ait7k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.6896, 20.1524, -95.5008)
+
+[node name="Croco4" parent="." instance=ExtResource("18_ait7k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.7847, 20.1741, -95.0845)
+
+[node name="Croco5" parent="." instance=ExtResource("18_ait7k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.885, 20.1966, -94.6791)
+
+[node name="Croco6" parent="." instance=ExtResource("18_ait7k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.9619, 20.1198, -94.023)
+
+[node name="Croco7" parent="." instance=ExtResource("18_ait7k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.1925, 20.1198, -93.8408)
+
+[node name="Croco8" parent="." instance=ExtResource("18_ait7k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.5935, 20.1198, -94.3158)
+
+[node name="CannonMan" parent="." instance=ExtResource("3_f2txt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.60159, 27.9871, -90.9308)
+
+[node name="CannonMan2" parent="." instance=ExtResource("3_f2txt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.20015, 27.9871, -89.5946)
+
+[node name="CannonMan3" parent="." instance=ExtResource("3_f2txt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.61846, 27.9871, -89.5181)
+
+[node name="Croco9" parent="." instance=ExtResource("18_ait7k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.51221, 27.9871, -86.9944)
+
+[node name="Croco10" parent="." instance=ExtResource("18_ait7k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 41.4994, -0.962938, 7.3628)
+
+[node name="Croco11" parent="." instance=ExtResource("18_ait7k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.6747, -0.962938, 5.27956)
+
+[node name="Croco12" parent="." instance=ExtResource("18_ait7k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.1992, -0.962937, -0.402507)
+
+[node name="CannonMan4" parent="." instance=ExtResource("3_f2txt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.4179, -0.962938, -1.7889)
+
+[node name="CannonMan5" parent="." instance=ExtResource("3_f2txt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.0478, -0.962938, 3.94979)
+
+[node name="CannonMan6" parent="." instance=ExtResource("3_f2txt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.1641, -0.962938, -2.68768)
+
+[node name="Croco13" parent="." instance=ExtResource("18_ait7k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.3999, 3.98185, -67.2705)
+
+[node name="Croco14" parent="." instance=ExtResource("18_ait7k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.9523, 3.98117, -67.4281)
+
+[node name="Croco15" parent="." instance=ExtResource("18_ait7k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.9895, 3.98298, -66.3022)
+
+[node name="Croco16" parent="." instance=ExtResource("18_ait7k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.5902, 3.96739, -75.707)
+
+[node name="Croco17" parent="." instance=ExtResource("18_ait7k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34.7152, 3.98048, -67.6061)
+
+[node name="Croco18" parent="." instance=ExtResource("18_ait7k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.527, -0.962938, -0.988788)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+autoplay = true
+
+[node name="pu_hp" parent="." instance=ExtResource("19_ait7k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54.7273, 0.450493, -0.139788)
+
+[node name="pu_hp2" parent="." instance=ExtResource("19_ait7k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 58.2707, 0.450493, -0.114537)
+
+[node name="pu_hp3" parent="." instance=ExtResource("19_ait7k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 130.398, 9.55385, -1.80313)
+
+[node name="pu_hp4" parent="." instance=ExtResource("19_ait7k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 131.367, 9.55385, 1.62528)
+
+[node name="CannonMan7" parent="." instance=ExtResource("3_f2txt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 102.095, 16.5249, -3.7116)
+
+[node name="CannonMan8" parent="." instance=ExtResource("3_f2txt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 96.9954, 16.5255, -4.30327)
+
+[node name="CannonMan9" parent="." instance=ExtResource("3_f2txt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 100.298, 16.5251, -1.78081)
+
+[node name="CannonMan10" parent="." instance=ExtResource("3_f2txt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 97.409, 16.5255, -1.49227)
+
+[node name="CannonMan11" parent="." instance=ExtResource("3_f2txt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 89.9497, 14.1623, 3.16052)
+
+[node name="CannonMan12" parent="." instance=ExtResource("3_f2txt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 88.8227, 14.1623, -0.740327)
+
+[node name="CannonMan13" parent="." instance=ExtResource("3_f2txt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 86.4467, 14.1623, -3.13685)
+
+[node name="CannonMan14" parent="." instance=ExtResource("3_f2txt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 106.421, 16.5243, 1.26765)
+
+[node name="Croco19" parent="." instance=ExtResource("18_ait7k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 107.326, 16.5242, -3.62676)
+
+[node name="Croco20" parent="." instance=ExtResource("18_ait7k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 104.463, 16.5245, -1.4539)
+
+[node name="Croco21" parent="." instance=ExtResource("18_ait7k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 110.797, 16.5237, -0.694789)
+
+[node name="Croco22" parent="." instance=ExtResource("18_ait7k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 124.11, 10.1034, 3.77357)
+
+[node name="Croco23" parent="." instance=ExtResource("18_ait7k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 121.785, 10.1034, -2.3515)
+
+[node name="Croco24" parent="." instance=ExtResource("18_ait7k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 113.546, 10.1034, -4.21479)
+
+[node name="Croco25" parent="." instance=ExtResource("18_ait7k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 101.251, 10.1034, -3.82261)
+
+[node name="Croco26" parent="." instance=ExtResource("18_ait7k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.4439, 9.83231, -33.2125)
+
+[node name="Croco27" parent="." instance=ExtResource("18_ait7k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.2695, 7.65412, -56.125)
