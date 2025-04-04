@@ -94,7 +94,7 @@ height = 1.00835
 size = Vector3(1.66321, 2.57782, 2.5719)
 
 [sub_resource type="BoxOccluder3D" id="BoxOccluder3D_dirdj"]
-size = Vector3(1, 3.04969, 2.86543)
+size = Vector3(1, 3.04969, 1.26292)
 
 [node name="Croco" type="CharacterBody3D" node_paths=PackedStringArray("health", "navAgent", "animPlayer", "detectArea", "attackArea", "attackTimer", "deleteTimer", "ragdollSimulator", "collisionShape", "helperNode") groups=["Enemy"]]
 script = ExtResource("1_hvbjc")
@@ -220,11 +220,11 @@ lod_bias = 0.05
 [node name="PhysicalBoneSimulator3D" type="PhysicalBoneSimulator3D" parent="Visual/crocodile/Croco rig/Skeleton3D" index="6"]
 
 [node name="Physical Bone Root_001" type="PhysicalBone3D" parent="Visual/crocodile/Croco rig/Skeleton3D/PhysicalBoneSimulator3D"]
-transform = Transform3D(-0.137077, 1.84434, -0.761317, 0.0160106, -0.76207, -1.84905, -1.99523, -0.132826, 0.0374667, -0.403376, 0.034692, 0.0253847)
+transform = Transform3D(-0.137077, 1.84434, -0.761316, 0.0160106, -0.762069, -1.84905, -1.99523, -0.132826, 0.0374666, -0.403376, 0.034692, 0.0253847)
 collision_layer = 0
 joint_type = 5
-joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000411886, 0.0022781, 0.143961)
-body_offset = Transform3D(-0.121129, 1.8453, -0.761711, -2.57973e-06, 0.763111, 1.84869, 1.99633, 0.111966, -0.0462151, 0.105403, -0.267878, 0.00722036)
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000411886, 0.00227803, 0.143961)
+body_offset = Transform3D(-0.121129, 1.8453, -0.76171, -2.57973e-06, 0.76311, 1.84869, 1.99633, 0.111966, -0.046215, 0.105403, -0.267878, 0.00722036)
 bone_name = "Root.001"
 joint_constraints/x/linear_limit_enabled = true
 joint_constraints/x/linear_limit_upper = 0.0
@@ -295,11 +295,11 @@ transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 0, 0)
 shape = SubResource("CapsuleShape3D_8a0u3")
 
 [node name="Physical Bone Root" type="PhysicalBone3D" parent="Visual/crocodile/Croco rig/Skeleton3D/PhysicalBoneSimulator3D"]
-transform = Transform3D(1.64619, -0.295888, -1.09659, -1.0793, 0.193994, -1.67257, 0.353813, 1.96846, -1.33954e-07, -0.0228355, 0.698801, 0.0208721)
+transform = Transform3D(1.64619, -0.295888, -1.09659, -1.0793, 0.193994, -1.67257, 0.353813, 1.96846, -1.4862e-07, -0.0228355, 0.698801, 0.0208721)
 collision_layer = 0
 joint_type = 5
-joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.13994e-06, 7.67409e-07, 0.249999)
-body_offset = Transform3D(2, 1.19209e-07, -5.36442e-07, -6.55651e-07, -4.32134e-07, -2, -5.96046e-08, 2, -4.17233e-07, -2.14577e-06, 0.499998, -1.43051e-06)
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.13994e-06, 7.69272e-07, 0.249999)
+body_offset = Transform3D(2, 1.3411e-07, -5.36442e-07, -6.55651e-07, -4.47035e-07, -2, -5.96046e-08, 2, -4.32134e-07, -2.14577e-06, 0.499998, -1.43051e-06)
 bone_name = "Root"
 joint_constraints/x/linear_limit_enabled = true
 joint_constraints/x/linear_limit_upper = 0.0
@@ -539,11 +539,11 @@ transform = Transform3D(0.869799, -0.493029, -0.0192728, 0.418784, 0.758343, -0.
 shape = SubResource("CapsuleShape3D_i2l6c")
 
 [node name="Physical Bone Neck" type="PhysicalBone3D" parent="Visual/crocodile/Croco rig/Skeleton3D/PhysicalBoneSimulator3D"]
-transform = Transform3D(1.91937, -0.0774447, -0.556794, -0.556342, 0.0224478, -1.92093, 0.0806324, 1.99837, -4.7599e-08, 0.434854, 2.10979, 0.00111377)
+transform = Transform3D(1.91937, -0.0774447, -0.556794, -0.556342, 0.0224478, -1.92093, 0.0806324, 1.99837, -4.57379e-08, 0.434854, 2.10979, 0.00111377)
 collision_layer = 0
 joint_type = 5
-joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.57888e-06, 3.41269e-06, 0.170296)
-body_offset = Transform3D(2, -3.44217e-06, -1.43051e-06, -7.15256e-07, -6.33299e-08, -2, 2.89083e-06, 2, -2.66358e-07, -6.91414e-06, 0.340592, -6.78003e-06)
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.57888e-06, 3.41253e-06, 0.170296)
+body_offset = Transform3D(2, -3.44217e-06, -1.43051e-06, -7.15256e-07, -6.14673e-08, -2, 2.89083e-06, 2, -2.64496e-07, -6.91414e-06, 0.340592, -6.78003e-06)
 bone_name = "Neck"
 joint_constraints/x/linear_limit_enabled = true
 joint_constraints/x/linear_limit_upper = 0.0
@@ -731,7 +731,7 @@ transform = Transform3D(-2, 2.26151e-07, -8.48656e-08, 2.26151e-07, 2, -2.82168e
 collision_layer = 0
 joint_type = 5
 joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.68566e-09, 1.75213e-08, 0.131114)
-body_offset = Transform3D(2, 8.73968e-11, 8.67283e-08, 8.48656e-08, -2.35602e-07, -2, -1.27898e-13, 2, -2.67267e-07, 0, 0.262229, 0)
+body_offset = Transform3D(2, 8.7411e-11, 8.67283e-08, 8.48656e-08, -2.35602e-07, -2, -1.42109e-13, 2, -2.67267e-07, 0, 0.262229, 0)
 bone_name = "Leg 3.R"
 joint_constraints/x/linear_limit_enabled = true
 joint_constraints/x/linear_limit_upper = 0.0
@@ -802,11 +802,11 @@ transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 0, 0)
 shape = SubResource("CapsuleShape3D_dirdj")
 
 [node name="Physical Bone Leg 3_R_001" type="PhysicalBone3D" parent="Visual/crocodile/Croco rig/Skeleton3D/PhysicalBoneSimulator3D"]
-transform = Transform3D(1.99173, 0.00804918, -0.181532, 0.18153, 0.000748083, 1.99174, 0.00808385, -1.99998, 1.44044e-05, -0.466534, -1.65367, 0.542556)
+transform = Transform3D(1.99173, 0.00804918, -0.181532, 0.18153, 0.000748083, 1.99174, 0.00808385, -1.99998, 1.44045e-05, -0.466534, -1.65367, 0.542556)
 collision_layer = 0
 joint_type = 5
 joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.4875e-05, -0.00275855, 0.232641)
-body_offset = Transform3D(2, -0.000173233, -0.000172615, -0.000172555, -1.36801e-05, -2, 0.000173249, 2, -1.34945e-05, -3.00705e-05, 0.465282, 0.00552022)
+body_offset = Transform3D(2, -0.000173233, -0.000172615, -0.000172555, -1.36802e-05, -2, 0.00017325, 2, -1.34946e-05, -3.00705e-05, 0.465282, 0.00552022)
 bone_name = "Leg 3.R.001"
 joint_constraints/x/linear_limit_enabled = true
 joint_constraints/x/linear_limit_upper = 0.0
@@ -881,7 +881,7 @@ transform = Transform3D(2, -1.16408e-10, -4.53485e-07, 1.16418e-10, 2, 4.32073e-
 collision_layer = 0
 joint_type = 5
 joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.01196e-08, -1.85567e-09, 0.131114)
-body_offset = Transform3D(2, -5.82006e-11, -4.4976e-07, -4.4976e-07, -1.49621e-09, -2, -6.59195e-16, 2, 2.83061e-08, 1.19209e-07, 0.262229, 0)
+body_offset = Transform3D(2, -5.82006e-11, -4.4976e-07, -4.4976e-07, -1.49621e-09, -2, -6.8695e-16, 2, 2.83061e-08, 1.19209e-07, 0.262229, 0)
 bone_name = "Leg 3.L"
 joint_constraints/x/linear_limit_enabled = true
 joint_constraints/x/linear_limit_upper = 0.0
@@ -1102,11 +1102,11 @@ transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 0, 0)
 shape = SubResource("CapsuleShape3D_qtven")
 
 [node name="Physical Bone Root_003" type="PhysicalBone3D" parent="Visual/crocodile/Croco rig/Skeleton3D/PhysicalBoneSimulator3D"]
-transform = Transform3D(-1.284e-07, -0.340631, 1.97078, 1.19307e-07, 1.97078, 0.340631, -2, 1.39432e-07, -1.06204e-07, -1.72562, -1.29312, 0.0195561)
+transform = Transform3D(-1.284e-07, -0.340631, 1.97078, 1.19452e-07, 1.97078, 0.340631, -2, 1.39575e-07, -1.0618e-07, -1.72562, -1.29312, 0.0194175)
 collision_layer = 0
 joint_type = 5
-joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00587077, -1.11594e-06, 0.201675)
-body_offset = Transform3D(2, -6.44587e-08, -4.95399e-08, 6.36116e-09, 1.40071e-06, -2, 4.87329e-09, 2, 1.60933e-06, 0.0117415, 0.40335, 1.90735e-06)
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00594004, -1.11594e-06, 0.201675)
+body_offset = Transform3D(2, -6.46016e-08, -4.95646e-08, 6.33648e-09, 1.40071e-06, -2, 5.01612e-09, 2, 1.60933e-06, 0.0118801, 0.40335, 1.90735e-06)
 bone_name = "Root.003"
 joint_constraints/x/linear_limit_enabled = true
 joint_constraints/x/linear_limit_upper = 0.0
@@ -1177,11 +1177,11 @@ transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 0, 0)
 shape = SubResource("CapsuleShape3D_rp1vd")
 
 [node name="Physical Bone Root_004" type="PhysicalBone3D" parent="Visual/crocodile/Croco rig/Skeleton3D/PhysicalBoneSimulator3D"]
-transform = Transform3D(-5.68366e-08, -0.535287, 1.92704, -1.37972e-08, 1.92704, 0.535287, -2, 1.91813e-09, -5.84559e-08, -2.60885, -1.49676, 0.0270079)
+transform = Transform3D(-5.68366e-08, -0.535287, 1.92704, -1.37972e-08, 1.92704, 0.535287, -2, 1.91813e-09, -5.84559e-08, -2.60885, -1.49676, 0.0268693)
 collision_layer = 0
 joint_type = 5
-joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00214487, -1.63291e-07, 0.252085)
-body_offset = Transform3D(2, -5.37185e-08, -4.99563e-08, 1.16032e-08, -7.7486e-07, -2, -9.27258e-13, 2, -5.96046e-07, 0.00428976, 0.504171, 4.76837e-07)
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00221418, -1.63291e-07, 0.252085)
+body_offset = Transform3D(2, -5.37185e-08, -4.99563e-08, 1.16032e-08, -7.7486e-07, -2, -9.27258e-13, 2, -5.96046e-07, 0.00442837, 0.504171, 4.76837e-07)
 bone_name = "Root.004"
 joint_constraints/x/linear_limit_enabled = true
 joint_constraints/x/linear_limit_upper = 0.0
@@ -1279,7 +1279,7 @@ autostart = false
 enable_node_path = NodePath("../Visual/crocodile/AnimationPlayer")
 
 [node name="OccluderInstance3D" type="OccluderInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.97678, 0.270879)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.97678, 0.00824133)
 occluder = SubResource("BoxOccluder3D_dirdj")
 
 [connection signal="died" from="Health" to="." method="onDeath"]

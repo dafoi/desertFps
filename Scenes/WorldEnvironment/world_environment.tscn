@@ -17,6 +17,8 @@ tonemap_mode = 3
 fog_enabled = true
 fog_mode = 1
 fog_density = 1.0
+fog_depth_begin = 85.2
+fog_depth_end = 205.5
 volumetric_fog_density = 0.02
 volumetric_fog_albedo = Color(0.668387, 0.56226, 0.423017, 1)
 

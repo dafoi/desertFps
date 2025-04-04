@@ -57,7 +57,6 @@ script = ExtResource("1_i4222")
 attackArea = NodePath("AttackArea")
 playerRes = ExtResource("2_t1vi8")
 speed = 50.0
-damage = 25.0
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("SphereMesh_uiefj")

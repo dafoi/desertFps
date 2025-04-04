@@ -1278,6 +1278,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.51221, 27.9871, -86.9944)
 
 [node name="Croco10" parent="." instance=ExtResource("18_ait7k")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 41.4994, -0.962938, 7.3628)
+visible = false
 
 [node name="Croco11" parent="." instance=ExtResource("18_ait7k")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.6747, -0.962938, 5.27956)
@@ -1313,6 +1314,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34.7152, 3.98048, -67.6061)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.527, -0.962938, -0.988788)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+volume_db = 8.805
+pitch_scale = 1.31
 autoplay = true
 
 [node name="pu_hp" parent="." instance=ExtResource("19_ait7k")]
