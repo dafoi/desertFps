@@ -65,12 +65,16 @@ public partial class WeaponManager : Node3D
 				exit();
 
 			}
-			if (Input.IsActionJustPressed("reload") && wep_current.ammo!= wep_current.mag_size)
+			if (Input.IsActionJustPressed("reload") && wep_current.ammo != wep_current.mag_size && wep_current.reserve_ammo > 0) 
 			{
 				wep_current.reload();
 				isReloading = true;
 				can_switch = false;
-				reloadTimer.Start();
+				//reloadTimer.Start();
+				rig_player.Play(wep_current.r_Reload_anim);
+				player.Play(wep_current.Reload_anim);
+				rig_player.SpeedScale = wep_current.Reload_speed;
+				player.SpeedScale = wep_current.Reload_speed;
 			}
 		}
 		last_id = id;
@@ -169,6 +173,13 @@ public partial class WeaponManager : Node3D
 			isShooting = false;
 
 		}
+		if(name == wep_current.Reload_anim)
+		{
+            can_switch = true;
+            isReloading = false;
+            player.SpeedScale = 1f;
+            rig_player.SpeedScale = 1f;
+        }
 	}
 	void updatePath()
 	{

@@ -32,6 +32,7 @@ public partial class Wep : Resource
     [Export] public float Activate_speed = 1f;
     [Export] public float Deactivate_speed = 1f;
     [Export] public float Shoot_speed = 1f;
+    [Export] public float Reload_speed = 1f;
     [ExportGroup("ShootingParams")]
     [Export] public float damage = 10f;
     [Export] public int amountOfBullets = 1;
