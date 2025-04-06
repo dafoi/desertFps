@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dqohd0gwpmbbr"]
+[gd_scene load_steps=19 format=4 uid="uid://dqohd0gwpmbbr"]
 
 [ext_resource type="Script" uid="uid://cmnnx6xfirnca" path="res://Playground.cs" id="1_is3ju"]
 [ext_resource type="Material" uid="uid://bpuou5s8cd5yw" path="res://Assets/Map/env/Sand.tres" id="1_wt17y"]
@@ -6,6 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://dmilavgdouvhg" path="res://Enemies/cannon_man.tscn" id="3_m8u5f"]
 [ext_resource type="PackedScene" uid="uid://bd5jkuduwu87l" path="res://Enemies/croco.tscn" id="5_o00ia"]
 [ext_resource type="PackedScene" uid="uid://opgee7kmyigj" path="res://Scenes/test/hitboxtest.tscn" id="6_4bqqs"]
+[ext_resource type="Material" uid="uid://14sx7hpqfifd" path="res://Assets/Materials/sandstone.tres" id="7_v7dth"]
+[ext_resource type="Material" uid="uid://t0ok1ts650mv" path="res://Assets/Materials/Shaders/water_basic.tres" id="8_v7dth"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_is3ju"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -29,6 +31,29 @@ size = Vector2(400, 400)
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_m8u5f"]
 data = PackedVector3Array(200, 0, 200, -200, 0, 200, 200, 0, -200, -200, 0, 200, -200, 0, -200, 200, 0, -200)
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_v7dth"]
+_surfaces = [{
+"aabb": AABB(-2.29761, -0.128174, -0.914978, 4.59521, 0.256348, 1.82996),
+"attribute_data": PackedByteArray("AAAAAAAAAAAAAAAAAACAPwAAgD8AAIA/eGcdPd7ziTwAAIA/AAAAAAAAAAAAAAAAeGcdPd7ziTwAAAAAAAAAAHhnHT1hsHs/iCl2P97ziTwAAIA/AAAAAHhnHT3e84k8AAAAAAAAAAAAAAAAAACAPwAAgD8AAIA/iCl2P97ziTwAAIA/AACAPwAAgD8AAAAAAAAAAAAAAAAAAAAAAACAPwAAgD8AAIA/AACAPwAAAAAAAAAAAAAAAAAAgD8AAIA/AAAAAAAAAAAAAAAAAACAPwAAgD8AAIA/AACAPwAAgD8AAIA/AAAAAAAAAAAAAAAAeGcdPWGwez8AAAAAAAAAAAAAAAAAAIA/AACAPwAAAAAAAAAAAAAAAAAAgD8AAIA/eGcdPWGwez8AAAAAAACAP4gpdj9hsHs/AAAAAAAAAAAAAAAAAACAPwAAgD8AAIA/iCl2P2Gwez8AAIA/AACAP4gpdj/e84k8iCl2P2Gwez8AAAAAAACAPwAAgD8AAIA/AAAAAAAAAAAAAIA/AACAPwAAgD8AAAAAAAAAAAAAAAAAAIA/AACAPwAAgD8AAAAAAAAAAAAAgD8AAIA/pj+TPgAAgD8AAIA/AACAPwAAgD+mP5M+AACAP6Y/kz4AAAAAAACAPwAAgD8AAAAAAACAPwAAAAAAAAAAAACAPwAAAAAAAAAALWA2PwAAAAAAAAAAAAAAAC1gNj8AAIA/AAAAAAAAgD8tYDY/pj+TPgAAAAAAAIA/AAAAAAAAgD8AAIA/AACAPwAAgD+mP5M+AACAP6Y/kz4AAAAAAACAPwAAAAAAAIA/AACAPwAAAAAAAAAAAACAP6Y/kz4AAAAAAACAPwAAAACmP5M+pj+TPgAAAAAAAIA/AAAAAAAAgD8AAIA/"),
+"format": 34359738391,
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 84,
+"vertex_data": PackedByteArray("AAwTwABAA74APGo/AAwTQABAA74APGo/AAwTQABAA74APGq/KBgOQABAAz5RO1g/AAwTQABAAz4APGq/AAwTQABAAz4APGo/KBgOQABAAz5RO1g/AAwTQABAAz4APGo/KBgOwABAAz5RO1g/KBgOQABAAz5RO1i/AAwTQABAAz4APGq/KBgOQABAAz5RO1g/AAwTQABAAz4APGo/AAwTQABAAz4APGq/AAwTQABAA74APGq/KBgOQABAAz5RO1i/AAwTwABAAz4APGq/AAwTQABAAz4APGq/AAwTQABAA74APGq/AAwTQABAAz4APGq/AAwTwABAAz4APGq/AAwTQABAA74APGo/AAwTQABAAz4APGo/AAwTQABAA74APGq/AAwTQABAAz4APGo/AAwTQABAA74APGo/AAwTwABAA74APGo/AAwTwABAA74APGo/AAwTwABAA74APGq/AAwTwABAAz4APGq/KBgOwABAAz5RO1g/AAwTQABAAz4APGo/AAwTwABAAz4APGo/AAwTwABAAz4APGo/AAwTQABAAz4APGo/AAwTwABAA74APGo/KBgOwABAAz5RO1g/AAwTwABAAz4APGo/KBgOwABAAz5RO1i/AAwTwABAAz4APGq/AAwTwABAAz4APGo/AAwTwABAA74APGo/KBgOwABAAz5RO1i/AAwTwABAAz4APGq/KBgOQABAAz5RO1i/KBgOwABAAz5RO1i/AAwTwABAAz4APGo/AAwTwABAAz4APGq/AAwTQABAA74APGq/AAwTwABAAz4APGq/AAwTwABAA74APGq/AAwTwABAA74APGo/AAwTQABAA74APGq/AAwTwABAA74APGq/KBgOQHgGX71RO1g/KBgOwABAAz5RO1g/KBgOwHgGX71RO1g/KBgOwHgGX71RO1g/KBgOwABAAz5RO1g/KBgOwABAAz5RO1i/KBgOQHgGX71RO1i/KBgOQHgGX71RO1g/KBgOwHgGX71RO1g/KBgOwHgGX71RO1i/KBgOQABAAz5RO1i/KBgOQHgGX71RO1i/KBgOQABAAz5RO1i/KBgOwHgGX71RO1i/KBgOwABAAz5RO1i/KBgOwABAAz5RO1i/KBgOwHgGX71RO1i/KBgOwHgGX71RO1g/KBgOQHgGX71RO1i/KBgOQABAAz5RO1i/KBgOQABAAz5RO1g/KBgOwHgGX71RO1i/KBgOQHgGX71RO1i/KBgOwHgGX71RO1g/KBgOwABAAz5RO1g/KBgOQHgGX71RO1g/KBgOQABAAz5RO1g/KBgOQABAAz5RO1g/KBgOQHgGX71RO1g/KBgOQHgGX71RO1i//38AAP//AAD/fwAA//8AAP9/AAD//wAA/3//////AAD/f/////8AAP9///8AAAAA/3//////AAD/f///AAAAAP9///8AAAAA/3//////AAD/f/////8AAP9//////wAA////f/9//n////9//3/+f////3//f/5//3//////AAD/f/////8AAP9//////wAA/////wAA/z//////AAD/P/////8AAP8/////f/9//n////9//3/+f////3//f/5//3//fwAA/z//f/9/AAD/P/9//38AAP8/AAD/f/9//n8AAP9//3/+fwAA/3//f/5//3///wAAAAD/f///AAAAAP9///8AAAAA/3//fwAA/z//f/9/AAD/P/9//38AAP8//3///wAAAAD/f///AAAAAP9//////wAAAAD/f/9//n8AAP9//3/+fwAA/3//f/5//3//////AAD/f/////8AAP9//////wAA/3//////AAD/f///AAAAAP9//////wAA/////wAA/z//////AAD/P/////8AAP8//38AAP//AAD/fwAA//8AAP9/AAD//wAA/////wAA/7//////AAD/v/////8AAP+/////f/9/AID///9//38AgP///3//fwCA/3//////////f/////////9//////////3//fwAA/7//f/9/AAD/v/9//38AAP+//3//fwAA/7//f/9/AAD/v/9//38AAP+/////f/9/AID///9//38AgP///3//fwCAAAD/f/9/AIAAAP9//38AgAAA/3//fwCA/3//////////f/////////9//////////////wAA/7//////AAD/v/////8AAP+/AAD/f/9/AIAAAP9//38AgAAA/3//fwCA")
+}]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_pi42a"]
+material = ExtResource("8_v7dth")
+size = Vector2(4.945, 1.99)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_pi42a"]
+data = PackedVector3Array(-2.2976, -0.1282, 0.915, 2.2976, -0.1282, 0.915, 2.2976, -0.1282, -0.915, 2.2202, 0.1282, 0.8447, 2.2976, 0.1282, -0.915, 2.2976, 0.1282, 0.915, 2.2202, 0.1282, 0.8447, 2.2976, 0.1282, 0.915, -2.2202, 0.1282, 0.8447, 2.2202, 0.1282, -0.8447, 2.2976, 0.1282, -0.915, 2.2202, 0.1282, 0.8447, 2.2976, 0.1282, 0.915, 2.2976, 0.1282, -0.915, 2.2976, -0.1282, -0.915, 2.2202, 0.1282, -0.8447, -2.2976, 0.1282, -0.915, 2.2976, 0.1282, -0.915, 2.2976, -0.1282, -0.915, 2.2976, 0.1282, -0.915, -2.2976, 0.1282, -0.915, 2.2976, -0.1282, 0.915, 2.2976, 0.1282, 0.915, 2.2976, -0.1282, -0.915, 2.2976, 0.1282, 0.915, 2.2976, -0.1282, 0.915, -2.2976, -0.1282, 0.915, -2.2976, -0.1282, 0.915, -2.2976, -0.1282, -0.915, -2.2976, 0.1282, -0.915, -2.2202, 0.1282, 0.8447, 2.2976, 0.1282, 0.915, -2.2976, 0.1282, 0.915, -2.2976, 0.1282, 0.915, 2.2976, 0.1282, 0.915, -2.2976, -0.1282, 0.915, -2.2202, 0.1282, 0.8447, -2.2976, 0.1282, 0.915, -2.2202, 0.1282, -0.8447, -2.2976, 0.1282, -0.915, -2.2976, 0.1282, 0.915, -2.2976, -0.1282, 0.915, -2.2202, 0.1282, -0.8447, -2.2976, 0.1282, -0.915, 2.2202, 0.1282, -0.8447, -2.2202, 0.1282, -0.8447, -2.2976, 0.1282, 0.915, -2.2976, 0.1282, -0.915, 2.2976, -0.1282, -0.915, -2.2976, 0.1282, -0.915, -2.2976, -0.1282, -0.915, -2.2976, -0.1282, 0.915, 2.2976, -0.1282, -0.915, -2.2976, -0.1282, -0.915, 2.2202, -0.0544, 0.8447, -2.2202, 0.1282, 0.8447, -2.2202, -0.0544, 0.8447, -2.2202, -0.0544, 0.8447, -2.2202, 0.1282, 0.8447, -2.2202, 0.1282, -0.8447, 2.2202, -0.0544, -0.8447, 2.2202, -0.0544, 0.8447, -2.2202, -0.0544, 0.8447, -2.2202, -0.0544, -0.8447, 2.2202, 0.1282, -0.8447, 2.2202, -0.0544, -0.8447, 2.2202, 0.1282, -0.8447, -2.2202, -0.0544, -0.8447, -2.2202, 0.1282, -0.8447, -2.2202, 0.1282, -0.8447, -2.2202, -0.0544, -0.8447, -2.2202, -0.0544, 0.8447, 2.2202, -0.0544, -0.8447, 2.2202, 0.1282, -0.8447, 2.2202, 0.1282, 0.8447, -2.2202, -0.0544, -0.8447, 2.2202, -0.0544, -0.8447, -2.2202, -0.0544, 0.8447, -2.2202, 0.1282, 0.8447, 2.2202, -0.0544, 0.8447, 2.2202, 0.1282, 0.8447, 2.2202, 0.1282, 0.8447, 2.2202, -0.0544, 0.8447, 2.2202, -0.0544, -0.8447)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_4bqqs"]
+material = ExtResource("8_v7dth")
+subdivide_width = 16
+subdivide_depth = 16
 
 [node name="Playground" type="Node3D"]
 script = ExtResource("1_is3ju")
@@ -115,3 +140,79 @@ NodePath("Leg 2/Area3D"): 4,
 NodePath("Arm/Area3D"): 2,
 NodePath("Arm 2/Area3D"): 1
 }
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="."]
+transform = Transform3D(6.4876, 0, 0, 0, 6.4876, 0, 0, 0, 6.4876, 3.80557, 2.66251, 11.8441)
+material_override = ExtResource("7_v7dth")
+use_collision = true
+size = Vector3(0.5625, 0.820801, 1)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="."]
+transform = Transform3D(6.4876, 0, 0, 0, 6.4876, 0, 0, 0, 6.4876, 7.00938, 2.21665, 11.8441)
+material_override = ExtResource("7_v7dth")
+use_collision = true
+size = Vector3(0.5625, 0.68335, 1)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="."]
+transform = Transform3D(6.4876, 0, 0, 0, 6.4876, 0, 0, 0, 6.4876, 10.7829, 1.54587, 11.8441)
+material_override = ExtResource("7_v7dth")
+use_collision = true
+size = Vector3(0.5625, 0.476563, 1)
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="."]
+transform = Transform3D(6.4876, 0, 0, 0, 6.4876, 0, 0, 0, 6.4876, -3.64036, 0.502092, 32.4409)
+material_override = ExtResource("7_v7dth")
+use_collision = true
+size = Vector3(5.23718, 0.154785, 1)
+
+[node name="CSGBakedMeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(6.4876, 0, 0, 0, 6.4876, 0, 0, 0, 6.4876, -2.29841, 0.83154, 41.8671)
+mesh = SubResource("ArrayMesh_v7dth")
+surface_material_override/0 = ExtResource("7_v7dth")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CSGBakedMeshInstance3D"]
+transform = Transform3D(0.904972, 0, 0, 0, 0.904972, 0, 0, 0, 0.904972, 0, 0.0658961, 0)
+mesh = SubResource("PlaneMesh_pi42a")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="CSGBakedMeshInstance3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CSGBakedMeshInstance3D/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_pi42a")
+
+[node name="CSGBakedMeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(6.4876, 0, 0, 0, 6.4876, 0, 0, 0, 6.4876, -2.29841, 0.83154, 24.0972)
+mesh = SubResource("ArrayMesh_v7dth")
+surface_material_override/0 = ExtResource("7_v7dth")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CSGBakedMeshInstance3D2"]
+transform = Transform3D(0.904972, 0, 0, 0, 0.904972, 0, 0, 0, 0.904972, 0, 0.0658961, 0)
+mesh = SubResource("PlaneMesh_pi42a")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="CSGBakedMeshInstance3D2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CSGBakedMeshInstance3D2/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_pi42a")
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="."]
+transform = Transform3D(6.4876, 0, 0, 0, 6.4876, 0, 0, 0, 6.4876, 14.3767, 0.810554, 11.8441)
+material_override = ExtResource("7_v7dth")
+use_collision = true
+size = Vector3(0.5625, 0.249878, 1)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(6.4876, 0, 0, 0, 6.4876, 0, 0, 0, 6.4876, -1.07845, 2.38941, 12.2761)
+material_override = ExtResource("7_v7dth")
+operation = 1
+use_collision = true
+size = Vector3(1, 1.1889, 1)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="CSGBox3D"]
+transform = Transform3D(0.774121, 0, 0, 0, 0.774121, 0, 0, 0, 0.774121, 0, 0.334768, 0)
+operation = 2
+size = Vector3(1, 1.02032, 1)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CSGBox3D"]
+transform = Transform3D(0.471085, 0, 0, 0, 0.471085, 0, 0, 0, 0.471085, 0, 0.416616, 0)
+mesh = SubResource("PlaneMesh_4bqqs")
