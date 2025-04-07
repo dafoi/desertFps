@@ -48,7 +48,8 @@ public partial class Enemy : CharacterBody3D
 		Shooting,
 		Ragdoll
 	}
-	public S st = S.Idle;
+	public S st = S.Running;
+	
 	public override void _Ready()
 
 	{

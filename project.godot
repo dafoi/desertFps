@@ -46,6 +46,7 @@ Player=""
 SceneManager=""
 Enemy=""
 Decals=""
+Enemies=""
 
 [input]
 

@@ -5,6 +5,7 @@ using System.Runtime.CompilerServices;
 
 public partial class WeaponManager : Node3D
 {
+	[Signal] public delegate void playerShotEventHandler();
 	[Export] player gamer;
 	[Export] ShootManager shootManager;
 	[Export] Timer reloadTimer;
@@ -13,6 +14,7 @@ public partial class WeaponManager : Node3D
 	[Export] Godot.Collections.Dictionary<string, Wep> wep_resources;
 	[Export] Godot.Collections.Dictionary<string, string> wep_paths;
 	[Export] string[] wep_have;
+	
 	[Export] DynamicCrosshair crosshair;
 	[ExportGroup("Labels")]
 	[Export] Label label;
@@ -96,6 +98,7 @@ public partial class WeaponManager : Node3D
 				can_switch = false;
 				wep_current.ammo--;
 				shootManager.shoot(wep_current.damage, wep_current.amountOfBullets, wep_current.accuracy);
+				EmitSignal(SignalName.playerShot);
 
 			}
 		}

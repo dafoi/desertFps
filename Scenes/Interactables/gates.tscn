@@ -1,0 +1,207 @@
+[gd_scene load_steps=11 format=3 uid="uid://csqdtou1ata6v"]
+
+[ext_resource type="Script" uid="uid://bcdn06o3aoa5s" path="res://Scenes/Interactables/Gates.cs" id="1_14oor"]
+[ext_resource type="Texture2D" uid="uid://bq280b2ntnpag" path="res://Assets/Materials/sandstone_albedo.png" id="1_toqul"]
+[ext_resource type="Texture2D" uid="uid://dqwlcwthqubn" path="res://Assets/Materials/sandstone_normal.png" id="2_14oor"]
+
+[sub_resource type="Animation" id="Animation_jlnck"]
+resource_name = "close"
+length = 0.7
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Wall2:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1.601, -0.25, 0, 0.25, 0, 0.502912, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0.0333333, 0.633333)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Wall2:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0.738, -0.25, 0, 0.25, 0, 0.738496, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0.0423447, 0.633333)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Wall2:position:z")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0.0423447, 0.633333)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("WAll1:position:x")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(-1.612, -0.25, 0, 0.25, 0, -0.496263, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0.0423447, 0.633333)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("WAll1:position:y")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0.738, -0.25, 0, 0.25, 0, 0.738496, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0.0423447, 0.633333)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("WAll1:position:z")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0.0423447, 0.633333)
+}
+
+[sub_resource type="Animation" id="Animation_14oor"]
+resource_name = "open"
+length = 0.7
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Wall2:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0.502912, -0.25, 0, 0.25, 0, 1.601, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.633333)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Wall2:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0.738496, -0.25, 0, 0.25, 0, 0.738, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.642345)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Wall2:position:z")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.642345)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("WAll1:position:x")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(-0.496263, -0.25, 0, 0.25, 0, -1.612, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.642345)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("WAll1:position:y")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0.738496, -0.25, 0, 0.25, 0, 0.738, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.642345)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("WAll1:position:z")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.642345)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_o6occ"]
+_data = {
+&"close": SubResource("Animation_jlnck"),
+&"open": SubResource("Animation_14oor")
+}
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_14oor"]
+data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
+
+[sub_resource type="ORMMaterial3D" id="ORMMaterial3D_1abs7"]
+albedo_texture = ExtResource("1_toqul")
+normal_enabled = true
+normal_texture = ExtResource("2_14oor")
+uv1_scale = Vector3(6.095, 6.095, 6.095)
+uv1_world_triplanar = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_yclxh"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_1abs7"]
+data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
+
+[node name="Gates" type="Node3D" node_paths=PackedStringArray("triggers", "animationPlayer")]
+script = ExtResource("1_14oor")
+closed = false
+triggers = []
+dict = Dictionary[String, int]({
+"close": 0,
+"open": 1
+})
+animationPlayer = NodePath("AnimationPlayer")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_o6occ")
+}
+
+[node name="WAll1" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.496263, 0.738496, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WAll1"]
+transform = Transform3D(1, 0, 0, 0, 1.44869, 0, 0, 0, 0.347305, 0, 0, 0)
+shape = SubResource("ConcavePolygonShape3D_14oor")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="WAll1"]
+transform = Transform3D(1, 0, 0, 0, 1.44869, 0, 0, 0, 0.347305, 0, 0, 0)
+material_override = SubResource("ORMMaterial3D_1abs7")
+mesh = SubResource("BoxMesh_yclxh")
+skeleton = NodePath("../..")
+
+[node name="Wall2" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.502912, 0.738496, 0)
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Wall2"]
+transform = Transform3D(1, 0, 0, 0, 1.44869, 0, 0, 0, 0.347305, 0, 0, 0)
+shape = SubResource("ConcavePolygonShape3D_1abs7")
+
+[node name="d" type="MeshInstance3D" parent="Wall2"]
+transform = Transform3D(1, 0, 0, 0, 1.44869, 0, 0, 0, 0.347305, 0, 0, 0)
+material_override = SubResource("ORMMaterial3D_1abs7")
+mesh = SubResource("BoxMesh_yclxh")
+skeleton = NodePath("../..")
