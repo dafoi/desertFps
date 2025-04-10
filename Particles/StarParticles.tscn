@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://s5ayo3ik36jm"]
+
+[ext_resource type="Material" uid="uid://xupwdvr1jpdy" path="res://Assets/Materials/star.tres" id="1_yg1n3"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_n54t1"]
+angle_min = -45.0
+angle_max = 45.0
+spread = 180.0
+gravity = Vector3(0, 0, 0)
+
+[sub_resource type="QuadMesh" id="QuadMesh_g4jhc"]
+material = ExtResource("1_yg1n3")
+size = Vector2(2, 2)
+
+[node name="StarParticles" type="GPUParticles3D"]
+amount = 2
+lifetime = 0.2
+interpolate = false
+local_coords = true
+process_material = SubResource("ParticleProcessMaterial_n54t1")
+draw_pass_1 = SubResource("QuadMesh_g4jhc")

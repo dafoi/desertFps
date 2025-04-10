@@ -1,0 +1,110 @@
+[gd_scene load_steps=11 format=3 uid="uid://cm57uq5xepesh"]
+
+[ext_resource type="PackedScene" uid="uid://ldk1pvpyog3x" path="res://Assets/Buidlings/Buidling1.gltf" id="1_s6hle"]
+[ext_resource type="PackedScene" uid="uid://csqdtou1ata6v" path="res://Scenes/Interactables/gates.tscn" id="2_sih4x"]
+[ext_resource type="PackedScene" uid="uid://w2gx0lc2jh4i" path="res://Scenes/Interactables/TriggerZone.tscn" id="3_vg7f4"]
+[ext_resource type="PackedScene" uid="uid://ft261it7edxa" path="res://Scenes/Interactables/skull_blue.tscn" id="4_meudg"]
+[ext_resource type="PackedScene" uid="uid://dwetdqe7cshjb" path="res://Scenes/Interactables/enemy_spawn_spot.tscn" id="5_63bso"]
+[ext_resource type="PackedScene" uid="uid://dmilavgdouvhg" path="res://Enemies/cannon_man.tscn" id="6_0yywl"]
+[ext_resource type="PackedScene" uid="uid://bd5jkuduwu87l" path="res://Enemies/croco.tscn" id="7_aavm2"]
+[ext_resource type="Script" uid="uid://gy51qnxmvu4k" path="res://Scenes/EnemyController.cs" id="8_sih4x"]
+[ext_resource type="Script" uid="uid://dujw6chdx0j40" path="res://Components/Trigger.cs" id="9_vg7f4"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jgc46"]
+size = Vector3(13.1543, 8.09033, 11.115)
+
+[node name="Buildingbruh" type="Node3D"]
+
+[node name="Buidling1" parent="." instance=ExtResource("1_s6hle")]
+transform = Transform3D(-0.933136, 0, 0.359525, 0, 1, 0, -0.359525, 0, -0.933136, 0, 0, 0)
+
+[node name="Gates2" parent="Buidling1" node_paths=PackedStringArray("triggers") instance=ExtResource("2_sih4x")]
+transform = Transform3D(-7.2557, 0, 0.00704539, 0, 7.25571, 0, -0.0124102, 0, -4.11913, -0.163475, 2, -2.78378)
+triggers = [NodePath("../TriggerZone2"), NodePath("../../EnemyController")]
+dict = Dictionary[String, int]({
+"alldead": 1,
+"close": 0,
+"open": 1
+})
+
+[node name="TriggerZone2" parent="Buidling1" instance=ExtResource("3_vg7f4")]
+transform = Transform3D(-0.933136, 0, -0.359525, 0, 1, 0, 0.359525, 0, -0.933136, -0.231323, 2, -7.41338)
+OneTimeOnly = true
+bodyEnteredSignals = PackedStringArray("spwn", "close")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Buidling1/TriggerZone2"]
+transform = Transform3D(0.925679, 0, -0.378309, 0, 1, 0, 0.378309, 0, 0.925679, -7.48365, 3.54517, 17.3317)
+shape = SubResource("BoxShape3D_jgc46")
+
+[node name="SkullBlue" parent="Buidling1" instance=ExtResource("4_meudg")]
+transform = Transform3D(-0.933136, 0, -0.359525, 0, 1, 0, 0.359525, 0, -0.933136, -0.610931, 5.23642, -25.6191)
+color = 1
+
+[node name="EnemySpawnSpot6" parent="Buidling1" node_paths=PackedStringArray("triggers") instance=ExtResource("5_63bso")]
+transform = Transform3D(-0.996574, 0, -0.0827039, 0, 1, 0, 0.0827039, 0, -0.996574, 9.96023, 3.86871, -26.6019)
+triggers = [NodePath("../TriggerZone2")]
+entity = ExtResource("6_0yywl")
+signal = "close"
+
+[node name="EnemySpawnSpot7" parent="Buidling1" node_paths=PackedStringArray("triggers") instance=ExtResource("5_63bso")]
+transform = Transform3D(-0.999389, 0, 0.0349692, 0, 1, 0, -0.0349692, 0, -0.999389, 10.2591, 3.86871, -23.0011)
+triggers = [NodePath("../TriggerZone2")]
+entity = ExtResource("7_aavm2")
+signal = "close"
+
+[node name="EnemySpawnSpot8" parent="Buidling1" node_paths=PackedStringArray("triggers") instance=ExtResource("5_63bso")]
+transform = Transform3D(-0.999389, 0, 0.0349692, 0, 1, 0, -0.0349692, 0, -0.999389, 10.168, 3.86871, -20.3998)
+triggers = [NodePath("../TriggerZone2")]
+entity = ExtResource("7_aavm2")
+signal = "close"
+
+[node name="EnemySpawnSpot9" parent="Buidling1" node_paths=PackedStringArray("triggers") instance=ExtResource("5_63bso")]
+transform = Transform3D(-0.999389, 0, 0.0349692, 0, 1, 0, -0.0349692, 0, -0.999389, 10.0165, 3.86871, -16.0698)
+triggers = [NodePath("../TriggerZone2")]
+entity = ExtResource("7_aavm2")
+signal = "close"
+
+[node name="EnemySpawnSpot10" parent="Buidling1" node_paths=PackedStringArray("triggers") instance=ExtResource("5_63bso")]
+transform = Transform3D(-0.999389, 0, 0.0349692, 0, 1, 0, -0.0349692, 0, -0.999389, 9.82577, 3.86871, -10.6179)
+triggers = [NodePath("../TriggerZone2")]
+entity = ExtResource("7_aavm2")
+signal = "close"
+
+[node name="EnemySpawnSpot11" parent="Buidling1" node_paths=PackedStringArray("triggers") instance=ExtResource("5_63bso")]
+transform = Transform3D(-0.999389, 0, 0.0349692, 0, 1, 0, -0.0349692, 0, -0.999389, -7.17718, 3.86871, -11.2128)
+triggers = [NodePath("../TriggerZone2")]
+entity = ExtResource("7_aavm2")
+signal = "close"
+
+[node name="EnemySpawnSpot12" parent="Buidling1" node_paths=PackedStringArray("triggers") instance=ExtResource("5_63bso")]
+transform = Transform3D(-0.999389, 0, 0.0349692, 0, 1, 0, -0.0349692, 0, -0.999389, -0.347165, 3.86871, -10.9738)
+triggers = [NodePath("../TriggerZone2")]
+entity = ExtResource("7_aavm2")
+signal = "close"
+
+[node name="EnemySpawnSpot13" parent="Buidling1" node_paths=PackedStringArray("triggers") instance=ExtResource("5_63bso")]
+transform = Transform3D(-0.999389, 0, 0.0349692, 0, 1, 0, -0.0349692, 0, -0.999389, -8.01024, 3.86871, -15.512)
+triggers = [NodePath("../TriggerZone2")]
+entity = ExtResource("7_aavm2")
+signal = "close"
+
+[node name="EnemySpawnSpot14" parent="Buidling1" node_paths=PackedStringArray("triggers") instance=ExtResource("5_63bso")]
+transform = Transform3D(-0.999389, 0, 0.0349692, 0, 1, 0, -0.0349692, 0, -0.999389, -4.76824, 3.86871, -8.58574)
+triggers = [NodePath("../TriggerZone2")]
+entity = ExtResource("6_0yywl")
+signal = "close"
+
+[node name="EnemySpawnSpot15" parent="Buidling1" node_paths=PackedStringArray("triggers") instance=ExtResource("5_63bso")]
+transform = Transform3D(-0.999389, 0, 0.0349692, 0, 1, 0, -0.0349692, 0, -0.999389, 7.02767, 3.86871, -8.17299)
+triggers = [NodePath("../TriggerZone2")]
+entity = ExtResource("6_0yywl")
+signal = "close"
+
+[node name="EnemyController" type="Node" parent="." node_paths=PackedStringArray("ess", "trigger")]
+script = ExtResource("8_sih4x")
+ess = [NodePath("../Buidling1/EnemySpawnSpot6"), NodePath("../Buidling1/EnemySpawnSpot7"), NodePath("../Buidling1/EnemySpawnSpot8"), NodePath("../Buidling1/EnemySpawnSpot9"), NodePath("../Buidling1/EnemySpawnSpot10"), NodePath("../Buidling1/EnemySpawnSpot11"), NodePath("../Buidling1/EnemySpawnSpot12"), NodePath("../Buidling1/EnemySpawnSpot13"), NodePath("../Buidling1/EnemySpawnSpot14"), NodePath("../Buidling1/EnemySpawnSpot15")]
+trigger = NodePath("Trigger")
+
+[node name="Trigger" type="Node" parent="EnemyController"]
+script = ExtResource("9_vg7f4")
+metadata/_custom_type_script = "uid://dujw6chdx0j40"

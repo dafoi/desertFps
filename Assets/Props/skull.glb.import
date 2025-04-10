@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://d188w7l716kb4"
-path="res://.godot/imported/temple.gltf-4625cf3079688f0d993f1043f54b3896.scn"
+uid="uid://euc70jhlb2ki"
+path="res://.godot/imported/skull.glb-b62a3f291a71735378ae28a3ad50a893.scn"
 
 [deps]
 
-source_file="res://Assets/Map/env/temple.gltf"
-dest_files=["res://.godot/imported/temple.gltf-4625cf3079688f0d993f1043f54b3896.scn"]
+source_file="res://Assets/Props/skull.glb"
+dest_files=["res://.godot/imported/skull.glb-b62a3f291a71735378ae28a3ad50a893.scn"]
 
 [params]
 
@@ -32,21 +32,6 @@ animation/trimming=false
 animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
-_subresources={
-"materials": {
-"Sand": {
-"use_external/enabled": true,
-"use_external/path": "uid://bpuou5s8cd5yw"
-},
-"Sandstone": {
-"use_external/enabled": true,
-"use_external/path": "uid://13tgsmlr8chm"
-},
-"Water": {
-"use_external/enabled": true,
-"use_external/path": "uid://t0ok1ts650mv"
-}
-}
-}
+_subresources={}
 gltf/naming_version=1
 gltf/embedded_image_handling=1

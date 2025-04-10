@@ -1,0 +1,13 @@
+[gd_resource type="ORMMaterial3D" load_steps=4 format=3 uid="uid://13tgsmlr8chm"]
+
+[ext_resource type="Texture2D" uid="uid://bbbbmtsngftqq" path="res://Assets/Materials/BSS_albedo.png" id="1"]
+[ext_resource type="Texture2D" uid="uid://ls5ruwxo80jn" path="res://Assets/Materials/BSS_normal.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://b1y26hwvael50" path="res://Assets/Materials/BSS_orm.png" id="3_000fk"]
+
+[resource]
+albedo_texture = ExtResource("1")
+orm_texture = ExtResource("3_000fk")
+normal_enabled = true
+normal_texture = ExtResource("3")
+uv1_scale = Vector3(0.36, 0.36, 0.36)
+texture_filter = 0

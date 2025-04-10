@@ -3,11 +3,11 @@
 [ext_resource type="Script" uid="uid://5bxf6loipuye" path="res://TriggerZone.cs" id="1_qe5d2"]
 [ext_resource type="Script" uid="uid://dujw6chdx0j40" path="res://Components/Trigger.cs" id="2_5jtw1"]
 
-[node name="TriggerZone" type="Area3D"]
+[node name="TriggerZone" type="Area3D" node_paths=PackedStringArray("trigger")]
 collision_layer = 0
 monitorable = false
 script = ExtResource("1_qe5d2")
-dict = Dictionary[int, String]({})
+trigger = NodePath("Trigger")
 
 [node name="Trigger" type="Node" parent="."]
 script = ExtResource("2_5jtw1")

@@ -3,17 +3,17 @@ using System;
 
 public partial class TriggerZone : Area3D
 {
+    [Export] public bool OneTimeOnly = false;
     [Export] public bool forPlayer = true;
-    [Export] Godot.Collections.Dictionary<ACTIONS,string> dict;
-    public Trigger trigger;
-    enum ACTIONS
-    {
-        bodyEntered,
-        BodyExited,
-        AreaEntered,
-        AreaExited
 
-    }
+    [Export] public string[] bodyEnteredSignals;
+    [Export] public string[] bodyExitedSignals;
+    [Export] public string[] areaEnteredSignals;
+    [Export] public string[] areaExitedSignals;
+    
+    [Export] public Trigger trigger;
+    public bool used = false;
+    
     
     public override void _Ready()
     {
@@ -21,50 +21,63 @@ public partial class TriggerZone : Area3D
         BodyExited+= bodyExited;
         AreaEntered += areaEntered;
         AreaExited += areaExited;
-        trigger = GetNode<Trigger>("Trigger");
     }
     public void bodyEntered(Node body)
     {
+        if (used && OneTimeOnly) return;
+
         if (forPlayer)
         {
             if(body is player)
             {
-                emit(dict[ACTIONS.bodyEntered]);
+                emit(bodyEnteredSignals);
+                used = true;
             }
         }
         else
         {
-            emit(dict[ACTIONS.bodyEntered]);
+            emit(bodyEnteredSignals);
+            used = true;
         }
         
     }
     public void bodyExited(Node body)
     {
+        if (used && OneTimeOnly) return;
+
         if(forPlayer)
         {
             if(body is player)
             {
-              emit(dict[ACTIONS.BodyExited]);
+              emit(bodyExitedSignals);
+                used = true;
 
             }
 
         }
         else
         {
-            emit(dict[ACTIONS.BodyExited]);
+            emit(bodyExitedSignals);
+            used = true;
         }
     }
     public void areaEntered(Node body)
     {
-        emit(dict[ACTIONS.AreaEntered]);
+
+        emit(areaEnteredSignals);
     }
     public void areaExited(Node body)
     {
-        emit(dict[ACTIONS.AreaExited]);
+        emit(areaExitedSignals);
     }
-    public void emit(string msg)
+    public void emit(string[] msg)
     {
-        trigger.msg = msg;
-        trigger.emit();
+        foreach(string s in msg)
+        {
+            trigger.msg = s;
+
+            trigger.emit();
+            GD.Print(s);
+        }
     }
 }

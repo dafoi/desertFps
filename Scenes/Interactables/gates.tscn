@@ -1,8 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://csqdtou1ata6v"]
+[gd_scene load_steps=12 format=3 uid="uid://csqdtou1ata6v"]
 
 [ext_resource type="Script" uid="uid://bcdn06o3aoa5s" path="res://Scenes/Interactables/Gates.cs" id="1_14oor"]
-[ext_resource type="Texture2D" uid="uid://bq280b2ntnpag" path="res://Assets/Materials/sandstone_albedo.png" id="1_toqul"]
-[ext_resource type="Texture2D" uid="uid://dqwlcwthqubn" path="res://Assets/Materials/sandstone_normal.png" id="2_14oor"]
+[ext_resource type="Texture2D" uid="uid://bbbbmtsngftqq" path="res://Assets/Materials/BSS_albedo.png" id="2_1abs7"]
+[ext_resource type="Texture2D" uid="uid://ls5ruwxo80jn" path="res://Assets/Materials/BSS_normal.png" id="3_yclxh"]
+[ext_resource type="Texture2D" uid="uid://b1y26hwvael50" path="res://Assets/Materials/BSS_orm.png" id="4_eahci"]
 
 [sub_resource type="Animation" id="Animation_jlnck"]
 resource_name = "close"
@@ -153,12 +154,13 @@ _data = {
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_14oor"]
 data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
 
-[sub_resource type="ORMMaterial3D" id="ORMMaterial3D_1abs7"]
-albedo_texture = ExtResource("1_toqul")
+[sub_resource type="ORMMaterial3D" id="ORMMaterial3D_05wwd"]
+albedo_texture = ExtResource("2_1abs7")
+orm_texture = ExtResource("4_eahci")
 normal_enabled = true
-normal_texture = ExtResource("2_14oor")
-uv1_scale = Vector3(6.095, 6.095, 6.095)
-uv1_world_triplanar = true
+normal_texture = ExtResource("3_yclxh")
+uv1_scale = Vector3(1.33, 1.33, 1.33)
+texture_filter = 0
 
 [sub_resource type="BoxMesh" id="BoxMesh_yclxh"]
 
@@ -189,7 +191,7 @@ shape = SubResource("ConcavePolygonShape3D_14oor")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="WAll1"]
 transform = Transform3D(1, 0, 0, 0, 1.44869, 0, 0, 0, 0.347305, 0, 0, 0)
-material_override = SubResource("ORMMaterial3D_1abs7")
+material_override = SubResource("ORMMaterial3D_05wwd")
 mesh = SubResource("BoxMesh_yclxh")
 skeleton = NodePath("../..")
 
@@ -202,6 +204,6 @@ shape = SubResource("ConcavePolygonShape3D_1abs7")
 
 [node name="d" type="MeshInstance3D" parent="Wall2"]
 transform = Transform3D(1, 0, 0, 0, 1.44869, 0, 0, 0, 0.347305, 0, 0, 0)
-material_override = SubResource("ORMMaterial3D_1abs7")
+material_override = SubResource("ORMMaterial3D_05wwd")
 mesh = SubResource("BoxMesh_yclxh")
 skeleton = NodePath("../..")

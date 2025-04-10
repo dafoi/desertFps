@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=3 uid="uid://c01q4ie2e0pxi"]
+[gd_scene load_steps=48 format=3 uid="uid://c01q4ie2e0pxi"]
 
 [ext_resource type="Script" uid="uid://bpy0e0x4mv0g3" path="res://Player/scripts/player.cs" id="1_3qydi"]
 [ext_resource type="Resource" uid="uid://hx8itknwgcsq" path="res://Resources/player/default_player.tres" id="2_3nb2p"]
@@ -30,6 +30,7 @@
 [ext_resource type="Script" uid="uid://cwov2ifsi1bkn" path="res://Player/healthBar.cs" id="21_roy6y"]
 [ext_resource type="PackedScene" uid="uid://bdql0gi4sssfu" path="res://Particles/muzzle_flash.tscn" id="22_croik"]
 [ext_resource type="Script" uid="uid://dqoxegu5jjpw6" path="res://Player/DynamicCrosshair.cs" id="23_ps8ct"]
+[ext_resource type="Script" uid="uid://bphwia62vhivo" path="res://Player/PlayerItemsManager.cs" id="31_bgaaw"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_fo8cm"]
 
@@ -380,6 +381,7 @@ bones/73/rotation = Quaternion(0.123173, -0.000295044, 0.00237795, 0.992382)
 bones/74/rotation = Quaternion(0.0519162, 3.86608e-05, -0.0055341, 0.998636)
 bones/75/position = Vector3(-2.06826e-08, 0.189944, -2.20087e-09)
 bones/75/rotation = Quaternion(-0.0272782, 0.183875, 0.0525715, 0.981164)
+bones/75/scale = Vector3(1, 1, 1)
 bones/77/position = Vector3(5.05079e-08, 0.189944, 2.7112e-08)
 bones/77/rotation = Quaternion(-0.0272783, 0.183875, 0.0525716, 0.981164)
 bones/79/rotation = Quaternion(0.123173, -0.000294594, 0.00237809, 0.992382)
@@ -740,6 +742,9 @@ width_curve = SubResource("Curve_ps8ct")
 points = PackedVector2Array(-2, 0, -12, 0)
 width = 2.0
 width_curve = SubResource("Curve_ps8ct")
+
+[node name="PlayerItemsManager" type="Node" parent="." groups=["PlayerItemsManager"]]
+script = ExtResource("31_bgaaw")
 
 [connection signal="animation_finished" from="Head/Camera3D/WeaponSway/WeaponManager/AnimationPlayer" to="Head/Camera3D/WeaponSway/WeaponManager" method="finished"]
 [connection signal="timeout" from="Head/Camera3D/WeaponSway/WeaponManager/reloadTimer" to="Head/Camera3D/WeaponSway/WeaponManager" method="onreloadTimer"]

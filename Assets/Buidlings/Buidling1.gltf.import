@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://d188w7l716kb4"
-path="res://.godot/imported/temple.gltf-4625cf3079688f0d993f1043f54b3896.scn"
+uid="uid://ldk1pvpyog3x"
+path="res://.godot/imported/Buidling1.gltf-9b0d2927161f3e1d02ea09123c0ea715.scn"
 
 [deps]
 
-source_file="res://Assets/Map/env/temple.gltf"
-dest_files=["res://.godot/imported/temple.gltf-4625cf3079688f0d993f1043f54b3896.scn"]
+source_file="res://Assets/Buidlings/Buidling1.gltf"
+dest_files=["res://.godot/imported/Buidling1.gltf-9b0d2927161f3e1d02ea09123c0ea715.scn"]
 
 [params]
 
@@ -34,17 +34,9 @@ animation/import_rest_as_RESET=false
 import_script/path=""
 _subresources={
 "materials": {
-"Sand": {
-"use_external/enabled": true,
-"use_external/path": "uid://bpuou5s8cd5yw"
-},
-"Sandstone": {
+"BSS": {
 "use_external/enabled": true,
 "use_external/path": "uid://13tgsmlr8chm"
-},
-"Water": {
-"use_external/enabled": true,
-"use_external/path": "uid://t0ok1ts650mv"
 }
 }
 }

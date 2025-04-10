@@ -1,0 +1,78 @@
+[gd_scene load_steps=8 format=3 uid="uid://ft261it7edxa"]
+
+[ext_resource type="Script" uid="uid://r66tgg0k81o2" path="res://Scenes/Interactables/Skull.cs" id="1_40ins"]
+[ext_resource type="PackedScene" uid="uid://euc70jhlb2ki" path="res://Assets/Props/skull.glb" id="1_ke5rd"]
+[ext_resource type="PackedScene" uid="uid://s5ayo3ik36jm" path="res://Particles/StarParticles.tscn" id="3_ebce3"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_40ins"]
+radius = 1.30513
+
+[sub_resource type="Animation" id="Animation_40ins"]
+resource_name = "spin"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("skull:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0666667, 0.166667, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector3(0, 0, 0), Vector3(0, 0.628319, 0), Vector3(0, 1.25664, 0), Vector3(0, 1.8326, 0), Vector3(0, 2.51327, 0), Vector3(0, 3.14159, 0), Vector3(0, 3.76991, 0), Vector3(0, 4.39823, 0), Vector3(0, 5.02655, 0), Vector3(0, 6.28319, 0)]
+}
+tracks/1/type = "position_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("skull")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0.0666667, 1, 0, 0, 0, 0.5, 1, 0, 0.43, 0, 1, 1, 0, 0, 0)
+
+[sub_resource type="Animation" id="Animation_ebce3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("skull:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/1/type = "position_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("skull")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 0, 0, 0)
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xwgf6"]
+_data = {
+&"RESET": SubResource("Animation_ebce3"),
+&"spin": SubResource("Animation_40ins")
+}
+
+[node name="SkullBlue" type="Node3D"]
+script = ExtResource("1_40ins")
+
+[node name="skull" parent="." instance=ExtResource("1_ke5rd")]
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("SphereShape3D_40ins")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_xwgf6")
+}
+autoplay = "spin"
+
+[node name="StarParticles" parent="." instance=ExtResource("3_ebce3")]
+transform = Transform3D(3.34369, 0, 0, 0, 3.34369, 0, 0, 0, 3.34369, 0, 0.0705625, -0.304758)
