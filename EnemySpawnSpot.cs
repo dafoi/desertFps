@@ -4,6 +4,7 @@ using System;
 public partial class EnemySpawnSpot : Marker3D
 {
     [Signal] public delegate void enemySpawnedEventHandler(Node3D enemy);
+    [Export] AudioStreamPlayer3D asp;
     [Export] Node[] triggers;
     [Export] PackedScene entity;
     [Export] string signal;
@@ -32,6 +33,7 @@ public partial class EnemySpawnSpot : Marker3D
             instance.GlobalPosition = GlobalPosition;
             GetTree().GetFirstNodeInGroup("Enemies").AddChild(instance);
             EmitSignal(SignalName.enemySpawned,instance);
+            asp.Play();
         }
     }
 }

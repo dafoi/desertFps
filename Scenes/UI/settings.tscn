@@ -4,7 +4,6 @@
 [ext_resource type="Theme" uid="uid://7yd65svu8utm" path="res://Assets/Theme/MyTheme.tres" id="2_ma1v7"]
 
 [node name="Settings Window" type="Control" node_paths=PackedStringArray("save", "exit", "ssao", "decals", "volume", "brightness")]
-visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

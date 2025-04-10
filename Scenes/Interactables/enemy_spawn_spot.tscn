@@ -1,6 +1,15 @@
-[gd_scene load_steps=2 format=3 uid="uid://dwetdqe7cshjb"]
+[gd_scene load_steps=4 format=3 uid="uid://dwetdqe7cshjb"]
 
 [ext_resource type="Script" uid="uid://diq63v5s5p3ma" path="res://EnemySpawnSpot.cs" id="1_yqpte"]
+[ext_resource type="PackedScene" uid="uid://bd5jkuduwu87l" path="res://Enemies/croco.tscn" id="2_0qsbv"]
+[ext_resource type="AudioStream" uid="uid://dixt4pe8iyorc" path="res://Assets/Sounds/EnemySpawn.wav" id="2_b1amm"]
 
-[node name="EnemySpawnSpot" type="Marker3D"]
+[node name="EnemySpawnSpot" type="Marker3D" node_paths=PackedStringArray("asp", "triggers")]
 script = ExtResource("1_yqpte")
+asp = NodePath("AudioStreamPlayer3D")
+triggers = []
+entity = ExtResource("2_0qsbv")
+signal = "spawn"
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("2_b1amm")

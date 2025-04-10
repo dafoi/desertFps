@@ -1,0 +1,104 @@
+[gd_scene load_steps=8 format=3 uid="uid://cxqpt66vc0xc6"]
+
+[ext_resource type="PackedScene" uid="uid://dk8omautinc2m" path="res://Assets/Enemies/dancinCroco.glb" id="1_iy2kt"]
+[ext_resource type="Script" uid="uid://fcddrphy6itr" path="res://Scenes/LostScreen.cs" id="1_t6vda"]
+[ext_resource type="Theme" uid="uid://7yd65svu8utm" path="res://Assets/Theme/MyTheme.tres" id="2_h5jrv"]
+[ext_resource type="Material" uid="uid://13tgsmlr8chm" path="res://Assets/Materials/BSS.tres" id="3_y0bqq"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_t6vda"]
+sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+ground_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+
+[sub_resource type="Sky" id="Sky_6ly5g"]
+sky_material = SubResource("ProceduralSkyMaterial_t6vda")
+
+[sub_resource type="Environment" id="Environment_olk75"]
+background_mode = 2
+sky = SubResource("Sky_6ly5g")
+tonemap_mode = 2
+glow_enabled = true
+
+[node name="LostScreen" type="Node3D" node_paths=PackedStringArray("again", "exit")]
+script = ExtResource("1_t6vda")
+again = NodePath("MarginContainer/VBoxContainer/Continue")
+exit = NodePath("MarginContainer/VBoxContainer/Exit")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_olk75")
+
+[node name="dancinCroco" parent="." instance=ExtResource("1_iy2kt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0713438, 0, -0.248207)
+
+[node name="Croco rig" parent="dancinCroco" index="0"]
+transform = Transform3D(-0.178752, -0.0148339, 0.983782, 0.338229, 0.938022, 0.0755998, -0.923931, 0.346257, -0.162656, -0.323906, 2.20994, -0.438942)
+
+[node name="Skeleton3D" parent="dancinCroco/Croco rig" index="0"]
+bones/0/position = Vector3(-0.508718, -0.233242, 0.0312977)
+bones/0/rotation = Quaternion(0.999984, 1.62613e-05, -0.00399515, -0.00401175)
+bones/1/rotation = Quaternion(0.962776, 0.259512, -0.069917, 0.028758)
+bones/2/rotation = Quaternion(0.00143951, 0.131447, 0.273828, 0.952753)
+bones/3/rotation = Quaternion(0.146038, 0.219659, 0.964516, -0.0115055)
+bones/4/rotation = Quaternion(-0.528186, -0.0594353, -0.110491, 0.839808)
+bones/6/rotation = Quaternion(0.0391543, -0.0328633, -0.209826, 0.976402)
+bones/7/rotation = Quaternion(0.0165694, -0.0237401, -0.1909, 0.981182)
+bones/9/rotation = Quaternion(0.571466, 0.721876, 0.225246, -0.318727)
+bones/11/rotation = Quaternion(0.642486, 0.558282, 0.380396, -0.361708)
+bones/13/rotation = Quaternion(-0.837575, -0.365295, 0.363763, 0.180846)
+bones/14/rotation = Quaternion(0.0682369, -0.199353, 0.553113, 0.80602)
+bones/17/rotation = Quaternion(-0.323667, -0.81547, 0.220823, -0.426012)
+bones/18/rotation = Quaternion(0.126976, 0.077727, -0.658432, 0.737769)
+bones/21/rotation = Quaternion(-0.0991177, 0.473194, 0.194863, 0.8534)
+bones/22/rotation = Quaternion(-0.100398, -0.103299, -0.637642, 0.756744)
+bones/25/rotation = Quaternion(0.347036, -1.48737e-08, -2.43656e-08, 0.937852)
+bones/26/rotation = Quaternion(-0.0498784, 3.42792e-08, 1.86468e-09, 0.998755)
+bones/27/rotation = Quaternion(0.0628471, -4.13423e-08, -3.17409e-09, 0.998023)
+
+[node name="AnimationPlayer" parent="dancinCroco" index="1"]
+autoplay = "twerk"
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-0.925654, -0.0769772, 0.370458, -0.0373123, 0.992885, 0.11308, -0.376527, 0.09085, -0.92194, 2.11301, 3.96983, -6.3332)
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 400
+theme_override_constants/margin_top = 200
+theme_override_constants/margin_right = 400
+theme_override_constants/margin_bottom = 100
+metadata/_edit_use_anchors_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 8
+
+[node name="Continue" type="Button" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+size_flags_vertical = 8
+theme = ExtResource("2_h5jrv")
+theme_override_font_sizes/font_size = 79
+text = "Nah, I'd win"
+
+[node name="Exit" type="Button" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+size_flags_vertical = 8
+theme = ExtResource("2_h5jrv")
+theme_override_font_sizes/font_size = 79
+text = "I'm too weak, exit."
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.442511, -2.24425, -0.0711555)
+radius = 4.32617
+height = 4.32739
+material = ExtResource("3_y0bqq")
+
+[editable path="dancinCroco"]

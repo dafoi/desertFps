@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://m2vv77gea7cg"]
+
+[ext_resource type="Script" uid="uid://diq63v5s5p3ma" path="res://EnemySpawnSpot.cs" id="1_vrhfu"]
+[ext_resource type="PackedScene" uid="uid://dmilavgdouvhg" path="res://Enemies/cannon_man.tscn" id="2_ndo0n"]
+[ext_resource type="AudioStream" uid="uid://dixt4pe8iyorc" path="res://Assets/Sounds/EnemySpawn.wav" id="3_w8phh"]
+
+[node name="EnemySpawnSpot" type="Marker3D" node_paths=PackedStringArray("asp", "triggers")]
+script = ExtResource("1_vrhfu")
+asp = NodePath("AudioStreamPlayer3D")
+triggers = []
+entity = ExtResource("2_ndo0n")
+signal = "spawn"
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("3_w8phh")

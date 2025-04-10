@@ -1,9 +1,12 @@
-[gd_scene load_steps=12 format=3 uid="uid://csqdtou1ata6v"]
+[gd_scene load_steps=20 format=3 uid="uid://csqdtou1ata6v"]
 
 [ext_resource type="Script" uid="uid://bcdn06o3aoa5s" path="res://Scenes/Interactables/Gates.cs" id="1_14oor"]
 [ext_resource type="Texture2D" uid="uid://bbbbmtsngftqq" path="res://Assets/Materials/BSS_albedo.png" id="2_1abs7"]
 [ext_resource type="Texture2D" uid="uid://ls5ruwxo80jn" path="res://Assets/Materials/BSS_normal.png" id="3_yclxh"]
 [ext_resource type="Texture2D" uid="uid://b1y26hwvael50" path="res://Assets/Materials/BSS_orm.png" id="4_eahci"]
+[ext_resource type="AudioStream" uid="uid://dwpglgud8dmfb" path="res://Assets/Sounds/GatesOpen.wav" id="5_eahci"]
+[ext_resource type="AudioStream" uid="uid://ccjiscjh7o6ci" path="res://Assets/Sounds/GatesClose.wav" id="6_05wwd"]
+[ext_resource type="Texture2D" uid="uid://cx1d2rjyg4ueh" path="res://Assets/Particles/smoke.png" id="7_05wwd"]
 
 [sub_resource type="Animation" id="Animation_jlnck"]
 resource_name = "close"
@@ -167,7 +170,42 @@ texture_filter = 0
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_1abs7"]
 data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
 
-[node name="Gates" type="Node3D" node_paths=PackedStringArray("triggers", "animationPlayer")]
+[sub_resource type="Curve" id="Curve_jlnck"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1e-05, 0), 0.0, 0.0, 0, 0, Vector2(0.296296, 1), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_o6occ"]
+curve = SubResource("Curve_jlnck")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_igfu2"]
+emission_shape_scale = Vector3(1, 0.524, 0.25)
+emission_shape = 3
+emission_box_extents = Vector3(1.195, 0.95, 1)
+angle_min = -520.1
+angle_max = 305.6
+direction = Vector3(0, 1, 0)
+spread = 180.0
+initial_velocity_min = 1.0
+initial_velocity_max = 1.0
+gravity = Vector3(0, -4.845, 0)
+damping_max = 4.0
+scale_min = 0.5
+scale_curve = SubResource("CurveTexture_o6occ")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k3t3t"]
+transparency = 1
+albedo_color = Color(1, 0.876, 0.69, 1)
+albedo_texture = ExtResource("7_05wwd")
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="QuadMesh" id="QuadMesh_vwvxi"]
+material = SubResource("StandardMaterial3D_k3t3t")
+
+[node name="Gates" type="Node3D" node_paths=PackedStringArray("triggers", "audioPlayerOpen", "audioPlayerClose", "particles", "animationPlayer")]
 script = ExtResource("1_14oor")
 closed = false
 triggers = []
@@ -175,6 +213,9 @@ dict = Dictionary[String, int]({
 "close": 0,
 "open": 1
 })
+audioPlayerOpen = NodePath("OpenSound")
+audioPlayerClose = NodePath("CloseSound")
+particles = NodePath("SandParticles")
 animationPlayer = NodePath("AnimationPlayer")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -191,6 +232,7 @@ shape = SubResource("ConcavePolygonShape3D_14oor")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="WAll1"]
 transform = Transform3D(1, 0, 0, 0, 1.44869, 0, 0, 0, 0.347305, 0, 0, 0)
+layers = 2
 material_override = SubResource("ORMMaterial3D_05wwd")
 mesh = SubResource("BoxMesh_yclxh")
 skeleton = NodePath("../..")
@@ -204,6 +246,24 @@ shape = SubResource("ConcavePolygonShape3D_1abs7")
 
 [node name="d" type="MeshInstance3D" parent="Wall2"]
 transform = Transform3D(1, 0, 0, 0, 1.44869, 0, 0, 0, 0.347305, 0, 0, 0)
+layers = 2
 material_override = SubResource("ORMMaterial3D_05wwd")
 mesh = SubResource("BoxMesh_yclxh")
 skeleton = NodePath("../..")
+
+[node name="OpenSound" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.728892, 0)
+stream = ExtResource("5_eahci")
+
+[node name="CloseSound" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.728892, 0)
+stream = ExtResource("6_05wwd")
+
+[node name="SandParticles" type="GPUParticles3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.32262, 0)
+emitting = false
+amount = 7
+one_shot = true
+local_coords = true
+process_material = SubResource("ParticleProcessMaterial_igfu2")
+draw_pass_1 = SubResource("QuadMesh_vwvxi")

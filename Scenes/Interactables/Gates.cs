@@ -9,7 +9,10 @@ public partial class Gates : Node3D
 
     [Export] Node[] triggers;
     [Export] Godot.Collections.Dictionary<string, ACTIONS> dict;
-
+    [Export] AudioStreamPlayer3D audioPlayerOpen;
+    [Export] AudioStreamPlayer3D audioPlayerClose;
+    [Export] GpuParticles3D particles;
+    [Export] float defaultAnimationSpeed = 1.0f;
     private bool used = false;
 
     private bool queueClose = false;
@@ -50,7 +53,6 @@ public partial class Gates : Node3D
 
     void act(ACTIONS A)
     {
-        GD.Print("Gates: act() action : " + A);
         if (animationPlayer.IsPlaying())
         {
             if (A == ACTIONS.close){ queueClose = true; }
@@ -65,38 +67,51 @@ public partial class Gates : Node3D
         }
 
         used = true;
-        animationPlayer.SpeedScale = 1f;
+        
 
         if (A == ACTIONS.close)
         {
-            GD.Print("should close;");
-            animationPlayer.Play("close");
+            close();
+
         }
         else
         {
-            animationPlayer.Play("open");
-            GD.Print("should open;");
+            open();
+            
         }
     }
     public void animFinished(StringName name)
     {
+        animationPlayer.SpeedScale = defaultAnimationSpeed;
         GD.Print("Gates anim finished : " + name);
         switch (name)
         {
             case "close":
                 if (queueOpen) {
-                    animationPlayer.Play("open");
+                    open();
                     queueOpen = false;
                 }
                 break;
             case "open":
                 if (queueClose)
                 {
-                    animationPlayer.Play("close");
+                    close();
                     queueClose = false;
                 }
                 break;
         } 
+    }
+    public void open()
+    {
+        animationPlayer.Play("open");
+        particles.Emitting = true;
+        audioPlayerOpen.Play();
+    }
+    public void close()
+    {
+        animationPlayer.Play("close");
+        particles.Emitting = true;
+        audioPlayerClose.Play();
     }
 
 }

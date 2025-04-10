@@ -30,7 +30,7 @@ dict = Dictionary[String, int]({
 [node name="TriggerZone2" parent="Buidling1" instance=ExtResource("3_vg7f4")]
 transform = Transform3D(-0.933136, 0, -0.359525, 0, 1, 0, 0.359525, 0, -0.933136, -0.231323, 2, -7.41338)
 OneTimeOnly = true
-bodyEnteredSignals = PackedStringArray("spwn", "close")
+bodyEnteredSignals = PackedStringArray("close")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Buidling1/TriggerZone2"]
 transform = Transform3D(0.925679, 0, -0.378309, 0, 1, 0, 0.378309, 0, 0.925679, -7.48365, 3.54517, 17.3317)

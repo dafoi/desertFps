@@ -36,7 +36,7 @@ public partial class WeaponManager : Node3D
 	{
 		if (isReloading) can_switch = false;
 
-		label.Text = "fps:" + Engine.GetFramesPerSecond() + " toggle v:global illumination, b:voletric fog";//$"{id} , {wep_current.name} , {can_switch} , next: {next_weapon} , res_ammo : {wep_current.reserve_ammo}";
+		label.Text = "fps:" + Engine.GetFramesPerSecond();
 		
 		if (can_switch)
 		{

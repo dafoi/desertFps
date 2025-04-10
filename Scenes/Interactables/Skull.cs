@@ -4,7 +4,8 @@ using System;
 public partial class Skull : Node3D
 {
     [Export] COLOR color;
-    enum COLOR
+    [Export] AudioStreamPlayer asp;
+    public enum COLOR
     {
         SKULLRED,
         SKULLBLUE,
@@ -20,7 +21,10 @@ public partial class Skull : Node3D
         {
             body.GetNode<PlayerItemsManager>("PlayerItemsManager").addItem(color.ToString(), 1);
             GD.Print(color.ToString());
-            QueueFree();
+            asp.Play();
+            Visible = false;
+            asp.Finished += QueueFree;
+            
         }
             
     }

@@ -42,7 +42,7 @@ public partial class player : CharacterBody3D
         if(playerResource.hp <= 0 && can_die)
         {
             //var sm = GetTree().GetFirstNodeInGroup("SceneManager") as SceneManager;
-            GetTree().ChangeSceneToFile("uid://dqohd0gwpmbbr");
+            GetTree().ChangeSceneToFile("uid://cxqpt66vc0xc6");
             //sm.loadLevel("main");
         }
 

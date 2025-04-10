@@ -1,0 +1,80 @@
+[gd_scene load_steps=5 format=3 uid="uid://cjfnkfepvbkaa"]
+
+[ext_resource type="Script" uid="uid://d2y1o4iila2g" path="res://Player/Items.cs" id="1_7rv5m"]
+[ext_resource type="Texture2D" uid="uid://m7oduhj2iuid" path="res://Assets/Images/SkullRed.png" id="2_tdx0b"]
+[ext_resource type="Texture2D" uid="uid://bwckid1w2e6l4" path="res://Assets/Images/SkullBlue.png" id="3_4d6lp"]
+[ext_resource type="Texture2D" uid="uid://d2x764bq2p483" path="res://Assets/Images/SkullGreen.png" id="4_jfdiv"]
+
+[node name="Items" type="Control" node_paths=PackedStringArray("slots")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7rv5m")
+slots = [NodePath("MarginContainer/GridContainer/Panel/TextureRect"), NodePath("MarginContainer/GridContainer/Panel2/TextureRect"), NodePath("MarginContainer/GridContainer/Panel3/TextureRect")]
+skullColors = Dictionary[int, Texture2D]({
+0: ExtResource("2_tdx0b"),
+1: ExtResource("3_4d6lp"),
+2: ExtResource("4_jfdiv")
+})
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -50.0
+offset_bottom = 50.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_constants/margin_right = 20
+
+[node name="GridContainer" type="GridContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Panel" type="Panel" parent="MarginContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_vertical = 4
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/GridContainer/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel2" type="Panel" parent="MarginContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_vertical = 4
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/GridContainer/Panel2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel3" type="Panel" parent="MarginContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_vertical = 4
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/GridContainer/Panel3"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2

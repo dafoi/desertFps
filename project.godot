@@ -15,13 +15,14 @@ warnings/check_invalid_track_paths=false
 [application]
 
 config/name="fps"
-run/main_scene="uid://dce3wwvm6ov43"
+run/main_scene="uid://dqohd0gwpmbbr"
 config/features=PackedStringArray("4.4", "C#", "Forward Plus")
 config/icon="uid://bucdgimkyqc2l"
 
 [autoload]
 
 Settings="*res://Global/Settings.cs"
+Global="*res://Global/Global.cs"
 
 [display]
 
